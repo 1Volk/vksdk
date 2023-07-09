@@ -1,7 +1,7 @@
 package api 
 
 import (
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // AppsDeleteAppRequests deletes all request notifications from the current app.

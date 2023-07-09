@@ -1,6 +1,6 @@
 package api 
 
-import "github.com/Volk/vksdk/object"
+import "github.com/1Volk/vksdk/object"
 
 // PollsAddVote adds the current user's vote to the selected answer in the poll.
 //

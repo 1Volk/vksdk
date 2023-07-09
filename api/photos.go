@@ -1,7 +1,7 @@
 package api 
 
 import (
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // PhotosConfirmTag confirms a tag on a photo.

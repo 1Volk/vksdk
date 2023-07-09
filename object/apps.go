@@ -1,4 +1,4 @@
-package object // import "github.com/Volk/vksdk/object"
+package object // import "github.com/1Volk/vksdk/object"
 
 // AppsApp type application type.
 const (

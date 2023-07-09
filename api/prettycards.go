@@ -1,6 +1,6 @@
 package api 
 
-import "github.com/Volk/vksdk/object"
+import "github.com/1Volk/vksdk/object"
 
 // PrettyCardsCreateResponse struct.
 type PrettyCardsCreateResponse struct {

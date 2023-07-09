@@ -1,7 +1,7 @@
 package api 
 
 import (
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // BoardAddTopic creates a new topic on a community's discussion board.

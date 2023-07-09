@@ -1,7 +1,7 @@
 /*
 Package internal unimportable
 */
-package internal // import "github.com/Volk/vksdk/internal"
+package internal // import "github.com/1Volk/vksdk/internal"
 
 import (
 	"context"

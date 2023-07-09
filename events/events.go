@@ -3,12 +3,12 @@ Package events for community events handling.
 
 See more https://vk.com/dev/groups_events
 */
-package events // import "github.com/Volk/vksdk/events"
+package events // import "github.com/1Volk/vksdk/events"
 
 import (
 	"encoding/json"
 
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // FuncList struct.

@@ -1,7 +1,7 @@
-package params // import "github.com/Volk/vksdk/api/params"
+package params // import "github.com/1Volk/vksdk/api/params"
 
 import (
-	"github.com/Volk/vksdk/api"
+	"github.com/1Volk/vksdk/api"
 )
 
 // LeadsCheckUserBuilder builder.

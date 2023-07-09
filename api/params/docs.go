@@ -1,7 +1,7 @@
 package params 
 
 import (
-	"github.com/Volk/vksdk/api"
+	"github.com/1Volk/vksdk/api"
 )
 
 // DocsAddBuilder builder.

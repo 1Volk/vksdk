@@ -1,6 +1,6 @@
 package api 
 
-import "github.com/Volk/vksdk/object"
+import "github.com/1Volk/vksdk/object"
 
 // StoriesBanOwner allows to hide stories from chosen sources from current user's feed.
 //

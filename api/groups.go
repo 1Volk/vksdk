@@ -1,7 +1,7 @@
 package api 
 
 import (
-	"github.com/Volk/vksdk/bject"
+	"github.com/1Volk/vksdk/bject"
 )
 
 // GroupsAddAddressResponse struct.

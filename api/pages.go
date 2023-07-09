@@ -1,7 +1,7 @@
 package api 
 
 import (
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // PagesClearCache allows to clear the cache of particular external pages which may be attached to VK posts.

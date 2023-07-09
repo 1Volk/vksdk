@@ -3,7 +3,7 @@ Package longpoll implements Bots Long Poll API.
 
 See more https://vk.com/dev/bots_longpoll
 */
-package longpoll // import "github.com/Volk/vksdk/longpoll-bot"
+package longpoll // import "github.com/1Volk/vksdk/longpoll-bot"
 
 import (
 	"encoding/json"
@@ -11,10 +11,10 @@ import (
 	"net/http"
 	"sync/atomic"
 
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 
-	"github.com/Volk/vksdk/api"
-	"github.com/Volk/vksdk/events"
+	"github.com/1Volk/vksdk/api"
+	"github.com/1Volk/vksdk/events"
 )
 
 // Longpoll struct.

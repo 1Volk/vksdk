@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 type uploadError struct {

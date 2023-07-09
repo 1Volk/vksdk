@@ -8,7 +8,7 @@ package errors
 import (
 	"fmt"
 
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 	"github.com/pkg/errors"
 )
 

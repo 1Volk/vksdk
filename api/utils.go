@@ -3,7 +3,7 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/object"
 )
 
 // UtilsCheckLinkResponse struct.

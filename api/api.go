@@ -16,9 +16,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Volk/vksdk/api/errors"
-	"github.com/Volk/vksdk/internal"
-	"github.com/Volk/vksdk/object"
+	"github.com/1Volk/vksdk/api/errors"
+	"github.com/1Volk/vksdk/internal"
+	"github.com/1Volk/vksdk/object"
 )
 
 // Api constants.
