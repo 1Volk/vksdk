@@ -1,6 +1,6 @@
-module github.com/SevereCloud/vksdk
+module github.com/1Volk/vksdk
 
-go 1.12
+go 1.17
 
 require (
 	github.com/gorilla/schema v1.1.0

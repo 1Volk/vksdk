@@ -7,7 +7,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/SevereCloud/vksdk"
+	"github.com/1Volk/vksdk"
 )
 
 // UserAgent module.
