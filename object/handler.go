@@ -6,7 +6,7 @@ import (
 )
 
 // MessageNewFunc func.
-type MessageNewFunc func(MessageNewObject, int)
+type MessageNewFunc func(MessageNewObject, int64)
 
 // MessageNewObject struct.
 type MessageNewObject struct {
@@ -48,22 +48,22 @@ func (obj *MessageNewObject) UnmarshalJSON(data []byte) (err error) {
 }
 
 // Message Event func.
-type MessageEventFunc func(EventNewObject, int)
+type MessageEventFunc func(EventNewObject, int64)
 
 // MessageReplyFunc func.
-type MessageReplyFunc func(MessageReplyObject, int)
+type MessageReplyFunc func(MessageReplyObject, int64)
 
 // MessageReplyObject struct.
 type MessageReplyObject MessagesMessage
 
 // MessageEditFunc func.
-type MessageEditFunc func(MessageEditObject, int)
+type MessageEditFunc func(MessageEditObject, int64)
 
 // MessageEditObject struct.
 type MessageEditObject MessagesMessage
 
 // MessageAllowFunc func.
-type MessageAllowFunc func(MessageAllowObject, int)
+type MessageAllowFunc func(MessageAllowObject, int64)
 
 // MessageAllowObject struct.
 type MessageAllowObject struct {
@@ -72,7 +72,7 @@ type MessageAllowObject struct {
 }
 
 // MessageDenyFunc func.
-type MessageDenyFunc func(MessageDenyObject, int)
+type MessageDenyFunc func(MessageDenyObject, int64)
 
 // MessageDenyObject struct.
 type MessageDenyObject struct {
@@ -80,7 +80,7 @@ type MessageDenyObject struct {
 }
 
 // MessageTypingStateFunc func.
-type MessageTypingStateFunc func(MessageTypingStateObject, int)
+type MessageTypingStateFunc func(MessageTypingStateObject, int64)
 
 // MessageTypingStateObject struct.
 type MessageTypingStateObject struct {
@@ -90,73 +90,73 @@ type MessageTypingStateObject struct {
 }
 
 // PhotoNewFunc func.
-type PhotoNewFunc func(PhotoNewObject, int)
+type PhotoNewFunc func(PhotoNewObject, int64)
 
 // PhotoNewObject struct.
 type PhotoNewObject PhotosPhoto
 
 // PhotoCommentNewFunc func.
-type PhotoCommentNewFunc func(PhotoCommentNewObject, int)
+type PhotoCommentNewFunc func(PhotoCommentNewObject, int64)
 
 // PhotoCommentNewObject struct.
 type PhotoCommentNewObject WallWallComment
 
 // PhotoCommentEditFunc func.
-type PhotoCommentEditFunc func(PhotoCommentEditObject, int)
+type PhotoCommentEditFunc func(PhotoCommentEditObject, int64)
 
 // PhotoCommentEditObject struct.
 type PhotoCommentEditObject WallWallComment
 
 // PhotoCommentRestoreFunc func.
-type PhotoCommentRestoreFunc func(PhotoCommentRestoreObject, int)
+type PhotoCommentRestoreFunc func(PhotoCommentRestoreObject, int64)
 
 // PhotoCommentRestoreObject struct.
 type PhotoCommentRestoreObject WallWallComment
 
 // PhotoCommentDeleteFunc func.
-type PhotoCommentDeleteFunc func(PhotoCommentDeleteObject, int)
+type PhotoCommentDeleteFunc func(PhotoCommentDeleteObject, int64)
 
 // PhotoCommentDeleteObject struct.
 type PhotoCommentDeleteObject struct {
 	OwnerID   int64 `json:"owner_id"`
 	ID        int `json:"id"`
 	UserID    int64 `json:"user_id"`
-	DeleterID int `json:"deleter_id"`
+	DeleterID int64 `json:"deleter_id"`
 	PhotoID   int `json:"photo_id"`
 }
 
 // AudioNewFunc func.
-type AudioNewFunc func(AudioNewObject, int)
+type AudioNewFunc func(AudioNewObject, int64)
 
 // AudioNewObject struct.
 type AudioNewObject AudioAudioFull
 
 // VideoNewFunc func.
-type VideoNewFunc func(VideoNewObject, int)
+type VideoNewFunc func(VideoNewObject, int64)
 
 // VideoNewObject struct.
 type VideoNewObject VideoVideo
 
 // VideoCommentNewFunc func.
-type VideoCommentNewFunc func(VideoCommentNewObject, int)
+type VideoCommentNewFunc func(VideoCommentNewObject, int64)
 
 // VideoCommentNewObject struct.
 type VideoCommentNewObject WallWallComment
 
 // VideoCommentEditFunc func.
-type VideoCommentEditFunc func(VideoCommentEditObject, int)
+type VideoCommentEditFunc func(VideoCommentEditObject, int64)
 
 // VideoCommentEditObject struct.
 type VideoCommentEditObject WallWallComment
 
 // VideoCommentRestoreFunc func.
-type VideoCommentRestoreFunc func(VideoCommentRestoreObject, int)
+type VideoCommentRestoreFunc func(VideoCommentRestoreObject, int64)
 
 // VideoCommentRestoreObject struct.
 type VideoCommentRestoreObject WallWallComment
 
 // VideoCommentDeleteFunc func.
-type VideoCommentDeleteFunc func(VideoCommentDeleteObject, int)
+type VideoCommentDeleteFunc func(VideoCommentDeleteObject, int64)
 
 // VideoCommentDeleteObject struct.
 type VideoCommentDeleteObject struct {
@@ -168,37 +168,37 @@ type VideoCommentDeleteObject struct {
 }
 
 // WallPostNewFunc func.
-type WallPostNewFunc func(WallPostNewObject, int)
+type WallPostNewFunc func(WallPostNewObject, int64)
 
 // WallPostNewObject struct.
 type WallPostNewObject WallWallpost
 
 // WallRepostFunc func.
-type WallRepostFunc func(WallRepostObject, int)
+type WallRepostFunc func(WallRepostObject, int64)
 
 // WallRepostObject struct.
 type WallRepostObject WallWallpost
 
 // WallReplyNewFunc func.
-type WallReplyNewFunc func(WallReplyNewObject, int)
+type WallReplyNewFunc func(WallReplyNewObject, int64)
 
 // WallReplyNewObject struct.
 type WallReplyNewObject WallWallComment
 
 // WallReplyEditFunc func.
-type WallReplyEditFunc func(WallReplyEditObject, int)
+type WallReplyEditFunc func(WallReplyEditObject, int64)
 
 // WallReplyEditObject struct.
 type WallReplyEditObject WallWallComment
 
 // WallReplyRestoreFunc func.
-type WallReplyRestoreFunc func(WallReplyRestoreObject, int)
+type WallReplyRestoreFunc func(WallReplyRestoreObject, int64)
 
 // WallReplyRestoreObject struct.
 type WallReplyRestoreObject WallWallComment
 
 // WallReplyDeleteFunc func.
-type WallReplyDeleteFunc func(WallReplyDeleteObject, int)
+type WallReplyDeleteFunc func(WallReplyDeleteObject, int64)
 
 // WallReplyDeleteObject struct.
 type WallReplyDeleteObject struct {
@@ -209,25 +209,25 @@ type WallReplyDeleteObject struct {
 }
 
 // BoardPostNewFunc func.
-type BoardPostNewFunc func(BoardPostNewObject, int)
+type BoardPostNewFunc func(BoardPostNewObject, int64)
 
 // BoardPostNewObject struct.
 type BoardPostNewObject BoardTopicComment
 
 // BoardPostEditFunc func.
-type BoardPostEditFunc func(BoardPostEditObject, int)
+type BoardPostEditFunc func(BoardPostEditObject, int64)
 
 // BoardPostEditObject struct.
 type BoardPostEditObject BoardTopicComment
 
 // BoardPostRestoreFunc func.
-type BoardPostRestoreFunc func(BoardPostRestoreObject, int)
+type BoardPostRestoreFunc func(BoardPostRestoreObject, int64)
 
 // BoardPostRestoreObject struct.
 type BoardPostRestoreObject BoardTopicComment
 
 // BoardPostDeleteFunc func.
-type BoardPostDeleteFunc func(BoardPostDeleteObject, int)
+type BoardPostDeleteFunc func(BoardPostDeleteObject, int64)
 
 // BoardPostDeleteObject struct.
 type BoardPostDeleteObject struct {
@@ -237,25 +237,25 @@ type BoardPostDeleteObject struct {
 }
 
 // MarketCommentNewFunc func.
-type MarketCommentNewFunc func(MarketCommentNewObject, int)
+type MarketCommentNewFunc func(MarketCommentNewObject, int64)
 
 // MarketCommentNewObject struct.
 type MarketCommentNewObject WallWallComment
 
 // MarketCommentEditFunc func.
-type MarketCommentEditFunc func(MarketCommentEditObject, int)
+type MarketCommentEditFunc func(MarketCommentEditObject, int64)
 
 // MarketCommentEditObject struct.
 type MarketCommentEditObject WallWallComment
 
 // MarketCommentRestoreFunc func.
-type MarketCommentRestoreFunc func(MarketCommentRestoreObject, int)
+type MarketCommentRestoreFunc func(MarketCommentRestoreObject, int64)
 
 // MarketCommentRestoreObject struct.
 type MarketCommentRestoreObject WallWallComment
 
 // MarketCommentDeleteFunc func.
-type MarketCommentDeleteFunc func(MarketCommentDeleteObject, int)
+type MarketCommentDeleteFunc func(MarketCommentDeleteObject, int64)
 
 // MarketCommentDeleteObject struct.
 type MarketCommentDeleteObject struct {
@@ -267,19 +267,19 @@ type MarketCommentDeleteObject struct {
 }
 
 // MarketOrderNewFunc func.
-type MarketOrderNewFunc func(MarketOrderNewObject, int)
+type MarketOrderNewFunc func(MarketOrderNewObject, int64)
 
 // MarketOrderNewObject struct.
 type MarketOrderNewObject MarketOrder
 
 // MarketOrderEditFunc func.
-type MarketOrderEditFunc func(MarketOrderEditObject, int)
+type MarketOrderEditFunc func(MarketOrderEditObject, int64)
 
 // MarketOrderEditObject struct.
 type MarketOrderEditObject MarketOrder
 
 // GroupLeaveFunc func.
-type GroupLeaveFunc func(GroupLeaveObject, int)
+type GroupLeaveFunc func(GroupLeaveObject, int64)
 
 // GroupLeaveObject struct.
 type GroupLeaveObject struct {
@@ -288,7 +288,7 @@ type GroupLeaveObject struct {
 }
 
 // GroupJoinFunc func.
-type GroupJoinFunc func(GroupJoinObject, int)
+type GroupJoinFunc func(GroupJoinObject, int64)
 
 // GroupJoinObject struct.
 type GroupJoinObject struct {
@@ -297,7 +297,7 @@ type GroupJoinObject struct {
 }
 
 // UserBlockFunc func.
-type UserBlockFunc func(UserBlockObject, int)
+type UserBlockFunc func(UserBlockObject, int64)
 
 // UserBlockObject struct.
 type UserBlockObject struct {
@@ -309,7 +309,7 @@ type UserBlockObject struct {
 }
 
 // UserUnblockFunc func.
-type UserUnblockFunc func(UserUnblockObject, int)
+type UserUnblockFunc func(UserUnblockObject, int64)
 
 // UserUnblockObject struct.
 type UserUnblockObject struct {
@@ -319,7 +319,7 @@ type UserUnblockObject struct {
 }
 
 // PollVoteNewFunc func.
-type PollVoteNewFunc func(PollVoteNewObject, int)
+type PollVoteNewFunc func(PollVoteNewObject, int64)
 
 // PollVoteNewObject struct.
 //
@@ -332,7 +332,7 @@ type PollVoteNewObject struct {
 }
 
 // GroupOfficersEditFunc func.
-type GroupOfficersEditFunc func(GroupOfficersEditObject, int)
+type GroupOfficersEditFunc func(GroupOfficersEditObject, int64)
 
 // GroupOfficersEditObject struct.
 type GroupOfficersEditObject struct {
@@ -355,7 +355,7 @@ type ChangesInt struct {
 }
 
 // GroupChangeSettingsFunc func.
-type GroupChangeSettingsFunc func(GroupChangeSettingsObject, int)
+type GroupChangeSettingsFunc func(GroupChangeSettingsObject, int64)
 
 // GroupChangeSettingsObject struct
 // спасибо vk.com/eee
@@ -397,7 +397,7 @@ type GroupChangeSettingsObject struct {
 }
 
 // GroupChangePhotoFunc func.
-type GroupChangePhotoFunc func(GroupChangePhotoObject, int)
+type GroupChangePhotoFunc func(GroupChangePhotoObject, int64)
 
 // GroupChangePhotoObject struct.
 type GroupChangePhotoObject struct {
@@ -406,7 +406,7 @@ type GroupChangePhotoObject struct {
 }
 
 // VkpayTransactionFunc func.
-type VkpayTransactionFunc func(VkpayTransactionObject, int)
+type VkpayTransactionFunc func(VkpayTransactionObject, int64)
 
 // VkpayTransactionObject struct.
 type VkpayTransactionObject struct {
@@ -417,7 +417,7 @@ type VkpayTransactionObject struct {
 }
 
 // LeadFormsNewFunc func.
-type LeadFormsNewFunc func(LeadFormsNewObject, int)
+type LeadFormsNewFunc func(LeadFormsNewObject, int64)
 
 // LeadFormsNewObject struct.
 type LeadFormsNewObject struct {
@@ -435,7 +435,7 @@ type LeadFormsNewObject struct {
 }
 
 // AppPayloadFunc func.
-type AppPayloadFunc func(AppPayloadObject, int)
+type AppPayloadFunc func(AppPayloadObject, int64)
 
 // AppPayloadObject struct.
 type AppPayloadObject struct {
@@ -445,7 +445,7 @@ type AppPayloadObject struct {
 }
 
 // MessageReadFunc func.
-type MessageReadFunc func(MessageReadObject, int)
+type MessageReadFunc func(MessageReadObject, int64)
 
 // MessageReadObject struct.
 type MessageReadObject struct {
@@ -455,7 +455,7 @@ type MessageReadObject struct {
 }
 
 // LikeAddFunc func.
-type LikeAddFunc func(LikeAddObject, int)
+type LikeAddFunc func(LikeAddObject, int64)
 
 // LikeAddObject struct.
 type LikeAddObject struct {
@@ -468,7 +468,7 @@ type LikeAddObject struct {
 }
 
 // LikeRemoveFunc func.
-type LikeRemoveFunc func(LikeRemoveObject, int)
+type LikeRemoveFunc func(LikeRemoveObject, int64)
 
 // LikeRemoveObject struct.
 type LikeRemoveObject struct {
