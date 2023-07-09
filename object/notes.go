@@ -10,7 +10,7 @@ type NotesNote struct {
 	Comments       int           `json:"comments"`    // Comments number
 	Date           int           `json:"date"`        // Date when the note has been created in Unixtime
 	ID             int           `json:"id"`          // Note ID
-	OwnerID        int           `json:"owner_id"`    // Note owner's ID
+	OwnerID        int64           `json:"owner_id"`    // Note owner's ID
 	Text           string        `json:"text"`        // Note text
 	TextWiki       string        `json:"text_wiki"`   // Note text in wiki format
 	Title          string        `json:"title"`       // Note title
@@ -33,5 +33,5 @@ type NotesNoteComment struct {
 	NID     int    `json:"nid"`      // Note ID
 	OID     int    `json:"oid"`      // Note ID
 	ReplyTo int    `json:"reply_to"` // ID of replied comment
-	UID     int    `json:"uid"`      // Comment author's ID
+	UID     int64    `json:"uid"`      // Comment author's ID
 }

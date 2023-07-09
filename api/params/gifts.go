@@ -19,7 +19,7 @@ func NewGiftsGetBuilder() *GiftsGetBuilder {
 }
 
 // UserID parameter.
-func (b *GiftsGetBuilder) UserID(v int) *GiftsGetBuilder {
+func (b *GiftsGetBuilder) UserID(v int64) *GiftsGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }

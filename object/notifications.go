@@ -5,7 +5,7 @@ import "encoding/json"
 // NotificationsFeedback struct.
 type NotificationsFeedback struct {
 	Attachments []WallWallpostAttachment `json:"attachments"`
-	FromID      int                      `json:"from_id"` // Reply author's ID
+	FromID      int64                      `json:"from_id"` // Reply author's ID
 	Geo         BaseGeo                  `json:"geo"`
 	ID          int                      `json:"id"` // Item ID
 	Likes       BaseLikesInfo            `json:"likes"`
@@ -26,7 +26,7 @@ type NotificationsNotification struct {
 type NotificationsNotificationsComment struct {
 	Date    int          `json:"date"`     // Date when the comment has been added in Unixtime
 	ID      int          `json:"id"`       // Comment ID
-	OwnerID int          `json:"owner_id"` // Author ID
+	OwnerID int64          `json:"owner_id"` // Author ID
 	Photo   PhotosPhoto  `json:"photo"`
 	Post    WallWallpost `json:"post"`
 	Text    string       `json:"text"` // Comment text

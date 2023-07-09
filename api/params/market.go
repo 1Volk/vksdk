@@ -19,7 +19,7 @@ func NewMarketAddBuilder() *MarketAddBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketAddBuilder) OwnerID(v int) *MarketAddBuilder {
+func (b *MarketAddBuilder) OwnerID(v int64) *MarketAddBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -93,7 +93,7 @@ func NewMarketAddAlbumBuilder() *MarketAddAlbumBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketAddAlbumBuilder) OwnerID(v int) *MarketAddAlbumBuilder {
+func (b *MarketAddAlbumBuilder) OwnerID(v int64) *MarketAddAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -131,7 +131,7 @@ func NewMarketAddToAlbumBuilder() *MarketAddToAlbumBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketAddToAlbumBuilder) OwnerID(v int) *MarketAddToAlbumBuilder {
+func (b *MarketAddToAlbumBuilder) OwnerID(v int64) *MarketAddToAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -163,7 +163,7 @@ func NewMarketCreateCommentBuilder() *MarketCreateCommentBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketCreateCommentBuilder) OwnerID(v int) *MarketCreateCommentBuilder {
+func (b *MarketCreateCommentBuilder) OwnerID(v int64) *MarketCreateCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -229,7 +229,7 @@ func NewMarketDeleteBuilder() *MarketDeleteBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketDeleteBuilder) OwnerID(v int) *MarketDeleteBuilder {
+func (b *MarketDeleteBuilder) OwnerID(v int64) *MarketDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -255,7 +255,7 @@ func NewMarketDeleteAlbumBuilder() *MarketDeleteAlbumBuilder {
 }
 
 // OwnerID ID of an collection owner community.
-func (b *MarketDeleteAlbumBuilder) OwnerID(v int) *MarketDeleteAlbumBuilder {
+func (b *MarketDeleteAlbumBuilder) OwnerID(v int64) *MarketDeleteAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -283,7 +283,7 @@ func NewMarketDeleteCommentBuilder() *MarketDeleteCommentBuilder {
 // OwnerID identifier of an item owner community.
 // Note that community id in the 'owner_id' parameter should be negative number.
 // For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community.
-func (b *MarketDeleteCommentBuilder) OwnerID(v int) *MarketDeleteCommentBuilder {
+func (b *MarketDeleteCommentBuilder) OwnerID(v int64) *MarketDeleteCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -309,7 +309,7 @@ func NewMarketEditBuilder() *MarketEditBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketEditBuilder) OwnerID(v int) *MarketEditBuilder {
+func (b *MarketEditBuilder) OwnerID(v int64) *MarketEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -383,7 +383,7 @@ func NewMarketEditAlbumBuilder() *MarketEditAlbumBuilder {
 }
 
 // OwnerID ID of an collection owner community.
-func (b *MarketEditAlbumBuilder) OwnerID(v int) *MarketEditAlbumBuilder {
+func (b *MarketEditAlbumBuilder) OwnerID(v int64) *MarketEditAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -427,7 +427,7 @@ func NewMarketEditOrderBuilder() *MarketEditOrderBuilder {
 }
 
 // UserID user id.
-func (b *MarketEditOrderBuilder) UserID(v int) *MarketEditOrderBuilder {
+func (b *MarketEditOrderBuilder) UserID(v int64) *MarketEditOrderBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -465,7 +465,7 @@ func NewMarketEditCommentBuilder() *MarketEditCommentBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketEditCommentBuilder) OwnerID(v int) *MarketEditCommentBuilder {
+func (b *MarketEditCommentBuilder) OwnerID(v int64) *MarketEditCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -510,7 +510,7 @@ func NewMarketGetBuilder() *MarketGetBuilder {
 // number.
 //
 // For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community ".
-func (b *MarketGetBuilder) OwnerID(v int) *MarketGetBuilder {
+func (b *MarketGetBuilder) OwnerID(v int64) *MarketGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -558,7 +558,7 @@ func NewMarketGetAlbumByIDBuilder() *MarketGetAlbumByIDBuilder {
 
 // OwnerID identifier of an album owner community, "Note that community id in the 'owner_id' parameter should be
 // negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community ".
-func (b *MarketGetAlbumByIDBuilder) OwnerID(v int) *MarketGetAlbumByIDBuilder {
+func (b *MarketGetAlbumByIDBuilder) OwnerID(v int64) *MarketGetAlbumByIDBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -584,7 +584,7 @@ func NewMarketGetAlbumsBuilder() *MarketGetAlbumsBuilder {
 }
 
 // OwnerID ID of an items owner community.
-func (b *MarketGetAlbumsBuilder) OwnerID(v int) *MarketGetAlbumsBuilder {
+func (b *MarketGetAlbumsBuilder) OwnerID(v int64) *MarketGetAlbumsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -669,7 +669,7 @@ func NewMarketGetCommentsBuilder() *MarketGetCommentsBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketGetCommentsBuilder) OwnerID(v int) *MarketGetCommentsBuilder {
+func (b *MarketGetCommentsBuilder) OwnerID(v int64) *MarketGetCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -740,7 +740,7 @@ func NewMarketGetGroupOrdersBuilder() *MarketGetGroupOrdersBuilder {
 }
 
 // GroupID ID of an items owner community.
-func (b *MarketGetGroupOrdersBuilder) GroupID(v int) *MarketGetGroupOrdersBuilder {
+func (b *MarketGetGroupOrdersBuilder) GroupID(v int64) *MarketGetGroupOrdersBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -772,7 +772,7 @@ func NewMarketGetOrderByIDBuilder() *MarketGetOrderByIDBuilder {
 }
 
 // UserID user id.
-func (b *MarketGetOrderByIDBuilder) UserID(v int) *MarketGetOrderByIDBuilder {
+func (b *MarketGetOrderByIDBuilder) UserID(v int64) *MarketGetOrderByIDBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -836,7 +836,7 @@ func NewMarketRemoveFromAlbumBuilder() *MarketRemoveFromAlbumBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketRemoveFromAlbumBuilder) OwnerID(v int) *MarketRemoveFromAlbumBuilder {
+func (b *MarketRemoveFromAlbumBuilder) OwnerID(v int64) *MarketRemoveFromAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -868,7 +868,7 @@ func NewMarketReorderAlbumsBuilder() *MarketReorderAlbumsBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketReorderAlbumsBuilder) OwnerID(v int) *MarketReorderAlbumsBuilder {
+func (b *MarketReorderAlbumsBuilder) OwnerID(v int64) *MarketReorderAlbumsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -906,7 +906,7 @@ func NewMarketReorderItemsBuilder() *MarketReorderItemsBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketReorderItemsBuilder) OwnerID(v int) *MarketReorderItemsBuilder {
+func (b *MarketReorderItemsBuilder) OwnerID(v int64) *MarketReorderItemsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -950,7 +950,7 @@ func NewMarketReportBuilder() *MarketReportBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketReportBuilder) OwnerID(v int) *MarketReportBuilder {
+func (b *MarketReportBuilder) OwnerID(v int64) *MarketReportBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -996,7 +996,7 @@ func NewMarketReportCommentBuilder() *MarketReportCommentBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketReportCommentBuilder) OwnerID(v int) *MarketReportCommentBuilder {
+func (b *MarketReportCommentBuilder) OwnerID(v int64) *MarketReportCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1042,7 +1042,7 @@ func NewMarketRestoreBuilder() *MarketRestoreBuilder {
 }
 
 // OwnerID ID of an item owner community.
-func (b *MarketRestoreBuilder) OwnerID(v int) *MarketRestoreBuilder {
+func (b *MarketRestoreBuilder) OwnerID(v int64) *MarketRestoreBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1069,7 +1069,7 @@ func NewMarketRestoreCommentBuilder() *MarketRestoreCommentBuilder {
 
 // OwnerID identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be
 // negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community ".
-func (b *MarketRestoreCommentBuilder) OwnerID(v int) *MarketRestoreCommentBuilder {
+func (b *MarketRestoreCommentBuilder) OwnerID(v int64) *MarketRestoreCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

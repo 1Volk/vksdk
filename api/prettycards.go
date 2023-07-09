@@ -4,7 +4,7 @@ import "github.com/1Volk/vksdk/object"
 
 // PrettyCardsCreateResponse struct.
 type PrettyCardsCreateResponse struct {
-	OwnerID int    `json:"owner_id"` // Owner ID of created pretty card
+	OwnerID int64    `json:"owner_id"` // Owner ID of created pretty card
 	CardID  string `json:"card_id"`  // Card ID of created pretty card
 }
 
@@ -18,7 +18,7 @@ func (vk *VK) PrettyCardsCreate(params Params) (response PrettyCardsCreateRespon
 
 // PrettyCardsDeleteResponse struct.
 type PrettyCardsDeleteResponse struct {
-	OwnerID int    `json:"owner_id"` // Owner ID of created pretty card
+	OwnerID int64    `json:"owner_id"` // Owner ID of created pretty card
 	CardID  string `json:"card_id"`  // Card ID of created pretty card
 	Error   string `json:"error"`    // Error reason if error happened
 }
@@ -33,7 +33,7 @@ func (vk *VK) PrettyCardsDelete(params Params) (response PrettyCardsDeleteRespon
 
 // PrettyCardsEditResponse struct.
 type PrettyCardsEditResponse struct {
-	OwnerID int    `json:"owner_id"` // Owner ID of created pretty card
+	OwnerID int64    `json:"owner_id"` // Owner ID of created pretty card
 	CardID  string `json:"card_id"`  // Card ID of created pretty card
 }
 

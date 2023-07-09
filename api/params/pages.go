@@ -39,7 +39,7 @@ func NewPagesGetBuilder() *PagesGetBuilder {
 }
 
 // OwnerID page owner ID.
-func (b *PagesGetBuilder) OwnerID(v int) *PagesGetBuilder {
+func (b *PagesGetBuilder) OwnerID(v int64) *PagesGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -101,13 +101,13 @@ func (b *PagesGetHistoryBuilder) PageID(v int) *PagesGetHistoryBuilder {
 }
 
 // GroupID ID of the community that owns the wiki page.
-func (b *PagesGetHistoryBuilder) GroupID(v int) *PagesGetHistoryBuilder {
+func (b *PagesGetHistoryBuilder) GroupID(v int64) *PagesGetHistoryBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *PagesGetHistoryBuilder) UserID(v int) *PagesGetHistoryBuilder {
+func (b *PagesGetHistoryBuilder) UserID(v int64) *PagesGetHistoryBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -127,7 +127,7 @@ func NewPagesGetTitlesBuilder() *PagesGetTitlesBuilder {
 }
 
 // GroupID ID of the community that owns the wiki page.
-func (b *PagesGetTitlesBuilder) GroupID(v int) *PagesGetTitlesBuilder {
+func (b *PagesGetTitlesBuilder) GroupID(v int64) *PagesGetTitlesBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -153,13 +153,13 @@ func (b *PagesGetVersionBuilder) VersionID(v int) *PagesGetVersionBuilder {
 }
 
 // GroupID ID of the community that owns the wiki page.
-func (b *PagesGetVersionBuilder) GroupID(v int) *PagesGetVersionBuilder {
+func (b *PagesGetVersionBuilder) GroupID(v int64) *PagesGetVersionBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *PagesGetVersionBuilder) UserID(v int) *PagesGetVersionBuilder {
+func (b *PagesGetVersionBuilder) UserID(v int64) *PagesGetVersionBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -191,7 +191,7 @@ func (b *PagesParseWikiBuilder) Text(v string) *PagesParseWikiBuilder {
 }
 
 // GroupID ID of the group in the context of which this markup is interpreted.
-func (b *PagesParseWikiBuilder) GroupID(v int) *PagesParseWikiBuilder {
+func (b *PagesParseWikiBuilder) GroupID(v int64) *PagesParseWikiBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -223,13 +223,13 @@ func (b *PagesSaveBuilder) PageID(v int) *PagesSaveBuilder {
 }
 
 // GroupID ID of the community that owns the wiki page.
-func (b *PagesSaveBuilder) GroupID(v int) *PagesSaveBuilder {
+func (b *PagesSaveBuilder) GroupID(v int64) *PagesSaveBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *PagesSaveBuilder) UserID(v int) *PagesSaveBuilder {
+func (b *PagesSaveBuilder) UserID(v int64) *PagesSaveBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -261,13 +261,13 @@ func (b *PagesSaveAccessBuilder) PageID(v int) *PagesSaveAccessBuilder {
 }
 
 // GroupID ID of the community that owns the wiki page.
-func (b *PagesSaveAccessBuilder) GroupID(v int) *PagesSaveAccessBuilder {
+func (b *PagesSaveAccessBuilder) GroupID(v int64) *PagesSaveAccessBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *PagesSaveAccessBuilder) UserID(v int) *PagesSaveAccessBuilder {
+func (b *PagesSaveAccessBuilder) UserID(v int64) *PagesSaveAccessBuilder {
 	b.Params["user_id"] = v
 	return b
 }

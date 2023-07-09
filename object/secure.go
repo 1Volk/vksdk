@@ -3,7 +3,7 @@ package object // import "github.com/1Volk/vksdk/object"
 // SecureLevel struct.
 type SecureLevel struct {
 	Level int `json:"level"` // Level
-	UID   int `json:"uid"`   // User ID
+	UID   int64 `json:"uid"`   // User ID
 }
 
 // SecureSmsNotification struct.
@@ -27,7 +27,7 @@ type SecureTokenChecked struct {
 type SecureTransaction struct {
 	Date    int `json:"date"`     // Transaction date in Unixtime
 	ID      int `json:"id"`       // Transaction ID
-	UIDFrom int `json:"uid_from"` // From ID
-	UIDTo   int `json:"uid_to"`   // To ID
+	UIDFrom int64 `json:"uid_from"` // From ID
+	UIDTo   int64 `json:"uid_to"`   // To ID
 	Votes   int `json:"votes"`    // Votes number
 }

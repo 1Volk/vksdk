@@ -9,7 +9,7 @@ import (
 type MessagesAudioMessage struct {
 	AccessKey string `json:"access_key"` // Access key for the document
 	ID        int    `json:"id"`         // Document ID
-	OwnerID   int    `json:"owner_id"`   // Document owner ID
+	OwnerID   int64    `json:"owner_id"`   // Document owner ID
 	Duration  int    `json:"duration"`   // Audio message duration in seconds
 	LinkMp3   string `json:"link_mp3"`   // MP3 file URL
 	LinkOgg   string `json:"link_ogg"`   // OGG file URL
@@ -25,7 +25,7 @@ func (doc MessagesAudioMessage) ToAttachment() string {
 type MessagesGraffiti struct {
 	AccessKey string `json:"access_key"` // Access key for the document
 	ID        int    `json:"id"`         // Document ID
-	OwnerID   int    `json:"owner_id"`   // Document owner ID
+	OwnerID   int64    `json:"owner_id"`   // Document owner ID
 	URL       string `json:"url"`        // Graffiti URL
 	Width     int    `json:"width"`      // Graffiti width
 	Height    int    `json:"height"`     // Graffiti height
@@ -184,7 +184,7 @@ func (keyboard *MessagesKeyboard) AddVKPayButton(payload string, hash string) *M
 }
 
 // AddVKAppsButton add VK Apps button in last row.
-func (keyboard *MessagesKeyboard) AddVKAppsButton(appID, ownerID int, payload, label, hash string) *MessagesKeyboard {
+func (keyboard *MessagesKeyboard) AddVKAppsButton(appID int, ownerID int64, payload, label, hash string) *MessagesKeyboard {
 	button := MessagesKeyboardButton{
 		Action: MessagesKeyboardButtonAction{
 			Type:    ButtonVKApp,
@@ -225,7 +225,7 @@ type MessagesKeyboardButtonAction struct {
 	AppID   int    `json:"app_id,omitempty"`   // Fragment value in app link like vk.com/app{app_id}_-654321#hash
 	Hash    string `json:"hash,omitempty"`     // Fragment value in app link like vk.com/app123456_-654321#{hash}
 	Label   string `json:"label,omitempty"`    // Label for button
-	OwnerID int    `json:"owner_id,omitempty"` // Fragment value in app link like vk.com/app123456_{owner_id}#hash
+	OwnerID int64    `json:"owner_id,omitempty"` // Fragment value in app link like vk.com/app123456_{owner_id}#hash
 	Payload string `json:"payload,omitempty"`  // Additional data sent along with message for developer convenience
 	Type    string `json:"type"`               // Button type
 	Link    string `json:"link,omitempty"`     // Link URL
@@ -357,8 +357,8 @@ type MessagesConversationChatSettings struct {
 		CanCall             BaseBoolInt `json:"can_call"`
 	} `json:"acl"`
 	IsGroupChannel BaseBoolInt `json:"is_group_channel"`
-	OwnerID        int         `json:"owner_id"`
-	AdminIDs       []int       `json:"admin_ids"`
+	OwnerID        int64         `json:"owner_id"`
+	AdminIDs       []int64       `json:"admin_ids"`
 }
 
 // MessagesConversationPeer struct.
@@ -443,7 +443,7 @@ const (
 type MessagesMessageAction struct {
 	ConversationMessageID int                        `json:"conversation_message_id"` // Message ID
 	Email                 string                     `json:"email"`                   // Email address for chat_invite_user or chat_kick_user actions
-	MemberID              int                        `json:"member_id"`               // User or email peer ID
+	MemberID              int64                        `json:"member_id"`               // User or email peer ID
 	Message               string                     `json:"message"`                 // Message body of related message
 	Photo                 MessagesMessageActionPhoto `json:"photo"`
 	Text                  string                     `json:"text"` // New chat title for chat_create and chat_title_update actions

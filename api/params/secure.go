@@ -19,7 +19,7 @@ func NewSecureAddAppEventBuilder() *SecureAddAppEventBuilder {
 }
 
 // UserID ID of a user to save the data.
-func (b *SecureAddAppEventBuilder) UserID(v int) *SecureAddAppEventBuilder {
+func (b *SecureAddAppEventBuilder) UserID(v int64) *SecureAddAppEventBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -93,7 +93,7 @@ func NewSecureGetSMSHistoryBuilder() *SecureGetSMSHistoryBuilder {
 }
 
 // UserID parameter.
-func (b *SecureGetSMSHistoryBuilder) UserID(v int) *SecureGetSMSHistoryBuilder {
+func (b *SecureGetSMSHistoryBuilder) UserID(v int64) *SecureGetSMSHistoryBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -181,7 +181,7 @@ func NewSecureGetUserLevelBuilder() *SecureGetUserLevelBuilder {
 }
 
 // UserIDs parameter.
-func (b *SecureGetUserLevelBuilder) UserIDs(v []int) *SecureGetUserLevelBuilder {
+func (b *SecureGetUserLevelBuilder) UserIDs(v []int64) *SecureGetUserLevelBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -201,7 +201,7 @@ func NewSecureGiveEventStickerBuilder() *SecureGiveEventStickerBuilder {
 }
 
 // UserIDs parameter.
-func (b *SecureGiveEventStickerBuilder) UserIDs(v []int) *SecureGiveEventStickerBuilder {
+func (b *SecureGiveEventStickerBuilder) UserIDs(v []int64) *SecureGiveEventStickerBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -227,13 +227,13 @@ func NewSecureSendNotificationBuilder() *SecureSendNotificationBuilder {
 }
 
 // UserIDs parameter.
-func (b *SecureSendNotificationBuilder) UserIDs(v []int) *SecureSendNotificationBuilder {
+func (b *SecureSendNotificationBuilder) UserIDs(v []int64) *SecureSendNotificationBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *SecureSendNotificationBuilder) UserID(v int) *SecureSendNotificationBuilder {
+func (b *SecureSendNotificationBuilder) UserID(v int64) *SecureSendNotificationBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -260,7 +260,7 @@ func NewSecureSendSMSNotificationBuilder() *SecureSendSMSNotificationBuilder {
 
 // UserID ID of the user to whom SMS notification is sent. The user shall allow the application to send him/her
 // notifications (, +1).
-func (b *SecureSendSMSNotificationBuilder) UserID(v int) *SecureSendSMSNotificationBuilder {
+func (b *SecureSendSMSNotificationBuilder) UserID(v int64) *SecureSendSMSNotificationBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -293,7 +293,7 @@ func (b *SecureSetCounterBuilder) Counters(v []string) *SecureSetCounterBuilder 
 }
 
 // UserID parameter.
-func (b *SecureSetCounterBuilder) UserID(v int) *SecureSetCounterBuilder {
+func (b *SecureSetCounterBuilder) UserID(v int64) *SecureSetCounterBuilder {
 	b.Params["user_id"] = v
 	return b
 }

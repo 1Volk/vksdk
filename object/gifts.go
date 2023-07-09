@@ -10,7 +10,7 @@ const (
 // GiftsGift struct.
 type GiftsGift struct {
 	Date     int         `json:"date"`    // Date when gist has been sent in Unixtime
-	FromID   int         `json:"from_id"` // Gift sender ID
+	FromID   int64         `json:"from_id"` // Gift sender ID
 	Gift     GiftsLayout `json:"gift"`
 	GiftHash string      `json:"gift_hash"` // Hash
 	ID       int         `json:"id"`        // Gift ID

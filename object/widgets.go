@@ -3,7 +3,7 @@ package object // import "github.com/1Volk/vksdk/object"
 // WidgetsCommentMedia struct.
 type WidgetsCommentMedia struct {
 	ItemID   int    `json:"item_id"`   // Media item ID
-	OwnerID  int    `json:"owner_id"`  // Media owner's ID
+	OwnerID  int64    `json:"owner_id"`  // Media owner's ID
 	ThumbSrc string `json:"thumb_src"` // URL of the preview image (type=photo only)
 	Type     string `json:"type"`
 }
@@ -22,7 +22,7 @@ type WidgetsCommentRepliesItem struct {
 	Date  int                `json:"date"` // Date when the comment has been added in Unixtime
 	Likes WidgetsWidgetLikes `json:"likes"`
 	Text  string             `json:"text"` // Comment text
-	UID   int                `json:"uid"`  // User ID
+	UID   int64                `json:"uid"`  // User ID
 	User  UsersUser          `json:"user"`
 }
 
@@ -33,7 +33,7 @@ type WidgetsWidgetComment struct {
 	IsFavorite  BaseBoolInt             `json:"is_favorite"`
 	Comments    WidgetsCommentReplies   `json:"comments"`
 	Date        int                     `json:"date"`    // Date when the comment has been added in Unixtime
-	FromID      int                     `json:"from_id"` // Comment author ID
+	FromID      int64                     `json:"from_id"` // Comment author ID
 	ID          int                     `json:"id"`      // Comment ID
 	Likes       BaseLikesInfo           `json:"likes"`
 	Media       WidgetsCommentMedia     `json:"media"`

@@ -19,7 +19,7 @@ import (
 
 // Longpoll struct.
 type Longpoll struct {
-	GroupID int
+	GroupID int64
 	Server  string
 	Key     string
 	Ts      string
@@ -38,7 +38,7 @@ type Longpoll struct {
 // The Longpoll will use the http.DefaultClient.
 // This means that if the http.DefaultClient is modified by other components
 // of your application the modifications will be picked up by the SDK as well.
-func NewLongpoll(vk *api.VK, groupID int) (*Longpoll, error) {
+func NewLongpoll(vk *api.VK, groupID int64) (*Longpoll, error) {
 	lp := &Longpoll{
 		VK:      vk,
 		GroupID: groupID,
@@ -79,7 +79,7 @@ func NewLongpollCommunity(vk *api.VK) (*Longpoll, error) {
 // Init Longpoll.
 //
 // Deprecated: use NewLongpoll.
-func Init(vk *api.VK, groupID int) (lp Longpoll, err error) {
+func Init(vk *api.VK, groupID int64) (lp Longpoll, err error) {
 	lp.VK = vk
 	lp.GroupID = groupID
 	lp.Wait = 25

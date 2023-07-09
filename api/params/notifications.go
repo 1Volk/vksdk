@@ -73,7 +73,7 @@ func NewNotificationsSendMessageBuilder() *NotificationsSendMessageBuilder {
 }
 
 // UserIDs parameter.
-func (b *NotificationsSendMessageBuilder) UserIDs(v []int) *NotificationsSendMessageBuilder {
+func (b *NotificationsSendMessageBuilder) UserIDs(v []int64) *NotificationsSendMessageBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -91,7 +91,7 @@ func (b *NotificationsSendMessageBuilder) Fragment(v string) *NotificationsSendM
 }
 
 // GroupID parameter.
-func (b *NotificationsSendMessageBuilder) GroupID(v int) *NotificationsSendMessageBuilder {
+func (b *NotificationsSendMessageBuilder) GroupID(v int64) *NotificationsSendMessageBuilder {
 	b.Params["group_id"] = v
 	return b
 }

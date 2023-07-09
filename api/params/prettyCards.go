@@ -17,7 +17,7 @@ func NewPrettyCardsCreateBuilder() *PrettyCardsCreateBuilder {
 }
 
 // OwnerID parameter.
-func (b *PrettyCardsCreateBuilder) OwnerID(v int) *PrettyCardsCreateBuilder {
+func (b *PrettyCardsCreateBuilder) OwnerID(v int64) *PrettyCardsCreateBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -71,7 +71,7 @@ func NewPrettyCardsDeleteBuilder() *PrettyCardsDeleteBuilder {
 }
 
 // OwnerID parameter.
-func (b *PrettyCardsDeleteBuilder) OwnerID(v int) *PrettyCardsDeleteBuilder {
+func (b *PrettyCardsDeleteBuilder) OwnerID(v int64) *PrettyCardsDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -95,7 +95,7 @@ func NewPrettyCardsEditBuilder() *PrettyCardsEditBuilder {
 }
 
 // OwnerID parameter.
-func (b *PrettyCardsEditBuilder) OwnerID(v int) *PrettyCardsEditBuilder {
+func (b *PrettyCardsEditBuilder) OwnerID(v int64) *PrettyCardsEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -155,7 +155,7 @@ func NewPrettyCardsGetBuilder() *PrettyCardsGetBuilder {
 }
 
 // OwnerID parameter.
-func (b *PrettyCardsGetBuilder) OwnerID(v int) *PrettyCardsGetBuilder {
+func (b *PrettyCardsGetBuilder) OwnerID(v int64) *PrettyCardsGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -185,7 +185,7 @@ func NewPrettyCardsGetByIDBuilder() *PrettyCardsGetByIDBuilder {
 }
 
 // OwnerID parameter.
-func (b *PrettyCardsGetByIDBuilder) OwnerID(v int) *PrettyCardsGetByIDBuilder {
+func (b *PrettyCardsGetByIDBuilder) OwnerID(v int64) *PrettyCardsGetByIDBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

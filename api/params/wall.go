@@ -17,7 +17,7 @@ func NewWallCloseCommentsBuilder() *WallCloseCommentsBuilder {
 }
 
 // OwnerID parameter.
-func (b *WallCloseCommentsBuilder) OwnerID(v int) *WallCloseCommentsBuilder {
+func (b *WallCloseCommentsBuilder) OwnerID(v int64) *WallCloseCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -43,7 +43,7 @@ func NewWallCreateCommentBuilder() *WallCreateCommentBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallCreateCommentBuilder) OwnerID(v int) *WallCreateCommentBuilder {
+func (b *WallCreateCommentBuilder) OwnerID(v int64) *WallCreateCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -110,7 +110,7 @@ func NewWallDeleteBuilder() *WallDeleteBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallDeleteBuilder) OwnerID(v int) *WallDeleteBuilder {
+func (b *WallDeleteBuilder) OwnerID(v int64) *WallDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -136,7 +136,7 @@ func NewWallDeleteCommentBuilder() *WallDeleteCommentBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallDeleteCommentBuilder) OwnerID(v int) *WallDeleteCommentBuilder {
+func (b *WallDeleteCommentBuilder) OwnerID(v int64) *WallDeleteCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -162,7 +162,7 @@ func NewWallEditBuilder() *WallEditBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallEditBuilder) OwnerID(v int) *WallEditBuilder {
+func (b *WallEditBuilder) OwnerID(v int64) *WallEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -253,7 +253,7 @@ func (b *WallEditBuilder) PosterBkgID(v int) *WallEditBuilder {
 }
 
 // PosterBkgOwnerID parameter.
-func (b *WallEditBuilder) PosterBkgOwnerID(v int) *WallEditBuilder {
+func (b *WallEditBuilder) PosterBkgOwnerID(v int64) *WallEditBuilder {
 	b.Params["poster_bkg_owner_id"] = v
 	return b
 }
@@ -279,7 +279,7 @@ func NewWallEditAdsStealthBuilder() *WallEditAdsStealthBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallEditAdsStealthBuilder) OwnerID(v int) *WallEditAdsStealthBuilder {
+func (b *WallEditAdsStealthBuilder) OwnerID(v int64) *WallEditAdsStealthBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -376,7 +376,7 @@ func NewWallEditCommentBuilder() *WallEditCommentBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallEditCommentBuilder) OwnerID(v int) *WallEditCommentBuilder {
+func (b *WallEditCommentBuilder) OwnerID(v int64) *WallEditCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -421,7 +421,7 @@ func NewWallGetBuilder() *WallGetBuilder {
 
 // OwnerID ID of the user or community that owns the wall. By default, current user ID.
 // Use a negative value to designate a community ID.
-func (b *WallGetBuilder) OwnerID(v int) *WallGetBuilder {
+func (b *WallGetBuilder) OwnerID(v int64) *WallGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -530,7 +530,7 @@ func NewWallGetCommentsBuilder() *WallGetCommentsBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallGetCommentsBuilder) OwnerID(v int) *WallGetCommentsBuilder {
+func (b *WallGetCommentsBuilder) OwnerID(v int64) *WallGetCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -621,7 +621,7 @@ func NewWallGetRepostsBuilder() *WallGetRepostsBuilder {
 }
 
 // OwnerID user ID or community ID. By default, current user ID. Use a negative value to designate a community ID.
-func (b *WallGetRepostsBuilder) OwnerID(v int) *WallGetRepostsBuilder {
+func (b *WallGetRepostsBuilder) OwnerID(v int64) *WallGetRepostsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -657,7 +657,7 @@ func NewWallOpenCommentsBuilder() *WallOpenCommentsBuilder {
 }
 
 // OwnerID parameter.
-func (b *WallOpenCommentsBuilder) OwnerID(v int) *WallOpenCommentsBuilder {
+func (b *WallOpenCommentsBuilder) OwnerID(v int64) *WallOpenCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -684,7 +684,7 @@ func NewWallPinBuilder() *WallPinBuilder {
 
 // OwnerID ID of the user or community that owns the wall. By default, current user ID.
 // Use a negative value to designate a community ID.
-func (b *WallPinBuilder) OwnerID(v int) *WallPinBuilder {
+func (b *WallPinBuilder) OwnerID(v int64) *WallPinBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -710,7 +710,7 @@ func NewWallPostBuilder() *WallPostBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallPostBuilder) OwnerID(v int) *WallPostBuilder {
+func (b *WallPostBuilder) OwnerID(v int64) *WallPostBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -842,7 +842,7 @@ func NewWallPostAdsStealthBuilder() *WallPostAdsStealthBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallPostAdsStealthBuilder) OwnerID(v int) *WallPostAdsStealthBuilder {
+func (b *WallPostAdsStealthBuilder) OwnerID(v int64) *WallPostAdsStealthBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -944,7 +944,7 @@ func NewWallReportCommentBuilder() *WallReportCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the wall.
-func (b *WallReportCommentBuilder) OwnerID(v int) *WallReportCommentBuilder {
+func (b *WallReportCommentBuilder) OwnerID(v int64) *WallReportCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -990,7 +990,7 @@ func NewWallReportPostBuilder() *WallReportPostBuilder {
 }
 
 // OwnerID ID of the user or community that owns the wall.
-func (b *WallReportPostBuilder) OwnerID(v int) *WallReportPostBuilder {
+func (b *WallReportPostBuilder) OwnerID(v int64) *WallReportPostBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1081,7 +1081,7 @@ func NewWallRestoreBuilder() *WallRestoreBuilder {
 
 // OwnerID user ID or community ID from whose wall the post was deleted.
 // Use a negative value to designate a community ID.
-func (b *WallRestoreBuilder) OwnerID(v int) *WallRestoreBuilder {
+func (b *WallRestoreBuilder) OwnerID(v int64) *WallRestoreBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1107,7 +1107,7 @@ func NewWallRestoreCommentBuilder() *WallRestoreCommentBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *WallRestoreCommentBuilder) OwnerID(v int) *WallRestoreCommentBuilder {
+func (b *WallRestoreCommentBuilder) OwnerID(v int64) *WallRestoreCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1133,7 +1133,7 @@ func NewWallSearchBuilder() *WallSearchBuilder {
 }
 
 // OwnerID user or community id. "Remember that for a community 'owner_id' must be negative.".
-func (b *WallSearchBuilder) OwnerID(v int) *WallSearchBuilder {
+func (b *WallSearchBuilder) OwnerID(v int64) *WallSearchBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1196,7 +1196,7 @@ func NewWallUnpinBuilder() *WallUnpinBuilder {
 
 // OwnerID ID of the user or community that owns the wall. By default, current user ID.
 // Use a negative value to designate a community ID.
-func (b *WallUnpinBuilder) OwnerID(v int) *WallUnpinBuilder {
+func (b *WallUnpinBuilder) OwnerID(v int64) *WallUnpinBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

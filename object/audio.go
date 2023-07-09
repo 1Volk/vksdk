@@ -7,7 +7,7 @@ import (
 // AudioAudioFull struct.
 type AudioAudioFull struct {
 	ID             int                `json:"id"`
-	OwnerID        int                `json:"owner_id"`
+	OwnerID        int64                `json:"owner_id"`
 	Artist         string             `json:"artist"`
 	Title          string             `json:"title"`
 	Duration       int                `json:"duration"`
@@ -45,7 +45,7 @@ type AudioAudio struct {
 	IsFocusTrack BaseBoolInt `json:"is_focus_track"`
 	IsLicensed   BaseBoolInt `json:"is_licensed"`
 	OwnerID      int         `json:"owner_id"` // Audio owner's ID
-	Title        string      `json:"title"`    // Title
+	Title        int64      `json:"title"`    // Title
 	URL          string      `json:"url"`      // URL of mp3 file
 }
 

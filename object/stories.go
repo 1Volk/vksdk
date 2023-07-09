@@ -77,7 +77,7 @@ type StoriesStory struct {
 	Seen                 BaseBoolInt              `json:"seen"`          // Information whether current user has seen the story or not (0 - no, 1 - yes).
 	IsOwnerPinned        BaseBoolInt              `json:"is_owner_pinned"`
 	Link                 StoriesStoryLink         `json:"link"`
-	OwnerID              int                      `json:"owner_id"` // Story owner's ID.
+	OwnerID              int64                      `json:"owner_id"` // Story owner's ID.
 	ParentStory          *StoriesStory            `json:"parent_story"`
 	ParentStoryAccessKey string                   `json:"parent_story_access_key"` // Access key for private object.
 	ParentStoryID        int                      `json:"parent_story_id"`         // Parent story ID.
@@ -164,7 +164,7 @@ type StoriesClickableSticker struct { // nolint: maligned
 	Style         string                  `json:"style,omitempty"`
 
 	// type=post
-	PostOwnerID int `json:"post_owner_id,omitempty"`
+	PostOwnerID int64 `json:"post_owner_id,omitempty"`
 	PostID      int `json:"post_id,omitempty"`
 
 	// type=sticker
@@ -196,7 +196,7 @@ type StoriesClickableSticker struct { // nolint: maligned
 	MarketItem MarketMarketItem `json:"market_item,omitempty"` // subtype=market_item
 
 	// type=story_reply
-	OwnerID int `json:"owner_id,omitempty"`
+	OwnerID int64 `json:"owner_id,omitempty"`
 	StoryID int `json:"story_id,omitempty"`
 
 	// type=owner

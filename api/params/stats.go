@@ -19,7 +19,7 @@ func NewStatsGetBuilder() *StatsGetBuilder {
 }
 
 // GroupID community ID.
-func (b *StatsGetBuilder) GroupID(v int) *StatsGetBuilder {
+func (b *StatsGetBuilder) GroupID(v int64) *StatsGetBuilder {
 	b.Params["group_id"] = v
 	return b
 }

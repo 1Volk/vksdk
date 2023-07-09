@@ -2,7 +2,7 @@ package object
 
 // PodcastsItem struct.
 type PodcastsItem struct {
-	OwnerID int `json:"owner_id"`
+	OwnerID int64 `json:"owner_id"`
 }
 
 // PodcastsCategory struct.
@@ -15,7 +15,7 @@ type PodcastsCategory struct {
 // PodcastsEpisode struct.
 type PodcastsEpisode struct {
 	ID           int                 `json:"id"`
-	OwnerID      int                 `json:"owner_id"`
+	OwnerID      int64                 `json:"owner_id"`
 	Artist       string              `json:"artist"`
 	Title        string              `json:"title"`
 	Duration     int                 `json:"duration"`

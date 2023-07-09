@@ -19,13 +19,13 @@ func NewStatusGetBuilder() *StatusGetBuilder {
 }
 
 // UserID user ID or community ID. Use a negative value to designate a community ID.
-func (b *StatusGetBuilder) UserID(v int) *StatusGetBuilder {
+func (b *StatusGetBuilder) UserID(v int64) *StatusGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *StatusGetBuilder) GroupID(v int) *StatusGetBuilder {
+func (b *StatusGetBuilder) GroupID(v int64) *StatusGetBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -51,7 +51,7 @@ func (b *StatusSetBuilder) Text(v string) *StatusSetBuilder {
 }
 
 // GroupID identifier of a community to set a status in. If left blank the status is set to current user.
-func (b *StatusSetBuilder) GroupID(v int) *StatusSetBuilder {
+func (b *StatusSetBuilder) GroupID(v int64) *StatusSetBuilder {
 	b.Params["group_id"] = v
 	return b
 }

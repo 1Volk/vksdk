@@ -39,7 +39,7 @@ func NewStoriesDeleteBuilder() *StoriesDeleteBuilder {
 }
 
 // OwnerID story owner's ID. Current user id is used by default.
-func (b *StoriesDeleteBuilder) OwnerID(v int) *StoriesDeleteBuilder {
+func (b *StoriesDeleteBuilder) OwnerID(v int64) *StoriesDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -65,7 +65,7 @@ func NewStoriesGetBuilder() *StoriesGetBuilder {
 }
 
 // OwnerID parameter.
-func (b *StoriesGetBuilder) OwnerID(v int) *StoriesGetBuilder {
+func (b *StoriesGetBuilder) OwnerID(v int64) *StoriesGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -155,7 +155,7 @@ func (b *StoriesGetPhotoUploadServerBuilder) AddToNews(v bool) *StoriesGetPhotoU
 }
 
 // UserIDs list of users IDs who can see the story.
-func (b *StoriesGetPhotoUploadServerBuilder) UserIDs(v []int) *StoriesGetPhotoUploadServerBuilder {
+func (b *StoriesGetPhotoUploadServerBuilder) UserIDs(v []int64) *StoriesGetPhotoUploadServerBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -179,7 +179,7 @@ func (b *StoriesGetPhotoUploadServerBuilder) LinkURL(v string) *StoriesGetPhotoU
 }
 
 // GroupID ID of the community to upload the story (should be verified or with the "fire" icon).
-func (b *StoriesGetPhotoUploadServerBuilder) GroupID(v int) *StoriesGetPhotoUploadServerBuilder {
+func (b *StoriesGetPhotoUploadServerBuilder) GroupID(v int64) *StoriesGetPhotoUploadServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -199,7 +199,7 @@ func NewStoriesGetRepliesBuilder() *StoriesGetRepliesBuilder {
 }
 
 // OwnerID story owner ID.
-func (b *StoriesGetRepliesBuilder) OwnerID(v int) *StoriesGetRepliesBuilder {
+func (b *StoriesGetRepliesBuilder) OwnerID(v int64) *StoriesGetRepliesBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -243,7 +243,7 @@ func NewStoriesGetStatsBuilder() *StoriesGetStatsBuilder {
 }
 
 // OwnerID story owner ID.
-func (b *StoriesGetStatsBuilder) OwnerID(v int) *StoriesGetStatsBuilder {
+func (b *StoriesGetStatsBuilder) OwnerID(v int64) *StoriesGetStatsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -275,7 +275,7 @@ func (b *StoriesGetVideoUploadServerBuilder) AddToNews(v bool) *StoriesGetVideoU
 }
 
 // UserIDs list of users IDs who can see the story.
-func (b *StoriesGetVideoUploadServerBuilder) UserIDs(v []int) *StoriesGetVideoUploadServerBuilder {
+func (b *StoriesGetVideoUploadServerBuilder) UserIDs(v []int64) *StoriesGetVideoUploadServerBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -299,7 +299,7 @@ func (b *StoriesGetVideoUploadServerBuilder) LinkURL(v string) *StoriesGetVideoU
 }
 
 // GroupID ID of the community to upload the story (should be verified or with the "fire" icon).
-func (b *StoriesGetVideoUploadServerBuilder) GroupID(v int) *StoriesGetVideoUploadServerBuilder {
+func (b *StoriesGetVideoUploadServerBuilder) GroupID(v int64) *StoriesGetVideoUploadServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -319,7 +319,7 @@ func NewStoriesGetViewersBuilder() *StoriesGetViewersBuilder {
 }
 
 // OwnerID story owner ID.
-func (b *StoriesGetViewersBuilder) OwnerID(v int) *StoriesGetViewersBuilder {
+func (b *StoriesGetViewersBuilder) OwnerID(v int64) *StoriesGetViewersBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -363,13 +363,13 @@ func NewStoriesHideAllRepliesBuilder() *StoriesHideAllRepliesBuilder {
 }
 
 // OwnerID ID of the user whose replies should be hidden.
-func (b *StoriesHideAllRepliesBuilder) OwnerID(v int) *StoriesHideAllRepliesBuilder {
+func (b *StoriesHideAllRepliesBuilder) OwnerID(v int64) *StoriesHideAllRepliesBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *StoriesHideAllRepliesBuilder) GroupID(v int) *StoriesHideAllRepliesBuilder {
+func (b *StoriesHideAllRepliesBuilder) GroupID(v int64) *StoriesHideAllRepliesBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -389,7 +389,7 @@ func NewStoriesHideReplyBuilder() *StoriesHideReplyBuilder {
 }
 
 // OwnerID ID of the user whose replies should be hidden.
-func (b *StoriesHideReplyBuilder) OwnerID(v int) *StoriesHideReplyBuilder {
+func (b *StoriesHideReplyBuilder) OwnerID(v int64) *StoriesHideReplyBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

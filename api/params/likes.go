@@ -45,7 +45,7 @@ func (b *LikesAddBuilder) Type(v string) *LikesAddBuilder {
 }
 
 // OwnerID ID of the user or community that owns the object.
-func (b *LikesAddBuilder) OwnerID(v int) *LikesAddBuilder {
+func (b *LikesAddBuilder) OwnerID(v int64) *LikesAddBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -103,7 +103,7 @@ func (b *LikesDeleteBuilder) Type(v string) *LikesDeleteBuilder {
 }
 
 // OwnerID ID of the user or community that owns the object.
-func (b *LikesDeleteBuilder) OwnerID(v int) *LikesDeleteBuilder {
+func (b *LikesDeleteBuilder) OwnerID(v int64) *LikesDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -158,7 +158,7 @@ func (b *LikesGetListBuilder) Type(v string) *LikesGetListBuilder {
 // If the 'type' parameter is set as 'sitepage', the application ID is passed as 'owner_id'.
 // Use negative value for a community id. If the 'type' parameter is not set, the 'owner_id' is assumed to be
 // either the current user or the same application ID as if the 'type' parameter was set to 'sitepage'.
-func (b *LikesGetListBuilder) OwnerID(v int) *LikesGetListBuilder {
+func (b *LikesGetListBuilder) OwnerID(v int64) *LikesGetListBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -241,7 +241,7 @@ func NewLikesIsLikedBuilder() *LikesIsLikedBuilder {
 }
 
 // UserID parameter.
-func (b *LikesIsLikedBuilder) UserID(v int) *LikesIsLikedBuilder {
+func (b *LikesIsLikedBuilder) UserID(v int64) *LikesIsLikedBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -271,7 +271,7 @@ func (b *LikesIsLikedBuilder) Type(v string) *LikesIsLikedBuilder {
 }
 
 // OwnerID ID of the user or community that owns the object.
-func (b *LikesIsLikedBuilder) OwnerID(v int) *LikesIsLikedBuilder {
+func (b *LikesIsLikedBuilder) OwnerID(v int64) *LikesIsLikedBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

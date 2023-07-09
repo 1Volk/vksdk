@@ -19,7 +19,7 @@ func NewFriendsAddBuilder() *FriendsAddBuilder {
 }
 
 // UserID ID of the user whose friend request will be approved or to whom a friend request will be sent.
-func (b *FriendsAddBuilder) UserID(v int) *FriendsAddBuilder {
+func (b *FriendsAddBuilder) UserID(v int64) *FriendsAddBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -57,7 +57,7 @@ func (b *FriendsAddListBuilder) Name(v string) *FriendsAddListBuilder {
 }
 
 // UserIDs IDs of users to be added to the friend list.
-func (b *FriendsAddListBuilder) UserIDs(v []int) *FriendsAddListBuilder {
+func (b *FriendsAddListBuilder) UserIDs(v []int64) *FriendsAddListBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -77,7 +77,7 @@ func NewFriendsAreFriendsBuilder() *FriendsAreFriendsBuilder {
 }
 
 // UserIDs IDs of the users whose friendship status to check.
-func (b *FriendsAreFriendsBuilder) UserIDs(v []int) *FriendsAreFriendsBuilder {
+func (b *FriendsAreFriendsBuilder) UserIDs(v []int64) *FriendsAreFriendsBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -109,7 +109,7 @@ func NewFriendsDeleteBuilder() *FriendsDeleteBuilder {
 
 // UserID ID of the user whose friend request is to be declined or who is to be deleted from the current user's
 // friend list.
-func (b *FriendsDeleteBuilder) UserID(v int) *FriendsDeleteBuilder {
+func (b *FriendsDeleteBuilder) UserID(v int64) *FriendsDeleteBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -149,7 +149,7 @@ func NewFriendsEditBuilder() *FriendsEditBuilder {
 }
 
 // UserID ID of the user whose friend list is to be edited.
-func (b *FriendsEditBuilder) UserID(v int) *FriendsEditBuilder {
+func (b *FriendsEditBuilder) UserID(v int64) *FriendsEditBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -187,19 +187,19 @@ func (b *FriendsEditListBuilder) ListID(v int) *FriendsEditListBuilder {
 }
 
 // UserIDs IDs of users in the friend list.
-func (b *FriendsEditListBuilder) UserIDs(v []int) *FriendsEditListBuilder {
+func (b *FriendsEditListBuilder) UserIDs(v []int64) *FriendsEditListBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
 
 // AddUserIDs (Applies if 'user_ids' parameter is not set.), User IDs to add to the friend list.
-func (b *FriendsEditListBuilder) AddUserIDs(v []int) *FriendsEditListBuilder {
+func (b *FriendsEditListBuilder) AddUserIDs(v []int64) *FriendsEditListBuilder {
 	b.Params["add_user_ids"] = v
 	return b
 }
 
 // DeleteUserIDs (Applies if 'user_ids' parameter is not set.), User IDs to delete from the friend list.
-func (b *FriendsEditListBuilder) DeleteUserIDs(v []int) *FriendsEditListBuilder {
+func (b *FriendsEditListBuilder) DeleteUserIDs(v []int64) *FriendsEditListBuilder {
 	b.Params["delete_user_ids"] = v
 	return b
 }
@@ -219,7 +219,7 @@ func NewFriendsGetBuilder() *FriendsGetBuilder {
 }
 
 // UserID parameter. By default, the current user ID.
-func (b *FriendsGetBuilder) UserID(v int) *FriendsGetBuilder {
+func (b *FriendsGetBuilder) UserID(v int64) *FriendsGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -331,7 +331,7 @@ func NewFriendsGetListsBuilder() *FriendsGetListsBuilder {
 }
 
 // UserID parameter.
-func (b *FriendsGetListsBuilder) UserID(v int) *FriendsGetListsBuilder {
+func (b *FriendsGetListsBuilder) UserID(v int64) *FriendsGetListsBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -409,7 +409,7 @@ func NewFriendsGetOnlineBuilder() *FriendsGetOnlineBuilder {
 }
 
 // UserID parameter.
-func (b *FriendsGetOnlineBuilder) UserID(v int) *FriendsGetOnlineBuilder {
+func (b *FriendsGetOnlineBuilder) UserID(v int64) *FriendsGetOnlineBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -631,7 +631,7 @@ func NewFriendsSearchBuilder() *FriendsSearchBuilder {
 }
 
 // UserID parameter.
-func (b *FriendsSearchBuilder) UserID(v int) *FriendsSearchBuilder {
+func (b *FriendsSearchBuilder) UserID(v int64) *FriendsSearchBuilder {
 	b.Params["user_id"] = v
 	return b
 }

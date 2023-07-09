@@ -17,7 +17,7 @@ func NewDownloadedGamesGetPaidStatusBuilder() *DownloadedGamesGetPaidStatusBuild
 }
 
 // UserID parameter.
-func (b *DownloadedGamesGetPaidStatusBuilder) UserID(v int) *DownloadedGamesGetPaidStatusBuilder {
+func (b *DownloadedGamesGetPaidStatusBuilder) UserID(v int64) *DownloadedGamesGetPaidStatusBuilder {
 	b.Params["user_id"] = v
 	return b
 }

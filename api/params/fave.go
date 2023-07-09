@@ -55,13 +55,13 @@ func NewFaveAddPageBuilder() *FaveAddPageBuilder {
 }
 
 // UserID parameter.
-func (b *FaveAddPageBuilder) UserID(v int) *FaveAddPageBuilder {
+func (b *FaveAddPageBuilder) UserID(v int64) *FaveAddPageBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *FaveAddPageBuilder) GroupID(v int) *FaveAddPageBuilder {
+func (b *FaveAddPageBuilder) GroupID(v int64) *FaveAddPageBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -79,7 +79,7 @@ func NewFaveAddPostBuilder() *FaveAddPostBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveAddPostBuilder) OwnerID(v int) *FaveAddPostBuilder {
+func (b *FaveAddPostBuilder) OwnerID(v int64) *FaveAddPostBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -109,7 +109,7 @@ func NewFaveAddProductBuilder() *FaveAddProductBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveAddProductBuilder) OwnerID(v int) *FaveAddProductBuilder {
+func (b *FaveAddProductBuilder) OwnerID(v int64) *FaveAddProductBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -157,7 +157,7 @@ func NewFaveAddVideoBuilder() *FaveAddVideoBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveAddVideoBuilder) OwnerID(v int) *FaveAddVideoBuilder {
+func (b *FaveAddVideoBuilder) OwnerID(v int64) *FaveAddVideoBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -307,7 +307,7 @@ func NewFaveRemoveArticleBuilder() *FaveRemoveArticleBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveRemoveArticleBuilder) OwnerID(v int) *FaveRemoveArticleBuilder {
+func (b *FaveRemoveArticleBuilder) OwnerID(v int64) *FaveRemoveArticleBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -357,13 +357,13 @@ func NewFaveRemovePageBuilder() *FaveRemovePageBuilder {
 }
 
 // UserID parameter.
-func (b *FaveRemovePageBuilder) UserID(v int) *FaveRemovePageBuilder {
+func (b *FaveRemovePageBuilder) UserID(v int64) *FaveRemovePageBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *FaveRemovePageBuilder) GroupID(v int) *FaveRemovePageBuilder {
+func (b *FaveRemovePageBuilder) GroupID(v int64) *FaveRemovePageBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -381,7 +381,7 @@ func NewFaveRemovePostBuilder() *FaveRemovePostBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveRemovePostBuilder) OwnerID(v int) *FaveRemovePostBuilder {
+func (b *FaveRemovePostBuilder) OwnerID(v int64) *FaveRemovePostBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -405,7 +405,7 @@ func NewFaveRemoveProductBuilder() *FaveRemoveProductBuilder {
 }
 
 // OwnerID parameter.
-func (b *FaveRemoveProductBuilder) OwnerID(v int) *FaveRemoveProductBuilder {
+func (b *FaveRemoveProductBuilder) OwnerID(v int64) *FaveRemoveProductBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -465,13 +465,13 @@ func NewFaveSetPageTagsBuilder() *FaveSetPageTagsBuilder {
 }
 
 // UserID parameter.
-func (b *FaveSetPageTagsBuilder) UserID(v int) *FaveSetPageTagsBuilder {
+func (b *FaveSetPageTagsBuilder) UserID(v int64) *FaveSetPageTagsBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *FaveSetPageTagsBuilder) GroupID(v int) *FaveSetPageTagsBuilder {
+func (b *FaveSetPageTagsBuilder) GroupID(v int64) *FaveSetPageTagsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -501,7 +501,7 @@ func (b *FaveSetTagsBuilder) ItemType(v string) *FaveSetTagsBuilder {
 }
 
 // ItemOwnerID parameter.
-func (b *FaveSetTagsBuilder) ItemOwnerID(v int) *FaveSetTagsBuilder {
+func (b *FaveSetTagsBuilder) ItemOwnerID(v int64) *FaveSetTagsBuilder {
 	b.Params["item_owner_id"] = v
 	return b
 }
@@ -543,13 +543,13 @@ func NewFaveTrackPageInteractionBuilder() *FaveTrackPageInteractionBuilder {
 }
 
 // UserID parameter.
-func (b *FaveTrackPageInteractionBuilder) UserID(v int) *FaveTrackPageInteractionBuilder {
+func (b *FaveTrackPageInteractionBuilder) UserID(v int64) *FaveTrackPageInteractionBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // GroupID parameter.
-func (b *FaveTrackPageInteractionBuilder) GroupID(v int) *FaveTrackPageInteractionBuilder {
+func (b *FaveTrackPageInteractionBuilder) GroupID(v int64) *FaveTrackPageInteractionBuilder {
 	b.Params["group_id"] = v
 	return b
 }

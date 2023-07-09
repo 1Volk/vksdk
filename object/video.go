@@ -124,7 +124,7 @@ type VideoCatElement struct {
 	Description string      `json:"description"`
 	Duration    int         `json:"duration"`
 	ID          int         `json:"id"`
-	OwnerID     int         `json:"owner_id"`
+	OwnerID     int64         `json:"owner_id"`
 	Photo130    string      `json:"photo_130"`
 	Photo160    string      `json:"photo_160"`
 	Photo320    string      `json:"photo_320"`
@@ -139,7 +139,7 @@ type VideoCatElement struct {
 // VideoSaveResult struct.
 type VideoSaveResult struct {
 	Description string `json:"description"` // Video description
-	OwnerID     int    `json:"owner_id"`    // Video owner ID
+	OwnerID     int64    `json:"owner_id"`    // Video owner ID
 	Title       string `json:"title"`       // Video title
 	UploadURL   string `json:"upload_url"`  // URL for the video uploading
 	VideoID     int    `json:"video_id"`    // Video ID
@@ -155,7 +155,7 @@ type VideoUploadResponse struct {
 // VideoVideoAlbum struct.
 type VideoVideoAlbum struct {
 	ID      int    `json:"id"`
-	OwnerID int    `json:"owner_id"`
+	OwnerID int64    `json:"owner_id"`
 	Title   string `json:"title"`
 }
 
@@ -165,7 +165,7 @@ type VideoVideoAlbumFull struct {
 	ID          int               `json:"id"`           // Album ID
 	Image       []VideoVideoImage `json:"image"`        // Album cover image in different sizes
 	IsSystem    BaseBoolInt       `json:"is_system"`    // Information whether album is system
-	OwnerID     int               `json:"owner_id"`     // Album owner's ID
+	OwnerID     int64               `json:"owner_id"`     // Album owner's ID
 	Photo160    string            `json:"photo_160"`    // URL of the preview image with 160px in width
 	Photo320    string            `json:"photo_320"`    // URL of the preview image with 320px in width
 	Title       string            `json:"title"`        // Album title
@@ -194,7 +194,7 @@ type VideoVideoFull struct {
 	ID            int               `json:"id"` // Video ID
 	Likes         BaseLikes         `json:"likes"`
 	Live          int               `json:"live"`       // Returns if the video is live translation
-	OwnerID       int               `json:"owner_id"`   // Video owner ID
+	OwnerID       int64               `json:"owner_id"`   // Video owner ID
 	Player        string            `json:"player"`     // URL of the page with a player that can be used to play the video in the browser.
 	Processing    int               `json:"processing"` // Returns if the video is processing
 	Title         string            `json:"title"`      // Video title

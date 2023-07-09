@@ -66,7 +66,7 @@ func NewUsersGetFollowersBuilder() *UsersGetFollowersBuilder {
 }
 
 // UserID parameter.
-func (b *UsersGetFollowersBuilder) UserID(v int) *UsersGetFollowersBuilder {
+func (b *UsersGetFollowersBuilder) UserID(v int64) *UsersGetFollowersBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -124,7 +124,7 @@ func NewUsersGetSubscriptionsBuilder() *UsersGetSubscriptionsBuilder {
 }
 
 // UserID parameter.
-func (b *UsersGetSubscriptionsBuilder) UserID(v int) *UsersGetSubscriptionsBuilder {
+func (b *UsersGetSubscriptionsBuilder) UserID(v int64) *UsersGetSubscriptionsBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -169,7 +169,7 @@ func NewUsersIsAppUserBuilder() *UsersIsAppUserBuilder {
 }
 
 // UserID parameter.
-func (b *UsersIsAppUserBuilder) UserID(v int) *UsersIsAppUserBuilder {
+func (b *UsersIsAppUserBuilder) UserID(v int64) *UsersIsAppUserBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -189,7 +189,7 @@ func NewUsersReportBuilder() *UsersReportBuilder {
 }
 
 // UserID ID of the user about whom a complaint is being made.
-func (b *UsersReportBuilder) UserID(v int) *UsersReportBuilder {
+func (b *UsersReportBuilder) UserID(v int64) *UsersReportBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -412,7 +412,7 @@ func (b *UsersSearchBuilder) Position(v string) *UsersSearchBuilder {
 }
 
 // GroupID to search in communities.
-func (b *UsersSearchBuilder) GroupID(v int) *UsersSearchBuilder {
+func (b *UsersSearchBuilder) GroupID(v int64) *UsersSearchBuilder {
 	b.Params["group_id"] = v
 	return b
 }

@@ -17,7 +17,7 @@ func NewOrdersCancelSubscriptionBuilder() *OrdersCancelSubscriptionBuilder {
 }
 
 // UserID parameter.
-func (b *OrdersCancelSubscriptionBuilder) UserID(v int) *OrdersCancelSubscriptionBuilder {
+func (b *OrdersCancelSubscriptionBuilder) UserID(v int64) *OrdersCancelSubscriptionBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -124,7 +124,7 @@ func NewOrdersGetAmountBuilder() *OrdersGetAmountBuilder {
 }
 
 // UserID parameter.
-func (b *OrdersGetAmountBuilder) UserID(v int) *OrdersGetAmountBuilder {
+func (b *OrdersGetAmountBuilder) UserID(v int64) *OrdersGetAmountBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -180,7 +180,7 @@ func NewOrdersGetUserSubscriptionByIDBuilder() *OrdersGetUserSubscriptionByIDBui
 }
 
 // UserID parameter.
-func (b *OrdersGetUserSubscriptionByIDBuilder) UserID(v int) *OrdersGetUserSubscriptionByIDBuilder {
+func (b *OrdersGetUserSubscriptionByIDBuilder) UserID(v int64) *OrdersGetUserSubscriptionByIDBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -204,7 +204,7 @@ func NewOrdersGetUserSubscriptionsBuilder() *OrdersGetUserSubscriptionsBuilder {
 }
 
 // UserID parameter.
-func (b *OrdersGetUserSubscriptionsBuilder) UserID(v int) *OrdersGetUserSubscriptionsBuilder {
+func (b *OrdersGetUserSubscriptionsBuilder) UserID(v int64) *OrdersGetUserSubscriptionsBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -222,7 +222,7 @@ func NewOrdersUpdateSubscriptionBuilder() *OrdersUpdateSubscriptionBuilder {
 }
 
 // UserID parameter.
-func (b *OrdersUpdateSubscriptionBuilder) UserID(v int) *OrdersUpdateSubscriptionBuilder {
+func (b *OrdersUpdateSubscriptionBuilder) UserID(v int64) *OrdersUpdateSubscriptionBuilder {
 	b.Params["user_id"] = v
 	return b
 }

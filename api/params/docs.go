@@ -19,7 +19,7 @@ func NewDocsAddBuilder() *DocsAddBuilder {
 }
 
 // OwnerID ID of the user or community that owns the document. Use a negative value to designate a community ID.
-func (b *DocsAddBuilder) OwnerID(v int) *DocsAddBuilder {
+func (b *DocsAddBuilder) OwnerID(v int64) *DocsAddBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -51,7 +51,7 @@ func NewDocsDeleteBuilder() *DocsDeleteBuilder {
 }
 
 // OwnerID ID of the user or community that owns the document. Use a negative value to designate a community ID.
-func (b *DocsDeleteBuilder) OwnerID(v int) *DocsDeleteBuilder {
+func (b *DocsDeleteBuilder) OwnerID(v int64) *DocsDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -77,7 +77,7 @@ func NewDocsEditBuilder() *DocsEditBuilder {
 }
 
 // OwnerID user ID or community ID. Use a negative value to designate a community ID.
-func (b *DocsEditBuilder) OwnerID(v int) *DocsEditBuilder {
+func (b *DocsEditBuilder) OwnerID(v int64) *DocsEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -133,7 +133,7 @@ func (b *DocsGetBuilder) Type(v int) *DocsGetBuilder {
 }
 
 // OwnerID ID of the user or community that owns the documents. Use a negative value to designate a community ID.
-func (b *DocsGetBuilder) OwnerID(v int) *DocsGetBuilder {
+func (b *DocsGetBuilder) OwnerID(v int64) *DocsGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -181,7 +181,7 @@ func (b *DocsGetMessagesUploadServerBuilder) Type(v string) *DocsGetMessagesUplo
 // PeerID destination ID. For user: 'User ID', e.g. '12345'.
 // For chat: '2000000000' + 'Chat ID', e.g. '2000000001'.
 // For community: '- community ID', e.g. '-12345'.
-func (b *DocsGetMessagesUploadServerBuilder) PeerID(v int) *DocsGetMessagesUploadServerBuilder {
+func (b *DocsGetMessagesUploadServerBuilder) PeerID(v int64) *DocsGetMessagesUploadServerBuilder {
 	b.Params["peer_id"] = v
 	return b
 }
@@ -201,7 +201,7 @@ func NewDocsGetTypesBuilder() *DocsGetTypesBuilder {
 }
 
 // OwnerID ID of the user or community that owns the documents. Use a negative value to designate a community ID.
-func (b *DocsGetTypesBuilder) OwnerID(v int) *DocsGetTypesBuilder {
+func (b *DocsGetTypesBuilder) OwnerID(v int64) *DocsGetTypesBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -221,7 +221,7 @@ func NewDocsGetUploadServerBuilder() *DocsGetUploadServerBuilder {
 }
 
 // GroupID community ID (if the document will be uploaded to the community).
-func (b *DocsGetUploadServerBuilder) GroupID(v int) *DocsGetUploadServerBuilder {
+func (b *DocsGetUploadServerBuilder) GroupID(v int64) *DocsGetUploadServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -241,7 +241,7 @@ func NewDocsGetWallUploadServerBuilder() *DocsGetWallUploadServerBuilder {
 }
 
 // GroupID community ID (if the document will be uploaded to the community).
-func (b *DocsGetWallUploadServerBuilder) GroupID(v int) *DocsGetWallUploadServerBuilder {
+func (b *DocsGetWallUploadServerBuilder) GroupID(v int64) *DocsGetWallUploadServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }

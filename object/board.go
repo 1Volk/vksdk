@@ -17,7 +17,7 @@ type BoardTopic struct {
 type BoardTopicComment struct {
 	Attachments []WallCommentAttachment `json:"attachments"`
 	Date        int                     `json:"date"`    // Date when the comment has been added in Unixtime
-	FromID      int                     `json:"from_id"` // Author ID
+	FromID      int64                     `json:"from_id"` // Author ID
 	ID          int                     `json:"id"`      // Comment ID
 	// RealOffset   int                     `json:"real_offset"` // Real position of the comment
 	Text string `json:"text"` // Comment text

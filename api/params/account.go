@@ -17,7 +17,7 @@ func NewAccountBanBuilder() *AccountBanBuilder {
 }
 
 // OwnerID parameter.
-func (b *AccountBanBuilder) OwnerID(v int) *AccountBanBuilder {
+func (b *AccountBanBuilder) OwnerID(v int64) *AccountBanBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -104,7 +104,7 @@ func NewAccountGetAppPermissionsBuilder() *AccountGetAppPermissionsBuilder {
 }
 
 // UserID user ID whose settings information shall be got. By default: current user.
-func (b *AccountGetAppPermissionsBuilder) UserID(v int) *AccountGetAppPermissionsBuilder {
+func (b *AccountGetAppPermissionsBuilder) UserID(v int64) *AccountGetAppPermissionsBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -418,7 +418,7 @@ func NewAccountSetNameInMenuBuilder() *AccountSetNameInMenuBuilder {
 }
 
 // UserID parameter.
-func (b *AccountSetNameInMenuBuilder) UserID(v int) *AccountSetNameInMenuBuilder {
+func (b *AccountSetNameInMenuBuilder) UserID(v int64) *AccountSetNameInMenuBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -516,7 +516,7 @@ func (b *AccountSetSilenceModeBuilder) Time(v int) *AccountSetSilenceModeBuilder
 // PeerID destination ID. For user: 'User ID', e.g. '12345'.
 // For chat: '2000000000' + 'Chat ID', e.g. '2000000001'.
 // For community: '- Community ID', e.g. '-12345'.
-func (b *AccountSetSilenceModeBuilder) PeerID(v int) *AccountSetSilenceModeBuilder {
+func (b *AccountSetSilenceModeBuilder) PeerID(v int64) *AccountSetSilenceModeBuilder {
 	b.Params["peer_id"] = v
 	return b
 }
@@ -544,7 +544,7 @@ func NewAccountUnbanBuilder() *AccountUnbanBuilder {
 }
 
 // OwnerID parameter.
-func (b *AccountUnbanBuilder) OwnerID(v int) *AccountUnbanBuilder {
+func (b *AccountUnbanBuilder) OwnerID(v int64) *AccountUnbanBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

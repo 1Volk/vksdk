@@ -85,7 +85,7 @@ type MessageTypingStateFunc func(MessageTypingStateObject, int64)
 // MessageTypingStateObject struct.
 type MessageTypingStateObject struct {
 	State  string `json:"state"`
-	FromID int    `json:"from_id"`
+	FromID int64    `json:"from_id"`
 	ToID   int    `json:"to_id"`
 }
 
@@ -202,7 +202,7 @@ type WallReplyDeleteFunc func(WallReplyDeleteObject, int64)
 
 // WallReplyDeleteObject struct.
 type WallReplyDeleteObject struct {
-	OwnerID   int `json:"owner_id"`
+	OwnerID   int64 `json:"owner_id"`
 	ID        int `json:"id"`
 	DeleterID int `json:"deleter_id"`
 	PostID    int `json:"post_id"`
@@ -231,7 +231,7 @@ type BoardPostDeleteFunc func(BoardPostDeleteObject, int64)
 
 // BoardPostDeleteObject struct.
 type BoardPostDeleteObject struct {
-	TopicOwnerID int `json:"topic_owner_id"`
+	TopicOwnerID int64 `json:"topic_owner_id"`
 	TopicID      int `json:"topic_id"`
 	ID           int `json:"id"`
 }
@@ -449,8 +449,8 @@ type MessageReadFunc func(MessageReadObject, int64)
 
 // MessageReadObject struct.
 type MessageReadObject struct {
-	FromID        int `json:"from_id"`
-	PeerID        int `json:"peer_id"`
+	FromID        int64 `json:"from_id"`
+	PeerID        int64 `json:"peer_id"`
 	ReadMessageID int `json:"read_message_id"`
 }
 
@@ -461,7 +461,7 @@ type LikeAddFunc func(LikeAddObject, int64)
 type LikeAddObject struct {
 	LikerID       int    `json:"liker_id"`
 	ObjectType    string `json:"object_type"`
-	ObjectOwnerID int    `json:"object_owner_id"`
+	ObjectOwnerID int64    `json:"object_owner_id"`
 	ObjectID      int    `json:"object_id"`
 	ThreadReplyID int    `json:"thread_reply_id"`
 	PostID        int    `json:"post_id"` // for comment
@@ -474,7 +474,7 @@ type LikeRemoveFunc func(LikeRemoveObject, int64)
 type LikeRemoveObject struct {
 	LikerID       int    `json:"liker_id"`
 	ObjectType    string `json:"object_type"`
-	ObjectOwnerID int    `json:"object_owner_id"`
+	ObjectOwnerID int64    `json:"object_owner_id"`
 	ObjectID      int    `json:"object_id"`
 	ThreadReplyID int    `json:"thread_reply_id"`
 	PostID        int    `json:"post_id"` // for comment

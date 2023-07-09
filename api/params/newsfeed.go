@@ -19,13 +19,13 @@ func NewNewsfeedAddBanBuilder() *NewsfeedAddBanBuilder {
 }
 
 // UserIDs parameter.
-func (b *NewsfeedAddBanBuilder) UserIDs(v []int) *NewsfeedAddBanBuilder {
+func (b *NewsfeedAddBanBuilder) UserIDs(v []int64) *NewsfeedAddBanBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
 
 // GroupIDs parameter.
-func (b *NewsfeedAddBanBuilder) GroupIDs(v []int) *NewsfeedAddBanBuilder {
+func (b *NewsfeedAddBanBuilder) GroupIDs(v []int64) *NewsfeedAddBanBuilder {
 	b.Params["group_ids"] = v
 	return b
 }
@@ -45,13 +45,13 @@ func NewNewsfeedDeleteBanBuilder() *NewsfeedDeleteBanBuilder {
 }
 
 // UserIDs parameter.
-func (b *NewsfeedDeleteBanBuilder) UserIDs(v []int) *NewsfeedDeleteBanBuilder {
+func (b *NewsfeedDeleteBanBuilder) UserIDs(v []int64) *NewsfeedDeleteBanBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
 
 // GroupIDs parameter.
-func (b *NewsfeedDeleteBanBuilder) GroupIDs(v []int) *NewsfeedDeleteBanBuilder {
+func (b *NewsfeedDeleteBanBuilder) GroupIDs(v []int64) *NewsfeedDeleteBanBuilder {
 	b.Params["group_ids"] = v
 	return b
 }
@@ -326,7 +326,7 @@ func NewNewsfeedGetMentionsBuilder() *NewsfeedGetMentionsBuilder {
 }
 
 // OwnerID parameter.
-func (b *NewsfeedGetMentionsBuilder) OwnerID(v int) *NewsfeedGetMentionsBuilder {
+func (b *NewsfeedGetMentionsBuilder) OwnerID(v int64) *NewsfeedGetMentionsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -476,7 +476,7 @@ func (b *NewsfeedIgnoreItemBuilder) Type(v string) *NewsfeedIgnoreItemBuilder {
 
 // OwnerID item owner's identifier (user or community),
 // Note that community id must be negative. 'owner_id=1' – user , 'owner_id=-1' – community.
-func (b *NewsfeedIgnoreItemBuilder) OwnerID(v int) *NewsfeedIgnoreItemBuilder {
+func (b *NewsfeedIgnoreItemBuilder) OwnerID(v int64) *NewsfeedIgnoreItemBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -625,7 +625,7 @@ func (b *NewsfeedUnignoreItemBuilder) Type(v string) *NewsfeedUnignoreItemBuilde
 
 // OwnerID item owner's identifier (user or community),
 // Note that community id must be negative. 'owner_id=1' – user , 'owner_id=-1' – community.
-func (b *NewsfeedUnignoreItemBuilder) OwnerID(v int) *NewsfeedUnignoreItemBuilder {
+func (b *NewsfeedUnignoreItemBuilder) OwnerID(v int64) *NewsfeedUnignoreItemBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -673,7 +673,7 @@ func (b *NewsfeedUnsubscribeBuilder) Type(v string) *NewsfeedUnsubscribeBuilder 
 }
 
 // OwnerID object owner ID.
-func (b *NewsfeedUnsubscribeBuilder) OwnerID(v int) *NewsfeedUnsubscribeBuilder {
+func (b *NewsfeedUnsubscribeBuilder) OwnerID(v int64) *NewsfeedUnsubscribeBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

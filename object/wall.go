@@ -13,7 +13,7 @@ type WallAttachedNote struct {
 	Comments     int    `json:"comments"`      // Comments number
 	Date         int    `json:"date"`          // Date when the note has been created in Unixtime
 	ID           int    `json:"id"`            // Note ID
-	OwnerID      int    `json:"owner_id"`      // Note owner's ID
+	OwnerID      int64    `json:"owner_id"`      // Note owner's ID
 	ReadComments int    `json:"read_comments"` // Read comments number
 	Title        string `json:"title"`         // Note title
 	ViewURL      string `json:"view_url"`      // URL of the page with note preview
@@ -38,7 +38,7 @@ type WallCommentAttachment struct {
 // WallGraffiti struct.
 type WallGraffiti struct {
 	ID        int    `json:"id"`        // Graffiti ID
-	OwnerID   int    `json:"owner_id"`  // Graffiti owner's ID
+	OwnerID   int64    `json:"owner_id"`  // Graffiti owner's ID
 	Photo200  string `json:"photo_200"` // URL of the preview image with 200 px in width
 	Photo586  string `json:"photo_586"` // URL of the preview image with 586 px in width
 	URL       string `json:"url"`
@@ -68,7 +68,7 @@ type WallPostSource struct {
 // WallPostedPhoto struct.
 type WallPostedPhoto struct {
 	ID       int    `json:"id"`        // Photo ID
-	OwnerID  int    `json:"owner_id"`  // Photo owner's ID
+	OwnerID  int64    `json:"owner_id"`  // Photo owner's ID
 	Photo130 string `json:"photo_130"` // URL of the preview image with 130 px in width
 	Photo604 string `json:"photo_604"` // URL of the preview image with 604 px in width
 }
@@ -92,7 +92,7 @@ type WallWallComment struct {
 	Attachments    []WallCommentAttachment `json:"attachments"`
 	Date           int                     `json:"date"` // Date when the comment has been added in Unixtime
 	Deleted        BaseBoolInt             `json:"deleted"`
-	FromID         int                     `json:"from_id"` // Author ID
+	FromID         int64                     `json:"from_id"` // Author ID
 	ID             int                     `json:"id"`      // Comment ID
 	Likes          BaseLikesInfo           `json:"likes"`
 	RealOffset     int                     `json:"real_offset"`      // Real position of the comment
@@ -100,15 +100,15 @@ type WallWallComment struct {
 	ReplyToUser    int                     `json:"reply_to_user"`    // Replied user ID
 	Text           string                  `json:"text"`             // Comment text
 	PostID         int                     `json:"post_id"`
-	PostOwnerID    int                     `json:"post_owner_id"`
+	PostOwnerID    int64                     `json:"post_owner_id"`
 	PhotoID        int                     `json:"photo_id"`
-	PhotoOwnerID   int                     `json:"photo_owner_id"`
+	PhotoOwnerID   int64                     `json:"photo_owner_id"`
 	VideoID        int                     `json:"video_id"`
-	VideoOwnerID   int                     `json:"video_owner_id"`
+	VideoOwnerID   int64                     `json:"video_owner_id"`
 	ItemID         int                     `json:"item_id"`
-	MarketOwnerID  int                     `json:"market_owner_id"`
+	MarketOwnerID  int64                     `json:"market_owner_id"`
 	ParentsStack   []int                   `json:"parents_stack"`
-	OwnerID        int                     `json:"owner_id"`
+	OwnerID        int64                     `json:"owner_id"`
 	Thread         WallWallCommentThread   `json:"thread"`
 }
 
@@ -125,12 +125,12 @@ const (
 type WallWallpost struct {
 	AccessKey    string                   `json:"access_key"` // Access key to private object
 	ID           int                      `json:"id"`         // Post ID
-	OwnerID      int                      `json:"owner_id"`   // Wall owner's ID
-	FromID       int                      `json:"from_id"`    // Post author ID
+	OwnerID      int64                      `json:"owner_id"`   // Wall owner's ID
+	FromID       int64                      `json:"from_id"`    // Post author ID
 	CreatedBy    int                      `json:"created_by"`
 	Date         int                      `json:"date"` // Date of publishing in Unixtime
 	Text         string                   `json:"text"` // Post text
-	ReplyOwnerID int                      `json:"reply_owner_id"`
+	ReplyOwnerID int64                      `json:"reply_owner_id"`
 	ReplyPostID  int                      `json:"reply_post_id"`
 	FriendsOnly  int                      `json:"friends_only"`
 	Comments     BaseCommentsInfo         `json:"comments"`
@@ -159,11 +159,11 @@ type WallWallpostAttached struct {
 	Attachments []WallWallpostAttachment `json:"attachments"`
 	CanDelete   BaseBoolInt              `json:"can_delete"`
 	Comments    BaseCommentsInfo         `json:"comments"`
-	CopyOwnerID int                      `json:"copy_owner_id"`
+	CopyOwnerID int64                      `json:"copy_owner_id"`
 	CopyPostID  int                      `json:"copy_post_id"`
 	CopyText    string                   `json:"copy_text"`
 	Date        int                      `json:"date"`
-	FromID      int                      `json:"from_id"`
+	FromID      int64                      `json:"from_id"`
 	Geo         BaseGeo                  `json:"geo"`
 	ID          int                      `json:"id"`
 	Likes       BaseLikesInfo            `json:"likes"`
@@ -223,10 +223,10 @@ type WallWallpostAttachment struct {
 type WallWallpostToID struct {
 	Attachments []WallWallpostAttachment `json:"attachments"`
 	Comments    BaseCommentsInfo         `json:"comments"`
-	CopyOwnerID int                      `json:"copy_owner_id"` // ID of the source post owner
+	CopyOwnerID int64                      `json:"copy_owner_id"` // ID of the source post owner
 	CopyPostID  int                      `json:"copy_post_id"`  // ID of the source post
 	Date        int                      `json:"date"`          // Date of publishing in Unixtime
-	FromID      int                      `json:"from_id"`       // Post author ID
+	FromID      int64                      `json:"from_id"`       // Post author ID
 	Geo         BaseGeo                  `json:"geo"`
 	ID          int                      `json:"id"` // Post ID
 	Likes       BaseLikesInfo            `json:"likes"`

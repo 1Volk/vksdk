@@ -21,7 +21,7 @@ type MarketCurrency struct {
 type MarketMarketAlbum struct {
 	Count       int         `json:"count"`    // Items number
 	ID          int         `json:"id"`       // Market album ID
-	OwnerID     int         `json:"owner_id"` // Market album owner's ID
+	OwnerID     int64         `json:"owner_id"` // Market album owner's ID
 	Photo       PhotosPhoto `json:"photo"`
 	Title       string      `json:"title"`        // Market album title
 	UpdatedTime int         `json:"updated_time"` // Date when album has been updated last time in Unixtime
@@ -47,7 +47,7 @@ type MarketMarketItem struct {
 	Date         int                  `json:"date"`        // Date when the item has been created in Unixtime
 	Description  string               `json:"description"` // Item description
 	ID           int                  `json:"id"`          // Item ID
-	OwnerID      int                  `json:"owner_id"`    // Item owner's ID
+	OwnerID      int64                  `json:"owner_id"`    // Item owner's ID
 	Price        MarketPrice          `json:"price"`
 	ThumbPhoto   string               `json:"thumb_photo"` // URL of the preview image
 	Title        string               `json:"title"`       // Item title
@@ -118,7 +118,7 @@ type MarketOrder struct {
 
 // MarketOrderItem struct.
 type MarketOrderItem struct {
-	OwnerID  int              `json:"owner_id"`
+	OwnerID  int64              `json:"owner_id"`
 	ItemID   int              `json:"item_id"`
 	Price    MarketPrice      `json:"price"`
 	Quantity int              `json:"quantity"`

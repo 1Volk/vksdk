@@ -110,7 +110,7 @@ type GroupsGroup struct {
 	AdminLevel           int                  `json:"admin_level"`
 	Deactivated          string               `json:"deactivated"` // Information whether community is banned
 	FinishDate           int                  `json:"finish_date"` // Finish date in Unixtime format
-	ID                   int                  `json:"id"`          // Community ID
+	ID                   int64                  `json:"id"`          // Community ID
 	Name                 string               `json:"name"`        // Community name
 	Photo100             string               `json:"photo_100"`   // URL of square photo of the community with 100 pixels in width
 	Photo200             string               `json:"photo_200"`   // URL of square photo of the community with 200 pixels in width

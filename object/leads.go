@@ -26,7 +26,7 @@ type LeadsEntry struct {
 	StartDate int         `json:"start_date"` // Start date in Unixtime (for status=2)
 	Status    int         `json:"status"`     // Action type
 	TestMode  BaseBoolInt `json:"test_mode"`  // Information whether test mode is enabled
-	UID       int         `json:"uid"`        // User ID
+	UID       int64         `json:"uid"`        // User ID
 }
 
 // LeadsLead struct.

@@ -19,7 +19,7 @@ func NewPollsAddVoteBuilder() *PollsAddVoteBuilder {
 }
 
 // OwnerID ID of the user or community that owns the poll. Use a negative value to designate a community ID.
-func (b *PollsAddVoteBuilder) OwnerID(v int) *PollsAddVoteBuilder {
+func (b *PollsAddVoteBuilder) OwnerID(v int64) *PollsAddVoteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -83,7 +83,7 @@ func (b *PollsCreateBuilder) EndDate(v int) *PollsCreateBuilder {
 
 // OwnerID if a poll will be added to a community it is required to send a negative group identifier.
 // Current user by default.
-func (b *PollsCreateBuilder) OwnerID(v int) *PollsCreateBuilder {
+func (b *PollsCreateBuilder) OwnerID(v int64) *PollsCreateBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -121,7 +121,7 @@ func NewPollsDeleteVoteBuilder() *PollsDeleteVoteBuilder {
 }
 
 // OwnerID ID of the user or community that owns the poll. Use a negative value to designate a community ID.
-func (b *PollsDeleteVoteBuilder) OwnerID(v int) *PollsDeleteVoteBuilder {
+func (b *PollsDeleteVoteBuilder) OwnerID(v int64) *PollsDeleteVoteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -159,7 +159,7 @@ func NewPollsEditBuilder() *PollsEditBuilder {
 }
 
 // OwnerID poll owner id.
-func (b *PollsEditBuilder) OwnerID(v int) *PollsEditBuilder {
+func (b *PollsEditBuilder) OwnerID(v int64) *PollsEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -228,7 +228,7 @@ func NewPollsGetByIDBuilder() *PollsGetByIDBuilder {
 }
 
 // OwnerID ID of the user or community that owns the poll. Use a negative value to designate a community ID.
-func (b *PollsGetByIDBuilder) OwnerID(v int) *PollsGetByIDBuilder {
+func (b *PollsGetByIDBuilder) OwnerID(v int64) *PollsGetByIDBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -284,7 +284,7 @@ func NewPollsGetVotersBuilder() *PollsGetVotersBuilder {
 }
 
 // OwnerID ID of the user or community that owns the poll. Use a negative value to designate a community ID.
-func (b *PollsGetVotersBuilder) OwnerID(v int) *PollsGetVotersBuilder {
+func (b *PollsGetVotersBuilder) OwnerID(v int64) *PollsGetVotersBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

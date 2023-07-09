@@ -17,7 +17,7 @@ func NewGroupsAddAddressBuilder() *GroupsAddAddressBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsAddAddressBuilder) GroupID(v int) *GroupsAddAddressBuilder {
+func (b *GroupsAddAddressBuilder) GroupID(v int64) *GroupsAddAddressBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -41,7 +41,7 @@ func (b *GroupsAddAddressBuilder) AdditionalAddress(v string) *GroupsAddAddressB
 }
 
 // CountryID parameter.
-func (b *GroupsAddAddressBuilder) CountryID(v int) *GroupsAddAddressBuilder {
+func (b *GroupsAddAddressBuilder) CountryID(v int64) *GroupsAddAddressBuilder {
 	b.Params["country_id"] = v
 	return b
 }
@@ -107,7 +107,7 @@ func NewGroupsAddCallbackServerBuilder() *GroupsAddCallbackServerBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsAddCallbackServerBuilder) GroupID(v int) *GroupsAddCallbackServerBuilder {
+func (b *GroupsAddCallbackServerBuilder) GroupID(v int64) *GroupsAddCallbackServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -145,7 +145,7 @@ func NewGroupsAddLinkBuilder() *GroupsAddLinkBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsAddLinkBuilder) GroupID(v int) *GroupsAddLinkBuilder {
+func (b *GroupsAddLinkBuilder) GroupID(v int64) *GroupsAddLinkBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -177,13 +177,13 @@ func NewGroupsApproveRequestBuilder() *GroupsApproveRequestBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsApproveRequestBuilder) GroupID(v int) *GroupsApproveRequestBuilder {
+func (b *GroupsApproveRequestBuilder) GroupID(v int64) *GroupsApproveRequestBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *GroupsApproveRequestBuilder) UserID(v int) *GroupsApproveRequestBuilder {
+func (b *GroupsApproveRequestBuilder) UserID(v int64) *GroupsApproveRequestBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -201,13 +201,13 @@ func NewGroupsBanBuilder() *GroupsBanBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsBanBuilder) GroupID(v int) *GroupsBanBuilder {
+func (b *GroupsBanBuilder) GroupID(v int64) *GroupsBanBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // OwnerID parameter.
-func (b *GroupsBanBuilder) OwnerID(v int) *GroupsBanBuilder {
+func (b *GroupsBanBuilder) OwnerID(v int64) *GroupsBanBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -307,7 +307,7 @@ func NewGroupsDeleteCallbackServerBuilder() *GroupsDeleteCallbackServerBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsDeleteCallbackServerBuilder) GroupID(v int) *GroupsDeleteCallbackServerBuilder {
+func (b *GroupsDeleteCallbackServerBuilder) GroupID(v int64) *GroupsDeleteCallbackServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -333,7 +333,7 @@ func NewGroupsDeleteLinkBuilder() *GroupsDeleteLinkBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsDeleteLinkBuilder) GroupID(v int) *GroupsDeleteLinkBuilder {
+func (b *GroupsDeleteLinkBuilder) GroupID(v int64) *GroupsDeleteLinkBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -357,7 +357,7 @@ func NewGroupsDisableOnlineBuilder() *GroupsDisableOnlineBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsDisableOnlineBuilder) GroupID(v int) *GroupsDisableOnlineBuilder {
+func (b *GroupsDisableOnlineBuilder) GroupID(v int64) *GroupsDisableOnlineBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -377,7 +377,7 @@ func NewGroupsEditBuilder() *GroupsEditBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsEditBuilder) GroupID(v int) *GroupsEditBuilder {
+func (b *GroupsEditBuilder) GroupID(v int64) *GroupsEditBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -540,7 +540,7 @@ func (b *GroupsEditBuilder) EventFinishDate(v int) *GroupsEditBuilder {
 }
 
 // EventGroupID organizer community ID (for events only).
-func (b *GroupsEditBuilder) EventGroupID(v int) *GroupsEditBuilder {
+func (b *GroupsEditBuilder) EventGroupID(v int64) *GroupsEditBuilder {
 	b.Params["event_group_id"] = v
 	return b
 }
@@ -846,7 +846,7 @@ func NewGroupsEditAddressBuilder() *GroupsEditAddressBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsEditAddressBuilder) GroupID(v int) *GroupsEditAddressBuilder {
+func (b *GroupsEditAddressBuilder) GroupID(v int64) *GroupsEditAddressBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -942,7 +942,7 @@ func NewGroupsEditCallbackServerBuilder() *GroupsEditCallbackServerBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsEditCallbackServerBuilder) GroupID(v int) *GroupsEditCallbackServerBuilder {
+func (b *GroupsEditCallbackServerBuilder) GroupID(v int64) *GroupsEditCallbackServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -986,7 +986,7 @@ func NewGroupsEditLinkBuilder() *GroupsEditLinkBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsEditLinkBuilder) GroupID(v int) *GroupsEditLinkBuilder {
+func (b *GroupsEditLinkBuilder) GroupID(v int64) *GroupsEditLinkBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1018,13 +1018,13 @@ func NewGroupsEditManagerBuilder() *GroupsEditManagerBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsEditManagerBuilder) GroupID(v int) *GroupsEditManagerBuilder {
+func (b *GroupsEditManagerBuilder) GroupID(v int64) *GroupsEditManagerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *GroupsEditManagerBuilder) UserID(v int) *GroupsEditManagerBuilder {
+func (b *GroupsEditManagerBuilder) UserID(v int64) *GroupsEditManagerBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -1078,7 +1078,7 @@ func NewGroupsEnableOnlineBuilder() *GroupsEnableOnlineBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsEnableOnlineBuilder) GroupID(v int) *GroupsEnableOnlineBuilder {
+func (b *GroupsEnableOnlineBuilder) GroupID(v int64) *GroupsEnableOnlineBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1098,7 +1098,7 @@ func NewGroupsGetBuilder() *GroupsGetBuilder {
 }
 
 // UserID parameter.
-func (b *GroupsGetBuilder) UserID(v int) *GroupsGetBuilder {
+func (b *GroupsGetBuilder) UserID(v int64) *GroupsGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -1164,7 +1164,7 @@ func NewGroupsGetAddressesBuilder() *GroupsGetAddressesBuilder {
 }
 
 // GroupID ID or screen name of the community.
-func (b *GroupsGetAddressesBuilder) GroupID(v int) *GroupsGetAddressesBuilder {
+func (b *GroupsGetAddressesBuilder) GroupID(v int64) *GroupsGetAddressesBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1220,7 +1220,7 @@ func NewGroupsGetBannedBuilder() *GroupsGetBannedBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetBannedBuilder) GroupID(v int) *GroupsGetBannedBuilder {
+func (b *GroupsGetBannedBuilder) GroupID(v int64) *GroupsGetBannedBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1244,7 +1244,7 @@ func (b *GroupsGetBannedBuilder) Fields(v []string) *GroupsGetBannedBuilder {
 }
 
 // OwnerID parameter.
-func (b *GroupsGetBannedBuilder) OwnerID(v int) *GroupsGetBannedBuilder {
+func (b *GroupsGetBannedBuilder) OwnerID(v int64) *GroupsGetBannedBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -1296,7 +1296,7 @@ func NewGroupsGetCallbackConfirmationCodeBuilder() *GroupsGetCallbackConfirmatio
 }
 
 // GroupID community ID.
-func (b *GroupsGetCallbackConfirmationCodeBuilder) GroupID(v int) *GroupsGetCallbackConfirmationCodeBuilder {
+func (b *GroupsGetCallbackConfirmationCodeBuilder) GroupID(v int64) *GroupsGetCallbackConfirmationCodeBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1314,7 +1314,7 @@ func NewGroupsGetCallbackServersBuilder() *GroupsGetCallbackServersBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsGetCallbackServersBuilder) GroupID(v int) *GroupsGetCallbackServersBuilder {
+func (b *GroupsGetCallbackServersBuilder) GroupID(v int64) *GroupsGetCallbackServersBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1340,7 +1340,7 @@ func NewGroupsGetCallbackSettingsBuilder() *GroupsGetCallbackSettingsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetCallbackSettingsBuilder) GroupID(v int) *GroupsGetCallbackSettingsBuilder {
+func (b *GroupsGetCallbackSettingsBuilder) GroupID(v int64) *GroupsGetCallbackSettingsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1418,7 +1418,7 @@ func NewGroupsGetInvitedUsersBuilder() *GroupsGetInvitedUsersBuilder {
 }
 
 // GroupID community ID to return invited users for.
-func (b *GroupsGetInvitedUsersBuilder) GroupID(v int) *GroupsGetInvitedUsersBuilder {
+func (b *GroupsGetInvitedUsersBuilder) GroupID(v int64) *GroupsGetInvitedUsersBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1510,7 +1510,7 @@ func NewGroupsGetLongPollServerBuilder() *GroupsGetLongPollServerBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetLongPollServerBuilder) GroupID(v int) *GroupsGetLongPollServerBuilder {
+func (b *GroupsGetLongPollServerBuilder) GroupID(v int64) *GroupsGetLongPollServerBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1530,7 +1530,7 @@ func NewGroupsGetLongPollSettingsBuilder() *GroupsGetLongPollSettingsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetLongPollSettingsBuilder) GroupID(v int) *GroupsGetLongPollSettingsBuilder {
+func (b *GroupsGetLongPollSettingsBuilder) GroupID(v int64) *GroupsGetLongPollSettingsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1606,7 +1606,7 @@ func NewGroupsGetRequestsBuilder() *GroupsGetRequestsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetRequestsBuilder) GroupID(v int) *GroupsGetRequestsBuilder {
+func (b *GroupsGetRequestsBuilder) GroupID(v int64) *GroupsGetRequestsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1644,7 +1644,7 @@ func NewGroupsGetSettingsBuilder() *GroupsGetSettingsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetSettingsBuilder) GroupID(v int) *GroupsGetSettingsBuilder {
+func (b *GroupsGetSettingsBuilder) GroupID(v int64) *GroupsGetSettingsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1662,7 +1662,7 @@ func NewGroupsGetTagListBuilder() *GroupsGetTagListBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsGetTagListBuilder) GroupID(v int) *GroupsGetTagListBuilder {
+func (b *GroupsGetTagListBuilder) GroupID(v int64) *GroupsGetTagListBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1682,13 +1682,13 @@ func NewGroupsInviteBuilder() *GroupsInviteBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsInviteBuilder) GroupID(v int) *GroupsInviteBuilder {
+func (b *GroupsInviteBuilder) GroupID(v int64) *GroupsInviteBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *GroupsInviteBuilder) UserID(v int) *GroupsInviteBuilder {
+func (b *GroupsInviteBuilder) UserID(v int64) *GroupsInviteBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -1714,13 +1714,13 @@ func (b *GroupsIsMemberBuilder) GroupID(v string) *GroupsIsMemberBuilder {
 }
 
 // UserID parameter.
-func (b *GroupsIsMemberBuilder) UserID(v int) *GroupsIsMemberBuilder {
+func (b *GroupsIsMemberBuilder) UserID(v int64) *GroupsIsMemberBuilder {
 	b.Params["user_id"] = v
 	return b
 }
 
 // UserIDs user IDs.
-func (b *GroupsIsMemberBuilder) UserIDs(v []int) *GroupsIsMemberBuilder {
+func (b *GroupsIsMemberBuilder) UserIDs(v []int64) *GroupsIsMemberBuilder {
 	b.Params["user_ids"] = v
 	return b
 }
@@ -1746,7 +1746,7 @@ func NewGroupsJoinBuilder() *GroupsJoinBuilder {
 }
 
 // GroupID ID or screen name of the community.
-func (b *GroupsJoinBuilder) GroupID(v int) *GroupsJoinBuilder {
+func (b *GroupsJoinBuilder) GroupID(v int64) *GroupsJoinBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1776,7 +1776,7 @@ func NewGroupsLeaveBuilder() *GroupsLeaveBuilder {
 }
 
 // GroupID ID or screen name of the community.
-func (b *GroupsLeaveBuilder) GroupID(v int) *GroupsLeaveBuilder {
+func (b *GroupsLeaveBuilder) GroupID(v int64) *GroupsLeaveBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1796,13 +1796,13 @@ func NewGroupsRemoveUserBuilder() *GroupsRemoveUserBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsRemoveUserBuilder) GroupID(v int) *GroupsRemoveUserBuilder {
+func (b *GroupsRemoveUserBuilder) GroupID(v int64) *GroupsRemoveUserBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *GroupsRemoveUserBuilder) UserID(v int) *GroupsRemoveUserBuilder {
+func (b *GroupsRemoveUserBuilder) UserID(v int64) *GroupsRemoveUserBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -1822,7 +1822,7 @@ func NewGroupsReorderLinkBuilder() *GroupsReorderLinkBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsReorderLinkBuilder) GroupID(v int) *GroupsReorderLinkBuilder {
+func (b *GroupsReorderLinkBuilder) GroupID(v int64) *GroupsReorderLinkBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -1935,7 +1935,7 @@ func NewGroupsSetCallbackSettingsBuilder() *GroupsSetCallbackSettingsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsSetCallbackSettingsBuilder) GroupID(v int) *GroupsSetCallbackSettingsBuilder {
+func (b *GroupsSetCallbackSettingsBuilder) GroupID(v int64) *GroupsSetCallbackSettingsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2219,7 +2219,7 @@ func NewGroupsSetLongPollSettingsBuilder() *GroupsSetLongPollSettingsBuilder {
 }
 
 // GroupID community ID.
-func (b *GroupsSetLongPollSettingsBuilder) GroupID(v int) *GroupsSetLongPollSettingsBuilder {
+func (b *GroupsSetLongPollSettingsBuilder) GroupID(v int64) *GroupsSetLongPollSettingsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2501,13 +2501,13 @@ func NewGroupsSetUserNoteBuilder() *GroupsSetUserNoteBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsSetUserNoteBuilder) GroupID(v int) *GroupsSetUserNoteBuilder {
+func (b *GroupsSetUserNoteBuilder) GroupID(v int64) *GroupsSetUserNoteBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // UserID parameter.
-func (b *GroupsSetUserNoteBuilder) UserID(v int) *GroupsSetUserNoteBuilder {
+func (b *GroupsSetUserNoteBuilder) UserID(v int64) *GroupsSetUserNoteBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -2533,7 +2533,7 @@ func NewGroupsTagAddBuilder() *GroupsTagAddBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsTagAddBuilder) GroupID(v int) *GroupsTagAddBuilder {
+func (b *GroupsTagAddBuilder) GroupID(v int64) *GroupsTagAddBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2585,7 +2585,7 @@ func NewGroupsTagBindBuilder() *GroupsTagBindBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsTagBindBuilder) GroupID(v int) *GroupsTagBindBuilder {
+func (b *GroupsTagBindBuilder) GroupID(v int64) *GroupsTagBindBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2597,7 +2597,7 @@ func (b *GroupsTagBindBuilder) TagID(v int) *GroupsTagBindBuilder {
 }
 
 // UserID parameter.
-func (b *GroupsTagBindBuilder) UserID(v int) *GroupsTagBindBuilder {
+func (b *GroupsTagBindBuilder) UserID(v int64) *GroupsTagBindBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -2631,7 +2631,7 @@ func NewGroupsTagDeleteBuilder() *GroupsTagDeleteBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsTagDeleteBuilder) GroupID(v int) *GroupsTagDeleteBuilder {
+func (b *GroupsTagDeleteBuilder) GroupID(v int64) *GroupsTagDeleteBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2655,7 +2655,7 @@ func NewGroupsTagUpdateBuilder() *GroupsTagUpdateBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsTagUpdateBuilder) GroupID(v int) *GroupsTagUpdateBuilder {
+func (b *GroupsTagUpdateBuilder) GroupID(v int64) *GroupsTagUpdateBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -2715,13 +2715,13 @@ func NewGroupsUnbanBuilder() *GroupsUnbanBuilder {
 }
 
 // GroupID parameter.
-func (b *GroupsUnbanBuilder) GroupID(v int) *GroupsUnbanBuilder {
+func (b *GroupsUnbanBuilder) GroupID(v int64) *GroupsUnbanBuilder {
 	b.Params["group_id"] = v
 	return b
 }
 
 // OwnerID parameter.
-func (b *GroupsUnbanBuilder) OwnerID(v int) *GroupsUnbanBuilder {
+func (b *GroupsUnbanBuilder) OwnerID(v int64) *GroupsUnbanBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

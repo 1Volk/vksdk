@@ -31,7 +31,7 @@ func (b *VideoAddBuilder) VideoID(v int) *VideoAddBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video. Use a negative value to designate a community ID.
-func (b *VideoAddBuilder) OwnerID(v int) *VideoAddBuilder {
+func (b *VideoAddBuilder) OwnerID(v int64) *VideoAddBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -51,7 +51,7 @@ func NewVideoAddAlbumBuilder() *VideoAddAlbumBuilder {
 }
 
 // GroupID community ID (if the album will be created in a community).
-func (b *VideoAddAlbumBuilder) GroupID(v int) *VideoAddAlbumBuilder {
+func (b *VideoAddAlbumBuilder) GroupID(v int64) *VideoAddAlbumBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -107,7 +107,7 @@ func (b *VideoAddToAlbumBuilder) AlbumIDs(v []int) *VideoAddToAlbumBuilder {
 }
 
 // OwnerID parameter.
-func (b *VideoAddToAlbumBuilder) OwnerID(v int) *VideoAddToAlbumBuilder {
+func (b *VideoAddToAlbumBuilder) OwnerID(v int64) *VideoAddToAlbumBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -133,7 +133,7 @@ func NewVideoCreateCommentBuilder() *VideoCreateCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoCreateCommentBuilder) OwnerID(v int) *VideoCreateCommentBuilder {
+func (b *VideoCreateCommentBuilder) OwnerID(v int64) *VideoCreateCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -205,7 +205,7 @@ func (b *VideoDeleteBuilder) VideoID(v int) *VideoDeleteBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoDeleteBuilder) OwnerID(v int) *VideoDeleteBuilder {
+func (b *VideoDeleteBuilder) OwnerID(v int64) *VideoDeleteBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -231,7 +231,7 @@ func NewVideoDeleteAlbumBuilder() *VideoDeleteAlbumBuilder {
 }
 
 // GroupID community ID (if the album is owned by a community).
-func (b *VideoDeleteAlbumBuilder) GroupID(v int) *VideoDeleteAlbumBuilder {
+func (b *VideoDeleteAlbumBuilder) GroupID(v int64) *VideoDeleteAlbumBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -257,7 +257,7 @@ func NewVideoDeleteCommentBuilder() *VideoDeleteCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoDeleteCommentBuilder) OwnerID(v int) *VideoDeleteCommentBuilder {
+func (b *VideoDeleteCommentBuilder) OwnerID(v int64) *VideoDeleteCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -283,7 +283,7 @@ func NewVideoEditBuilder() *VideoEditBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoEditBuilder) OwnerID(v int) *VideoEditBuilder {
+func (b *VideoEditBuilder) OwnerID(v int64) *VideoEditBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -392,7 +392,7 @@ func NewVideoEditCommentBuilder() *VideoEditCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoEditCommentBuilder) OwnerID(v int) *VideoEditCommentBuilder {
+func (b *VideoEditCommentBuilder) OwnerID(v int64) *VideoEditCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -434,7 +434,7 @@ func NewVideoGetBuilder() *VideoGetBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video(s).
-func (b *VideoGetBuilder) OwnerID(v int) *VideoGetBuilder {
+func (b *VideoGetBuilder) OwnerID(v int64) *VideoGetBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -486,7 +486,7 @@ func NewVideoGetAlbumByIDBuilder() *VideoGetAlbumByIDBuilder {
 }
 
 // OwnerID identifier of a user or community to add a video to. Use a negative value to designate a community ID.
-func (b *VideoGetAlbumByIDBuilder) OwnerID(v int) *VideoGetAlbumByIDBuilder {
+func (b *VideoGetAlbumByIDBuilder) OwnerID(v int64) *VideoGetAlbumByIDBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -512,7 +512,7 @@ func NewVideoGetAlbumsBuilder() *VideoGetAlbumsBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video album(s).
-func (b *VideoGetAlbumsBuilder) OwnerID(v int) *VideoGetAlbumsBuilder {
+func (b *VideoGetAlbumsBuilder) OwnerID(v int64) *VideoGetAlbumsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -560,7 +560,7 @@ func (b *VideoGetAlbumsByVideoBuilder) TargetID(v int) *VideoGetAlbumsByVideoBui
 }
 
 // OwnerID parameter.
-func (b *VideoGetAlbumsByVideoBuilder) OwnerID(v int) *VideoGetAlbumsByVideoBuilder {
+func (b *VideoGetAlbumsByVideoBuilder) OwnerID(v int64) *VideoGetAlbumsByVideoBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -592,7 +592,7 @@ func NewVideoGetCommentsBuilder() *VideoGetCommentsBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoGetCommentsBuilder) OwnerID(v int) *VideoGetCommentsBuilder {
+func (b *VideoGetCommentsBuilder) OwnerID(v int64) *VideoGetCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -702,7 +702,7 @@ func NewVideoReorderAlbumsBuilder() *VideoReorderAlbumsBuilder {
 }
 
 // OwnerID ID of the user or community that owns the albums..
-func (b *VideoReorderAlbumsBuilder) OwnerID(v int) *VideoReorderAlbumsBuilder {
+func (b *VideoReorderAlbumsBuilder) OwnerID(v int64) *VideoReorderAlbumsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -752,7 +752,7 @@ func (b *VideoReorderVideosBuilder) AlbumID(v int) *VideoReorderVideosBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoReorderVideosBuilder) OwnerID(v int) *VideoReorderVideosBuilder {
+func (b *VideoReorderVideosBuilder) OwnerID(v int64) *VideoReorderVideosBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -764,7 +764,7 @@ func (b *VideoReorderVideosBuilder) VideoID(v int) *VideoReorderVideosBuilder {
 }
 
 // BeforeOwnerID ID of the user or community that owns the video before which the video in question shall be placed.
-func (b *VideoReorderVideosBuilder) BeforeOwnerID(v int) *VideoReorderVideosBuilder {
+func (b *VideoReorderVideosBuilder) BeforeOwnerID(v int64) *VideoReorderVideosBuilder {
 	b.Params["before_owner_id"] = v
 	return b
 }
@@ -776,7 +776,7 @@ func (b *VideoReorderVideosBuilder) BeforeVideoID(v int) *VideoReorderVideosBuil
 }
 
 // AfterOwnerID ID of the user or community that owns the video after which the photo in question shall be placed.
-func (b *VideoReorderVideosBuilder) AfterOwnerID(v int) *VideoReorderVideosBuilder {
+func (b *VideoReorderVideosBuilder) AfterOwnerID(v int64) *VideoReorderVideosBuilder {
 	b.Params["after_owner_id"] = v
 	return b
 }
@@ -802,7 +802,7 @@ func NewVideoReportBuilder() *VideoReportBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoReportBuilder) OwnerID(v int) *VideoReportBuilder {
+func (b *VideoReportBuilder) OwnerID(v int64) *VideoReportBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -860,7 +860,7 @@ func NewVideoReportCommentBuilder() *VideoReportCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoReportCommentBuilder) OwnerID(v int) *VideoReportCommentBuilder {
+func (b *VideoReportCommentBuilder) OwnerID(v int64) *VideoReportCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -912,7 +912,7 @@ func (b *VideoRestoreBuilder) VideoID(v int) *VideoRestoreBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoRestoreBuilder) OwnerID(v int) *VideoRestoreBuilder {
+func (b *VideoRestoreBuilder) OwnerID(v int64) *VideoRestoreBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -932,7 +932,7 @@ func NewVideoRestoreCommentBuilder() *VideoRestoreCommentBuilder {
 }
 
 // OwnerID ID of the user or community that owns the video.
-func (b *VideoRestoreCommentBuilder) OwnerID(v int) *VideoRestoreCommentBuilder {
+func (b *VideoRestoreCommentBuilder) OwnerID(v int64) *VideoRestoreCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -996,7 +996,7 @@ func (b *VideoSaveBuilder) Link(v string) *VideoSaveBuilder {
 }
 
 // GroupID ID of the community in which the video will be saved. By default, the current user's page.
-func (b *VideoSaveBuilder) GroupID(v int) *VideoSaveBuilder {
+func (b *VideoSaveBuilder) GroupID(v int64) *VideoSaveBuilder {
 	b.Params["group_id"] = v
 	return b
 }

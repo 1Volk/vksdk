@@ -348,7 +348,7 @@ func NewAppsGetScoreBuilder() *AppsGetScoreBuilder {
 }
 
 // UserID parameter.
-func (b *AppsGetScoreBuilder) UserID(v int) *AppsGetScoreBuilder {
+func (b *AppsGetScoreBuilder) UserID(v int64) *AppsGetScoreBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -368,7 +368,7 @@ func NewAppsSendRequestBuilder() *AppsSendRequestBuilder {
 }
 
 // UserID id of the user to send a request.
-func (b *AppsSendRequestBuilder) UserID(v int) *AppsSendRequestBuilder {
+func (b *AppsSendRequestBuilder) UserID(v int64) *AppsSendRequestBuilder {
 	b.Params["user_id"] = v
 	return b
 }

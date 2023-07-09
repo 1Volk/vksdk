@@ -31,7 +31,7 @@ func (b *StorageGetBuilder) Keys(v []string) *StorageGetBuilder {
 }
 
 // UserID parameter.
-func (b *StorageGetBuilder) UserID(v int) *StorageGetBuilder {
+func (b *StorageGetBuilder) UserID(v int64) *StorageGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -57,7 +57,7 @@ func NewStorageGetKeysBuilder() *StorageGetKeysBuilder {
 }
 
 // UserID user id, whose variables names are returned if they were requested with a server method.
-func (b *StorageGetKeysBuilder) UserID(v int) *StorageGetKeysBuilder {
+func (b *StorageGetKeysBuilder) UserID(v int64) *StorageGetKeysBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -107,7 +107,7 @@ func (b *StorageSetBuilder) Value(v string) *StorageSetBuilder {
 }
 
 // UserID parameter.
-func (b *StorageSetBuilder) UserID(v int) *StorageSetBuilder {
+func (b *StorageSetBuilder) UserID(v int64) *StorageSetBuilder {
 	b.Params["user_id"] = v
 	return b
 }

@@ -319,7 +319,7 @@ func (b *AdsDeleteTargetGroupBuilder) ClientID(v int) *AdsDeleteTargetGroupBuild
 }
 
 // TargetGroupID parameter.
-func (b *AdsDeleteTargetGroupBuilder) TargetGroupID(v int) *AdsDeleteTargetGroupBuilder {
+func (b *AdsDeleteTargetGroupBuilder) TargetGroupID(v int64) *AdsDeleteTargetGroupBuilder {
 	b.Params["target_group_id"] = v
 	return b
 }
@@ -1193,7 +1193,7 @@ func (b *AdsImportTargetContactsBuilder) ClientID(v int) *AdsImportTargetContact
 }
 
 // TargetGroupID Target group ID.
-func (b *AdsImportTargetContactsBuilder) TargetGroupID(v int) *AdsImportTargetContactsBuilder {
+func (b *AdsImportTargetContactsBuilder) TargetGroupID(v int64) *AdsImportTargetContactsBuilder {
 	b.Params["target_group_id"] = v
 	return b
 }
@@ -1340,7 +1340,7 @@ func (b *AdsUpdateTargetGroupBuilder) ClientID(v int) *AdsUpdateTargetGroupBuild
 }
 
 // TargetGroupID parameter.
-func (b *AdsUpdateTargetGroupBuilder) TargetGroupID(v int) *AdsUpdateTargetGroupBuilder {
+func (b *AdsUpdateTargetGroupBuilder) TargetGroupID(v int64) *AdsUpdateTargetGroupBuilder {
 	b.Params["target_group_id"] = v
 	return b
 }

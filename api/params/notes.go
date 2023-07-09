@@ -63,7 +63,7 @@ func (b *NotesCreateCommentBuilder) NoteID(v int) *NotesCreateCommentBuilder {
 }
 
 // OwnerID note owner ID.
-func (b *NotesCreateCommentBuilder) OwnerID(v int) *NotesCreateCommentBuilder {
+func (b *NotesCreateCommentBuilder) OwnerID(v int64) *NotesCreateCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -127,7 +127,7 @@ func (b *NotesDeleteCommentBuilder) CommentID(v int) *NotesDeleteCommentBuilder 
 }
 
 // OwnerID note owner ID.
-func (b *NotesDeleteCommentBuilder) OwnerID(v int) *NotesDeleteCommentBuilder {
+func (b *NotesDeleteCommentBuilder) OwnerID(v int64) *NotesDeleteCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -197,7 +197,7 @@ func (b *NotesEditCommentBuilder) CommentID(v int) *NotesEditCommentBuilder {
 }
 
 // OwnerID note owner ID.
-func (b *NotesEditCommentBuilder) OwnerID(v int) *NotesEditCommentBuilder {
+func (b *NotesEditCommentBuilder) OwnerID(v int64) *NotesEditCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -229,7 +229,7 @@ func (b *NotesGetBuilder) NoteIDs(v []int) *NotesGetBuilder {
 }
 
 // UserID note owner ID.
-func (b *NotesGetBuilder) UserID(v int) *NotesGetBuilder {
+func (b *NotesGetBuilder) UserID(v int64) *NotesGetBuilder {
 	b.Params["user_id"] = v
 	return b
 }
@@ -273,7 +273,7 @@ func (b *NotesGetByIDBuilder) NoteID(v int) *NotesGetByIDBuilder {
 }
 
 // OwnerID note owner ID.
-func (b *NotesGetByIDBuilder) OwnerID(v int) *NotesGetByIDBuilder {
+func (b *NotesGetByIDBuilder) OwnerID(v int64) *NotesGetByIDBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -305,7 +305,7 @@ func (b *NotesGetCommentsBuilder) NoteID(v int) *NotesGetCommentsBuilder {
 }
 
 // OwnerID note owner ID.
-func (b *NotesGetCommentsBuilder) OwnerID(v int) *NotesGetCommentsBuilder {
+func (b *NotesGetCommentsBuilder) OwnerID(v int64) *NotesGetCommentsBuilder {
 	b.Params["owner_id"] = v
 	return b
 }
@@ -349,7 +349,7 @@ func (b *NotesRestoreCommentBuilder) CommentID(v int) *NotesRestoreCommentBuilde
 }
 
 // OwnerID note owner ID.
-func (b *NotesRestoreCommentBuilder) OwnerID(v int) *NotesRestoreCommentBuilder {
+func (b *NotesRestoreCommentBuilder) OwnerID(v int64) *NotesRestoreCommentBuilder {
 	b.Params["owner_id"] = v
 	return b
 }

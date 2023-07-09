@@ -19,7 +19,7 @@ func NewBoardAddTopicBuilder() *BoardAddTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardAddTopicBuilder) GroupID(v int) *BoardAddTopicBuilder {
+func (b *BoardAddTopicBuilder) GroupID(v int64) *BoardAddTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -72,7 +72,7 @@ func NewBoardCloseTopicBuilder() *BoardCloseTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardCloseTopicBuilder) GroupID(v int) *BoardCloseTopicBuilder {
+func (b *BoardCloseTopicBuilder) GroupID(v int64) *BoardCloseTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -98,7 +98,7 @@ func NewBoardCreateCommentBuilder() *BoardCreateCommentBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardCreateCommentBuilder) GroupID(v int) *BoardCreateCommentBuilder {
+func (b *BoardCreateCommentBuilder) GroupID(v int64) *BoardCreateCommentBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -158,7 +158,7 @@ func NewBoardDeleteCommentBuilder() *BoardDeleteCommentBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardDeleteCommentBuilder) GroupID(v int) *BoardDeleteCommentBuilder {
+func (b *BoardDeleteCommentBuilder) GroupID(v int64) *BoardDeleteCommentBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -190,7 +190,7 @@ func NewBoardDeleteTopicBuilder() *BoardDeleteTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardDeleteTopicBuilder) GroupID(v int) *BoardDeleteTopicBuilder {
+func (b *BoardDeleteTopicBuilder) GroupID(v int64) *BoardDeleteTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -216,7 +216,7 @@ func NewBoardEditCommentBuilder() *BoardEditCommentBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardEditCommentBuilder) GroupID(v int) *BoardEditCommentBuilder {
+func (b *BoardEditCommentBuilder) GroupID(v int64) *BoardEditCommentBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -264,7 +264,7 @@ func NewBoardEditTopicBuilder() *BoardEditTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardEditTopicBuilder) GroupID(v int) *BoardEditTopicBuilder {
+func (b *BoardEditTopicBuilder) GroupID(v int64) *BoardEditTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -296,7 +296,7 @@ func NewBoardFixTopicBuilder() *BoardFixTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardFixTopicBuilder) GroupID(v int) *BoardFixTopicBuilder {
+func (b *BoardFixTopicBuilder) GroupID(v int64) *BoardFixTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -322,7 +322,7 @@ func NewBoardGetCommentsBuilder() *BoardGetCommentsBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardGetCommentsBuilder) GroupID(v int) *BoardGetCommentsBuilder {
+func (b *BoardGetCommentsBuilder) GroupID(v int64) *BoardGetCommentsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -386,7 +386,7 @@ func NewBoardGetTopicsBuilder() *BoardGetTopicsBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardGetTopicsBuilder) GroupID(v int) *BoardGetTopicsBuilder {
+func (b *BoardGetTopicsBuilder) GroupID(v int64) *BoardGetTopicsBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -473,7 +473,7 @@ func NewBoardOpenTopicBuilder() *BoardOpenTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardOpenTopicBuilder) GroupID(v int) *BoardOpenTopicBuilder {
+func (b *BoardOpenTopicBuilder) GroupID(v int64) *BoardOpenTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -499,7 +499,7 @@ func NewBoardRestoreCommentBuilder() *BoardRestoreCommentBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardRestoreCommentBuilder) GroupID(v int) *BoardRestoreCommentBuilder {
+func (b *BoardRestoreCommentBuilder) GroupID(v int64) *BoardRestoreCommentBuilder {
 	b.Params["group_id"] = v
 	return b
 }
@@ -531,7 +531,7 @@ func NewBoardUnfixTopicBuilder() *BoardUnfixTopicBuilder {
 }
 
 // GroupID ID of the community that owns the discussion board.
-func (b *BoardUnfixTopicBuilder) GroupID(v int) *BoardUnfixTopicBuilder {
+func (b *BoardUnfixTopicBuilder) GroupID(v int64) *BoardUnfixTopicBuilder {
 	b.Params["group_id"] = v
 	return b
 }

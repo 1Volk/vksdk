@@ -103,7 +103,7 @@ func (vk *VK) UploadPhoto(albumID int, file io.Reader) (response PhotosSaveRespo
 //
 // Limits: width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadPhotoGroup(groupID, albumID int, file io.Reader) (response PhotosSaveResponse, err error) {
+func (vk *VK) UploadPhotoGroup(groupID int64, albumID int, file io.Reader) (response PhotosSaveResponse, err error) {
 	response, err = vk.uploadPhoto(Params{
 		"album_id": albumID,
 		"group_id": groupID,
@@ -163,7 +163,7 @@ func (vk *VK) UploadWallPhoto(file io.Reader) (response PhotosSaveWallPhotoRespo
 //
 // Limits: width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadGroupWallPhoto(groupID int, file io.Reader) (response PhotosSaveWallPhotoResponse, err error) {
+func (vk *VK) UploadGroupWallPhoto(groupID int64, file io.Reader) (response PhotosSaveWallPhotoResponse, err error) {
 	response, err = vk.uploadWallPhoto(Params{
 		"group_id": groupID,
 	}, file)
@@ -263,7 +263,7 @@ func (vk *VK) UploadUserPhoto(file io.Reader) (response PhotosSaveOwnerPhotoResp
 //
 // Limits: size not less than 200x200px, aspect ratio from 0.25 to 3,
 // width+height not more than 14000 px, file size up to 50 Mb.
-func (vk *VK) UploadOwnerPhoto(ownerID int, squareCrop string, file io.Reader) (response PhotosSaveOwnerPhotoResponse, err error) {
+func (vk *VK) UploadOwnerPhoto(ownerID int64, squareCrop string, file io.Reader) (response PhotosSaveOwnerPhotoResponse, err error) {
 	response, err = vk.uploadOwnerPhoto(Params{
 		"owner_id": ownerID,
 	}, squareCrop, file)
@@ -415,7 +415,7 @@ func (vk *VK) uploadMarketPhoto(params Params, file io.Reader) (response PhotosS
 // Limits: size not less than 400x400px,
 // width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadMarketPhoto(groupID int, mainPhoto bool, file io.Reader) (response PhotosSaveMarketPhotoResponse, err error) {
+func (vk *VK) UploadMarketPhoto(groupID int64, mainPhoto bool, file io.Reader) (response PhotosSaveMarketPhotoResponse, err error) {
 	response, err = vk.uploadMarketPhoto(Params{
 		"group_id":   groupID,
 		"main_photo": mainPhoto,
@@ -431,7 +431,7 @@ func (vk *VK) UploadMarketPhoto(groupID int, mainPhoto bool, file io.Reader) (re
 // Limits: size not less than 400x400px,
 // width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadMarketPhotoCrop(groupID, cropX, cropY, cropWidth int, file io.Reader) (response PhotosSaveMarketPhotoResponse, err error) {
+func (vk *VK) UploadMarketPhotoCrop(groupID int64, cropX, cropY, cropWidth int, file io.Reader) (response PhotosSaveMarketPhotoResponse, err error) {
 	response, err = vk.uploadMarketPhoto(Params{
 		"group_id":   groupID,
 		"main_photo": true,
@@ -450,7 +450,7 @@ func (vk *VK) UploadMarketPhotoCrop(groupID, cropX, cropY, cropWidth int, file i
 // Limits: size not less than 1280x720px,
 // width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadMarketAlbumPhoto(groupID int, file io.Reader) (response PhotosSaveMarketAlbumPhotoResponse, err error) {
+func (vk *VK) UploadMarketAlbumPhoto(groupID int64, file io.Reader) (response PhotosSaveMarketAlbumPhotoResponse, err error) {
 	uploadServer, err := vk.PhotosGetMarketAlbumUploadServer(Params{
 		"group_id": groupID,
 	})
@@ -568,7 +568,7 @@ func (vk *VK) UploadDoc(title, tags string, file io.Reader) (response DocsSaveRe
 // Supported formats: any formats excepting mp3 and executable files.
 //
 // Limits: file size up to 200 MB.
-func (vk *VK) UploadGroupDoc(groupID int, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
+func (vk *VK) UploadGroupDoc(groupID int64, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
 	uploadServer, err := vk.DocsGetUploadServer(Params{
 		"group_id": groupID,
 	})
@@ -602,7 +602,7 @@ func (vk *VK) UploadWallDoc(title, tags string, file io.Reader) (response DocsSa
 // Supported formats: any formats excepting mp3 and executable files.
 //
 // Limits: file size up to 200 MB.
-func (vk *VK) UploadGroupWallDoc(groupID int, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
+func (vk *VK) UploadGroupWallDoc(groupID int64, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
 	uploadServer, err := vk.DocsGetWallUploadServer(Params{
 		"group_id": groupID,
 	})
@@ -640,7 +640,7 @@ func (vk *VK) UploadMessagesDoc(peerID int, typeDoc, title, tags string, file io
 //
 // Limits: minimum photo size 795x200px, width+height not more than 14000px,
 // file size up to 50 MB. Recommended size: 1590x400px.
-func (vk *VK) UploadOwnerCoverPhoto(groupID, cropX, cropY, cropX2, cropY2 int, file io.Reader) (response PhotosSaveOwnerCoverPhotoResponse, err error) {
+func (vk *VK) UploadOwnerCoverPhoto(groupID int64, cropX, cropY, cropX2, cropY2 int, file io.Reader) (response PhotosSaveOwnerCoverPhotoResponse, err error) {
 	uploadServer, err := vk.PhotosGetOwnerCoverPhotoUploadServer(Params{
 		"group_id": groupID,
 		"crop_x":   cropX,
@@ -807,7 +807,7 @@ func (vk *VK) UploadPollsPhoto(file io.Reader) (response PollsSavePhotoResponse,
 //
 // Limits: minimum photo size 795x200px, width+height not more than 14000px,
 // file size up to 50 MB. Recommended size: 1590x400px.
-func (vk *VK) UploadOwnerPollsPhoto(ownerID int, file io.Reader) (response PollsSavePhotoResponse, err error) {
+func (vk *VK) UploadOwnerPollsPhoto(ownerID int64, file io.Reader) (response PollsSavePhotoResponse, err error) {
 	return vk.uploadPollsPhoto(Params{"owner_id": ownerID}, file)
 }
 

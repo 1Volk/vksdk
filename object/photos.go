@@ -14,7 +14,7 @@ type PhotosPhoto struct {
 	Images             []PhotosImage      `json:"images"`
 	Lat                float64            `json:"lat"`      // Latitude
 	Long               float64            `json:"long"`     // Longitude
-	OwnerID            int                `json:"owner_id"` // Photo owner's ID
+	OwnerID            int64                `json:"owner_id"` // Photo owner's ID
 	PostID             int                `json:"post_id"`  // Post ID
 	Text               string             `json:"text"`     // Photo caption
 	UserID             int64                `json:"user_id"`  // ID of the user who have uploaded the photo
@@ -76,7 +76,7 @@ func (photo PhotosPhoto) MinSize() (minPhotoSize PhotosPhotoSizes) {
 type PhotosCommentXtrPid struct {
 	Attachments    []WallCommentAttachment `json:"attachments"`
 	Date           int                     `json:"date"`    // Date when the comment has been added in Unixtime
-	FromID         int                     `json:"from_id"` // Author ID
+	FromID         int64                     `json:"from_id"` // Author ID
 	ID             int                     `json:"id"`      // Comment ID
 	Likes          BaseLikesInfo           `json:"likes"`
 	ParentsStack   []int                   `json:"parents_stack"`
@@ -135,7 +135,7 @@ type PhotosPhotoAlbum struct {
 	Created     int         `json:"created"`     // Date when the album has been created in Unixtime
 	Description string      `json:"description"` // Photo album description
 	ID          string      `json:"id"`          // BUG(VK): Photo album ID
-	OwnerID     int         `json:"owner_id"`    // Album owner's ID
+	OwnerID     int64         `json:"owner_id"`    // Album owner's ID
 	Size        int         `json:"size"`        // Photos number
 	Thumb       PhotosPhoto `json:"thumb"`
 	Title       string      `json:"title"`   // Photo album title
@@ -154,7 +154,7 @@ type PhotosPhotoAlbumFull struct {
 	Created            int                `json:"created"`           // Date when the album has been created in Unixtime
 	Description        string             `json:"description"`       // Photo album description
 	ID                 int                `json:"id"`                // Photo album ID
-	OwnerID            int                `json:"owner_id"`          // Album owner's ID
+	OwnerID            int64                `json:"owner_id"`          // Album owner's ID
 	Size               int                `json:"size"`              // Photos number
 	PrivacyComment     Privacy            `json:"privacy_comment"`
 	PrivacyView        Privacy            `json:"privacy_view"`

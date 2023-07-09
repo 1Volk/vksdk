@@ -437,7 +437,7 @@ type OauthError struct {
 // Article struct.
 type Article struct {
 	ID            int         `json:"id"`
-	OwnerID       int         `json:"owner_id"`
+	OwnerID       int64         `json:"owner_id"`
 	OwnerName     string      `json:"owner_name"`
 	OwnerPhoto    string      `json:"owner_photo"`
 	State         string      `json:"state"`

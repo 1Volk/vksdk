@@ -1,4 +1,4 @@
-package api 
+package api
 
 import (
 	"github.com/1Volk/vksdk/object"
@@ -189,7 +189,7 @@ func (vk *VK) MessagesGetChatPreview(params Params) (response MessagesGetChatPre
 // MessagesGetConversationMembersResponse struct.
 type MessagesGetConversationMembersResponse struct {
 	Items []struct {
-		MemberID  int                `json:"member_id"`
+		MemberID  int64              `json:"member_id"`
 		JoinDate  int                `json:"join_date"`
 		InvitedBy int                `json:"invited_by"`
 		IsOwner   object.BaseBoolInt `json:"is_owner,omitempty"`
@@ -512,7 +512,7 @@ func (vk *VK) MessagesSend(params Params) (response int, err error) {
 // MessagesSendUserIDsResponse struct.
 type MessagesSendUserIDsResponse []struct {
 	PeerID    int64 `json:"peer_id"`
-	MessageID int `json:"message_id"`
+	MessageID int   `json:"message_id"`
 	Error     struct {
 		Code        int    `json:"code"`
 		Description string `json:"description"`
