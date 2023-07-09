@@ -160,7 +160,7 @@ type UsersCareer struct {
 	Company   string `json:"company"`    // Company name
 	CountryID int    `json:"country_id"` // Country ID
 	From      int    `json:"from"`       // From year
-	GroupID   int    `json:"group_id"`   // Community ID
+	GroupID   int64    `json:"group_id"`   // Community ID
 	ID        int    `json:"id"`         // Career ID
 	Position  string `json:"position"`   // Position
 	Until     int    `json:"until"`      // Till year

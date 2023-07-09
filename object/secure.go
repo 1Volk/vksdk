@@ -12,7 +12,7 @@ type SecureSmsNotification struct {
 	Date    int    `json:"date"`    // Date when message has been sent in Unixtime
 	ID      int    `json:"id"`      // Notification ID
 	Message string `json:"message"` // Message text
-	UserID  int    `json:"user_id"` // User ID
+	UserID  int64    `json:"user_id"` // User ID
 }
 
 // SecureTokenChecked struct.
@@ -20,7 +20,7 @@ type SecureTokenChecked struct {
 	Date    int `json:"date"`    // Date when access_token has been generated in Unixtime
 	Expire  int `json:"expire"`  // Date when access_token will expire in Unixtime
 	Success int `json:"success"` // Returns if successfully processed
-	UserID  int `json:"user_id"` // User ID
+	UserID  int64 `json:"user_id"` // User ID
 }
 
 // SecureTransaction struct.

@@ -169,7 +169,7 @@ type GroupsGroup struct {
 	ActionButton         GroupsActionButton   `json:"action_button"`
 	TrackCode            string               `json:"track_code"`
 	PublicDateLabel      string               `json:"public_date_label"`
-	AuthorID             int                  `json:"author_id"`
+	AuthorID             int64                  `json:"author_id"`
 	Phone                string               `json:"phone"`
 }
 
@@ -225,7 +225,7 @@ type GroupsContactsItem struct {
 	Desc   string `json:"desc"`    // Contact description
 	Email  string `json:"email"`   // Contact email
 	Phone  string `json:"phone"`   // Contact phone
-	UserID int    `json:"user_id"` // User ID
+	UserID int64    `json:"user_id"` // User ID
 }
 
 // GroupsCountersGroup struct.
@@ -500,7 +500,7 @@ type GroupsActionButtonTarget struct {
 	Phone string `json:"phone"`
 
 	// ActionType == ActionTypeCallVK
-	UserID int `json:"user_id"`
+	UserID int64 `json:"user_id"`
 
 	// ActionType == ActionTypeOpenURL
 	URL string `json:"url"`
@@ -660,7 +660,7 @@ type GroupsMemberRoleXtrUsersUser struct {
 // GroupsMemberStatus struct.
 type GroupsMemberStatus struct {
 	Member      BaseBoolInt `json:"member"`  // Information whether user is a member of the group
-	UserID      int         `json:"user_id"` // User ID
+	UserID      int64         `json:"user_id"` // User ID
 	Permissions []string    `json:"permissions"`
 }
 
@@ -671,7 +671,7 @@ type GroupsMemberStatusFull struct {
 	Request    BaseBoolInt `json:"request"`    // Information whether user has send request to the group
 	CanInvite  BaseBoolInt `json:"can_invite"` // Information whether user can be invite
 	CanRecall  BaseBoolInt `json:"can_recall"` // Information whether user's invite to the group can be recalled
-	UserID     int         `json:"user_id"`    // User ID
+	UserID     int64         `json:"user_id"`    // User ID
 }
 
 // GroupsOnlineStatus Status type.

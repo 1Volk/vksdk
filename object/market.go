@@ -101,8 +101,8 @@ const (
 // MarketOrder struct.
 type MarketOrder struct {
 	ID                int                 `json:"id"`
-	GroupID           int                 `json:"group_id"`
-	UserID            int                 `json:"user_id"`
+	GroupID           int64                 `json:"group_id"`
+	UserID            int64                 `json:"user_id"`
 	Date              int                 `json:"date"`
 	Status            int                 `json:"status"` // TODO: v2 MarketOrderStatus
 	ItemsCount        int                 `json:"items_count"`

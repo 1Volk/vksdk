@@ -24,7 +24,7 @@ type OrdersOrder struct {
 	ReceiverID          int    `json:"receiver_id"`           // Receiver ID
 	Status              string `json:"status"`                // Order status
 	TransactionID       int    `json:"transaction_id"`        // Transaction ID
-	UserID              int    `json:"user_id"`               // User ID
+	UserID              int64    `json:"user_id"`               // User ID
 }
 
 // OrdersSubscription struct.

@@ -245,7 +245,7 @@ type AdsTargetGroup struct {
 // AdsUsers struct.
 type AdsUsers struct {
 	Accesses []AdsAccesses `json:"accesses"`
-	UserID   int           `json:"user_id"` // User ID
+	UserID   int64           `json:"user_id"` // User ID
 }
 
 // AdsAd struct.

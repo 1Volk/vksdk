@@ -133,8 +133,8 @@ func (vk *VK) StoriesGetByIDExtended(params Params) (response StoriesGetByIDExte
 // StoriesGetPhotoUploadServerResponse struct.
 type StoriesGetPhotoUploadServerResponse struct {
 	UploadURL string `json:"upload_url"`
-	PeerIDs   []int  `json:"peer_ids"`
-	UserIDs   []int  `json:"user_ids"`
+	PeerIDs   []int64  `json:"peer_ids"`
+	UserIDs   []int64  `json:"user_ids"`
 }
 
 // StoriesGetPhotoUploadServer returns URL for uploading a story with photo.
@@ -196,8 +196,8 @@ func (vk *VK) StoriesGetStats(params Params) (response StoriesGetStatsResponse, 
 // StoriesGetVideoUploadServerResponse struct.
 type StoriesGetVideoUploadServerResponse struct {
 	UploadURL string `json:"upload_url"`
-	PeerIDs   []int  `json:"peer_ids"`
-	UserIDs   []int  `json:"user_ids"`
+	PeerIDs   []int64  `json:"peer_ids"`
+	UserIDs   []int64  `json:"user_ids"`
 }
 
 // StoriesGetVideoUploadServer allows to receive URL for uploading story with video.

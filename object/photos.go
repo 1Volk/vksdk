@@ -17,7 +17,7 @@ type PhotosPhoto struct {
 	OwnerID            int                `json:"owner_id"` // Photo owner's ID
 	PostID             int                `json:"post_id"`  // Post ID
 	Text               string             `json:"text"`     // Photo caption
-	UserID             int                `json:"user_id"`  // ID of the user who have uploaded the photo
+	UserID             int64                `json:"user_id"`  // ID of the user who have uploaded the photo
 	Width              int                `json:"width"`    // Original photo width
 	CanUpload          BaseBoolInt        `json:"can_upload"`
 	CommentsDisabled   BaseBoolInt        `json:"comments_disabled"`
@@ -110,7 +110,7 @@ type PhotosMarketAlbumUploadResponse struct {
 type PhotosMarketUploadResponse struct {
 	CropData string `json:"crop_data"` // Crop data
 	CropHash string `json:"crop_hash"` // Crop hash
-	GroupID  int    `json:"group_id"`  // Community ID
+	GroupID  int64    `json:"group_id"`  // Community ID
 	Hash     string `json:"hash"`      // Uploading hash
 	Photo    string `json:"photo"`     // Uploaded photo data
 	Server   int    `json:"server"`    // Upload server number
@@ -217,12 +217,12 @@ type PhotosPhotoFull struct {
 	Lat        float64            `json:"lat"` // Latitude
 	Likes      BaseLikes          `json:"likes"`
 	Long       float64            `json:"long"`     // Longitude
-	OwnerID    int                `json:"owner_id"` // Photo owner's ID
+	OwnerID    int64                `json:"owner_id"` // Photo owner's ID
 	PostID     int                `json:"post_id"`  // Post ID
 	Reposts    BaseRepostsInfo    `json:"reposts"`
 	Tags       BaseObjectCount    `json:"tags"`
 	Text       string             `json:"text"`       // Photo caption
-	UserID     int                `json:"user_id"`    // ID of the user who have uploaded the photo
+	UserID     int64                `json:"user_id"`    // ID of the user who have uploaded the photo
 	Width      int                `json:"width"`      // Original photo width
 	Hidden     int                `json:"hidden"`     // Returns if the photo is hidden above the wall
 	Photo75    string             `json:"photo_75"`   // URL of image with 75 px width
@@ -287,7 +287,7 @@ type PhotosPhotoTag struct {
 	ID         int         `json:"id"`          // Tag ID
 	PlacerID   int         `json:"placer_id"`   // ID of the tag creator
 	TaggedName string      `json:"tagged_name"` // Tag description
-	UserID     int         `json:"user_id"`     // Tagged user ID
+	UserID     int64         `json:"user_id"`     // Tagged user ID
 	Viewed     BaseBoolInt `json:"viewed"`      // Information whether the tag is reviewed
 	X          float64     `json:"x"`           // Coordinate X of the left upper corner
 	X2         float64     `json:"x2"`          // Coordinate X of the right lower corner
@@ -299,7 +299,7 @@ type PhotosPhotoTag struct {
 type PhotosPhotoUpload struct {
 	AlbumID   int    `json:"album_id"`   // Album ID
 	UploadURL string `json:"upload_url"` // URL to upload photo
-	UserID    int    `json:"user_id"`    // User ID
+	UserID    int64    `json:"user_id"`    // User ID
 }
 
 // PhotosPhotoUploadResponse struct.

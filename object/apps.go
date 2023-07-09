@@ -39,7 +39,7 @@ type AppsCatalogBanner struct {
 // AppsApp struct.
 type AppsApp struct {
 	AuthorGroup       int                   `json:"author_group"`     // Official community's ID
-	AuthorID          int                   `json:"author_id"`        // Application author's ID
+	AuthorID          int64                   `json:"author_id"`        // Application author's ID
 	AuthorURL         string                `json:"author_url"`       // Application author's URL
 	Banner1120        string                `json:"banner_1120"`      // URL of the app banner with 1120 px in width
 	Banner560         string                `json:"banner_560"`       // URL of the app banner with 560 px in width
@@ -80,7 +80,7 @@ type AppsLeaderboard struct {
 	Level  int `json:"level"`   // Level
 	Points int `json:"points"`  // Points number
 	Score  int `json:"score"`   // Score number
-	UserID int `json:"user_id"` // User ID
+	UserID int64 `json:"user_id"` // User ID
 }
 
 // AppsScope Scope description.

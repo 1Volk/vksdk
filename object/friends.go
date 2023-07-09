@@ -14,7 +14,7 @@ type FriendsFriendStatus struct {
 	ReadState      BaseBoolInt `json:"read_state"`      // Information whether request is unviewed
 	RequestMessage string      `json:"request_message"` // Message sent with request
 	Sign           string      `json:"sign"`            // MD5 hash for the result validation
-	UserID         int         `json:"user_id"`         // User ID
+	UserID         int64         `json:"user_id"`         // User ID
 }
 
 // FriendsFriendsList struct.
@@ -34,7 +34,7 @@ type FriendsRequests struct {
 	UsersUser
 	From      string                `json:"from"` // ID of the user by whom friend has been suggested
 	Mutual    FriendsRequestsMutual `json:"mutual"`
-	UserID    int                   `json:"user_id"` // User ID
+	UserID    int64                   `json:"user_id"` // User ID
 	TrackCode string                `json:"track_code"`
 }
 

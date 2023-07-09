@@ -31,8 +31,8 @@ type VideoVideo struct {
 	Height            int               `json:"height"`   // Video height
 	ID                int               `json:"id"`       // Video ID
 	Live              int               `json:"live"`     // Returns if the video is a live stream
-	OwnerID           int               `json:"owner_id"` // Video owner ID
-	UserID            int               `json:"user_id"`
+	OwnerID           int64               `json:"owner_id"` // Video owner ID
+	UserID            int64               `json:"user_id"`
 	Photo130          string            `json:"photo_130"`  // URL of the preview image with 130 px in width
 	Photo320          string            `json:"photo_320"`  // URL of the preview image with 320 px in width
 	Photo640          string            `json:"photo_640"`  // URL of the preview image with 640 px in width
@@ -219,7 +219,7 @@ type VideoVideoTag struct {
 	ID         int         `json:"id"`
 	PlacerID   int         `json:"placer_id"`
 	TaggedName string      `json:"tagged_name"`
-	UserID     int         `json:"user_id"`
+	UserID     int64         `json:"user_id"`
 	Viewed     BaseBoolInt `json:"viewed"`
 }
 

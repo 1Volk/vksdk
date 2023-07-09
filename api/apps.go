@@ -101,7 +101,7 @@ type AppsGetLeaderboardExtendedResponse struct {
 	Count int `json:"count"`
 	Items []struct {
 		Score  int `json:"score"`
-		UserID int `json:"user_id"`
+		UserID int64 `json:"user_id"`
 	} `json:"items"`
 	Profiles []object.UsersUser `json:"profiles"`
 }

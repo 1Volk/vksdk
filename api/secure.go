@@ -69,7 +69,7 @@ func (vk *VK) SecureGetUserLevel(params Params) (response SecureGetUserLevelResp
 
 // SecureGiveEventStickerResponse struct.
 type SecureGiveEventStickerResponse []struct {
-	UserID int    `json:"user_id"`
+	UserID int64    `json:"user_id"`
 	Status string `json:"status"`
 }
 

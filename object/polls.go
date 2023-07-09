@@ -18,7 +18,7 @@ type PollsPoll struct {
 	Answers       []PollsAnswer   `json:"answers"`
 	Created       int             `json:"created"`  // Date when poll has been created in Unixtime
 	ID            int             `json:"id"`       // Poll ID
-	OwnerID       int             `json:"owner_id"` // Poll owner's ID
+	OwnerID       int64             `json:"owner_id"` // Poll owner's ID
 	Question      string          `json:"question"` // Poll question
 	Votes         int             `json:"votes"`    // Votes number
 	AnswerIDs     []int           `json:"answer_ids"`
@@ -33,7 +33,7 @@ type PollsPoll struct {
 	Multiple      BaseBoolInt     `json:"multiple"`
 	DisableUnvote BaseBoolInt     `json:"disable_unvote"`
 	Photo         PhotosPhoto     `json:"photo"`
-	AuthorID      int             `json:"author_id"`
+	AuthorID      int64             `json:"author_id"`
 	Background    PollsBackground `json:"background"`
 	Friends       []PollsFriend   `json:"friends"`
 	Profiles      []UsersUser     `json:"profiles"`

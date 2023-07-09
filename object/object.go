@@ -132,7 +132,7 @@ const (
 type GroupEvent struct {
 	Type    string          `json:"type"`
 	Object  json.RawMessage `json:"object"`
-	GroupID int             `json:"group_id"`
+	GroupID int64             `json:"group_id"`
 	EventID string          `json:"event_id"`
 	Secret  string          `json:"secret"`
 }
@@ -390,7 +390,7 @@ func (sticker BaseSticker) MinSizeBackground() (minImageSize BaseImage) {
 
 // BaseUserID struct.
 type BaseUserID struct {
-	UserID int `json:"user_id"`
+	UserID int64 `json:"user_id"`
 }
 
 // PrivacyCategory type.

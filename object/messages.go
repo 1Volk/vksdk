@@ -38,7 +38,7 @@ func (doc MessagesGraffiti) ToAttachment() string {
 
 // MessagesMessage struct.
 type MessagesMessage struct {
-	AdminAuthorID         int                         `json:"admin_author_id"` // Only for messages from community. Contains user ID of community admin, who sent this message.
+	AdminAuthorID         int64                         `json:"admin_author_id"` // Only for messages from community. Contains user ID of community admin, who sent this message.
 	Action                MessagesMessageAction       `json:"action"`
 	Attachments           []MessagesMessageAttachment `json:"attachments"`
 	Cmids                 int                         `json:"cmids"`                   // Unique auto-incremented number for all messages with this peer
@@ -80,7 +80,7 @@ const (
 
 // MessagesKeyboard struct.
 type MessagesKeyboard struct {
-	AuthorID int                        `json:"author_id,omitempty"` // Community or bot, which set this keyboard
+	AuthorID int64                        `json:"author_id,omitempty"` // Community or bot, which set this keyboard
 	Buttons  [][]MessagesKeyboardButton `json:"buttons"`
 	OneTime  BaseBoolInt                `json:"one_time,omitempty"` // Should this keyboard disappear on first use
 	Inline   BaseBoolInt                `json:"inline,omitempty"`
