@@ -19,7 +19,7 @@ func NewMessagesAddChatUserBuilder() *MessagesAddChatUserBuilder {
 }
 
 // ChatID parameter.
-func (b *MessagesAddChatUserBuilder) ChatID(v int64) *MessagesAddChatUserBuilder {
+func (b *MessagesAddChatUserBuilder) ChatID(v int) *MessagesAddChatUserBuilder {
 	b.Params["chat_id"] = v
 	return b
 }
@@ -313,7 +313,7 @@ func NewMessagesEditChatBuilder() *MessagesEditChatBuilder {
 }
 
 // ChatID parameter.
-func (b *MessagesEditChatBuilder) ChatID(v int64) *MessagesEditChatBuilder {
+func (b *MessagesEditChatBuilder) ChatID(v int) *MessagesEditChatBuilder {
 	b.Params["chat_id"] = v
 	return b
 }
@@ -1118,7 +1118,7 @@ func NewMessagesRemoveChatUserBuilder() *MessagesRemoveChatUserBuilder {
 }
 
 // ChatID parameter.
-func (b *MessagesRemoveChatUserBuilder) ChatID(v int64) *MessagesRemoveChatUserBuilder {
+func (b *MessagesRemoveChatUserBuilder) ChatID(v int) *MessagesRemoveChatUserBuilder {
 	b.Params["chat_id"] = v
 	return b
 }
