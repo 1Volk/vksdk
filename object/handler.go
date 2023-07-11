@@ -15,8 +15,9 @@ type MessageNewObject struct {
 }
 
 type EventNewObject struct {
-	UserID       int64            `json:"user_id"`
-	PeerID       int64            `json:"peer_id"`
+	UserID       int64          `json:"user_id"`
+	ChatID       int            `json:"-"`
+	PeerID       int64          `json:"peer_id"`
 	EventID      string         `json:"event_id"`
 	Payload      map[string]int `json:"payload"`
 	Conversation int            `json:"conversation_message_id"`
@@ -67,7 +68,7 @@ type MessageAllowFunc func(MessageAllowObject, int64)
 
 // MessageAllowObject struct.
 type MessageAllowObject struct {
-	UserID int64    `json:"user_id"`
+	UserID int64  `json:"user_id"`
 	Key    string `json:"key"`
 }
 
@@ -85,7 +86,7 @@ type MessageTypingStateFunc func(MessageTypingStateObject, int64)
 // MessageTypingStateObject struct.
 type MessageTypingStateObject struct {
 	State  string `json:"state"`
-	FromID int64    `json:"from_id"`
+	FromID int64  `json:"from_id"`
 	ToID   int    `json:"to_id"`
 }
 
@@ -119,10 +120,10 @@ type PhotoCommentDeleteFunc func(PhotoCommentDeleteObject, int64)
 // PhotoCommentDeleteObject struct.
 type PhotoCommentDeleteObject struct {
 	OwnerID   int64 `json:"owner_id"`
-	ID        int `json:"id"`
+	ID        int   `json:"id"`
 	UserID    int64 `json:"user_id"`
 	DeleterID int64 `json:"deleter_id"`
-	PhotoID   int `json:"photo_id"`
+	PhotoID   int   `json:"photo_id"`
 }
 
 // AudioNewFunc func.
@@ -161,10 +162,10 @@ type VideoCommentDeleteFunc func(VideoCommentDeleteObject, int64)
 // VideoCommentDeleteObject struct.
 type VideoCommentDeleteObject struct {
 	OwnerID   int64 `json:"owner_id"`
-	ID        int `json:"id"`
+	ID        int   `json:"id"`
 	UserID    int64 `json:"user_id"`
-	DeleterID int `json:"deleter_id"`
-	VideoID   int `json:"video_id"`
+	DeleterID int   `json:"deleter_id"`
+	VideoID   int   `json:"video_id"`
 }
 
 // WallPostNewFunc func.
@@ -203,9 +204,9 @@ type WallReplyDeleteFunc func(WallReplyDeleteObject, int64)
 // WallReplyDeleteObject struct.
 type WallReplyDeleteObject struct {
 	OwnerID   int64 `json:"owner_id"`
-	ID        int `json:"id"`
-	DeleterID int `json:"deleter_id"`
-	PostID    int `json:"post_id"`
+	ID        int   `json:"id"`
+	DeleterID int   `json:"deleter_id"`
+	PostID    int   `json:"post_id"`
 }
 
 // BoardPostNewFunc func.
@@ -232,8 +233,8 @@ type BoardPostDeleteFunc func(BoardPostDeleteObject, int64)
 // BoardPostDeleteObject struct.
 type BoardPostDeleteObject struct {
 	TopicOwnerID int64 `json:"topic_owner_id"`
-	TopicID      int `json:"topic_id"`
-	ID           int `json:"id"`
+	TopicID      int   `json:"topic_id"`
+	ID           int   `json:"id"`
 }
 
 // MarketCommentNewFunc func.
@@ -260,10 +261,10 @@ type MarketCommentDeleteFunc func(MarketCommentDeleteObject, int64)
 // MarketCommentDeleteObject struct.
 type MarketCommentDeleteObject struct {
 	OwnerID   int64 `json:"owner_id"`
-	ID        int `json:"id"`
+	ID        int   `json:"id"`
 	UserID    int64 `json:"user_id"`
 	DeleterID int64 `json:"deleter_id"`
-	ItemID    int `json:"item_id"`
+	ItemID    int   `json:"item_id"`
 }
 
 // MarketOrderNewFunc func.
@@ -283,7 +284,7 @@ type GroupLeaveFunc func(GroupLeaveObject, int64)
 
 // GroupLeaveObject struct.
 type GroupLeaveObject struct {
-	UserID int64         `json:"user_id"`
+	UserID int64       `json:"user_id"`
 	Self   BaseBoolInt `json:"self"`
 }
 
@@ -292,7 +293,7 @@ type GroupJoinFunc func(GroupJoinObject, int64)
 
 // GroupJoinObject struct.
 type GroupJoinObject struct {
-	UserID   int64    `json:"user_id"`
+	UserID   int64  `json:"user_id"`
 	JoinType string `json:"join_type"`
 }
 
@@ -301,8 +302,8 @@ type UserBlockFunc func(UserBlockObject, int64)
 
 // UserBlockObject struct.
 type UserBlockObject struct {
-	AdminID     int64    `json:"admin_id"`
-	UserID      int64    `json:"user_id"`
+	AdminID     int64  `json:"admin_id"`
+	UserID      int64  `json:"user_id"`
 	UnblockDate int    `json:"unblock_date"`
 	Reason      int    `json:"reason"`
 	Comment     string `json:"comment"`
@@ -315,7 +316,7 @@ type UserUnblockFunc func(UserUnblockObject, int64)
 type UserUnblockObject struct {
 	AdminID   int64 `json:"admin_id"`
 	UserID    int64 `json:"user_id"`
-	ByEndDate int `json:"by_end_date"`
+	ByEndDate int   `json:"by_end_date"`
 }
 
 // PollVoteNewFunc func.
@@ -326,8 +327,8 @@ type PollVoteNewFunc func(PollVoteNewObject, int64)
 // BUG(VK): при голосовании за несколько вариантов, возвращается только один.
 type PollVoteNewObject struct {
 	OwnerID  int64 `json:"owner_id"`
-	PollID   int `json:"poll_id"`
-	OptionID int `json:"option_id"`
+	PollID   int   `json:"poll_id"`
+	OptionID int   `json:"option_id"`
 	UserID   int64 `json:"user_id"`
 }
 
@@ -338,8 +339,8 @@ type GroupOfficersEditFunc func(GroupOfficersEditObject, int64)
 type GroupOfficersEditObject struct {
 	AdminID  int64 `json:"admin_id"`
 	UserID   int64 `json:"user_id"`
-	LevelOld int `json:"level_old"`
-	LevelNew int `json:"level_new"`
+	LevelOld int   `json:"level_old"`
+	LevelNew int   `json:"level_new"`
 }
 
 // Changes struct.
@@ -401,7 +402,7 @@ type GroupChangePhotoFunc func(GroupChangePhotoObject, int64)
 
 // GroupChangePhotoObject struct.
 type GroupChangePhotoObject struct {
-	UserID int64         `json:"user_id"`
+	UserID int64       `json:"user_id"`
 	Photo  PhotosPhoto `json:"photo"`
 }
 
@@ -410,7 +411,7 @@ type VkpayTransactionFunc func(VkpayTransactionObject, int64)
 
 // VkpayTransactionObject struct.
 type VkpayTransactionObject struct {
-	FromID      int64    `json:"from_id"`
+	FromID      int64  `json:"from_id"`
 	Amount      int    `json:"amount"`
 	Description string `json:"description"`
 	Date        int    `json:"date"`
@@ -422,8 +423,8 @@ type LeadFormsNewFunc func(LeadFormsNewObject, int64)
 // LeadFormsNewObject struct.
 type LeadFormsNewObject struct {
 	LeadID   int    `json:"lead_id"`
-	GroupID  int64    `json:"group_id"`
-	UserID   int64    `json:"user_id"`
+	GroupID  int64  `json:"group_id"`
+	UserID   int64  `json:"user_id"`
 	FormID   int    `json:"form_id"`
 	FormName string `json:"form_name"`
 	AdID     int    `json:"ad_id"`
@@ -439,7 +440,7 @@ type AppPayloadFunc func(AppPayloadObject, int64)
 
 // AppPayloadObject struct.
 type AppPayloadObject struct {
-	UserID  int64    `json:"user_id"`
+	UserID  int64  `json:"user_id"`
 	AppID   int    `json:"app_id"`
 	Payload string `json:"payload"`
 }
@@ -451,7 +452,7 @@ type MessageReadFunc func(MessageReadObject, int64)
 type MessageReadObject struct {
 	FromID        int64 `json:"from_id"`
 	PeerID        int64 `json:"peer_id"`
-	ReadMessageID int `json:"read_message_id"`
+	ReadMessageID int   `json:"read_message_id"`
 }
 
 // LikeAddFunc func.
@@ -461,7 +462,7 @@ type LikeAddFunc func(LikeAddObject, int64)
 type LikeAddObject struct {
 	LikerID       int    `json:"liker_id"`
 	ObjectType    string `json:"object_type"`
-	ObjectOwnerID int64    `json:"object_owner_id"`
+	ObjectOwnerID int64  `json:"object_owner_id"`
 	ObjectID      int    `json:"object_id"`
 	ThreadReplyID int    `json:"thread_reply_id"`
 	PostID        int    `json:"post_id"` // for comment
@@ -474,7 +475,7 @@ type LikeRemoveFunc func(LikeRemoveObject, int64)
 type LikeRemoveObject struct {
 	LikerID       int    `json:"liker_id"`
 	ObjectType    string `json:"object_type"`
-	ObjectOwnerID int64    `json:"object_owner_id"`
+	ObjectOwnerID int64  `json:"object_owner_id"`
 	ObjectID      int    `json:"object_id"`
 	ThreadReplyID int    `json:"thread_reply_id"`
 	PostID        int    `json:"post_id"` // for comment

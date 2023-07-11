@@ -102,6 +102,17 @@ func (b *MessagesDeleteBuilder) MessageIDs(v []int) *MessagesDeleteBuilder {
 	return b
 }
 
+// PeerID parameter.
+func (b *MessagesDeleteBuilder) PeerID(v int64) *MessagesDeleteBuilder {
+	b.Params["peer_id"] = v
+	return b
+}
+
+func (b *MessagesDeleteBuilder) ChatID(v int) *MessagesDeleteBuilder {
+	b.Params["peer_id"] = v + 2e9
+	return b
+}
+
 // Spam '1' — to mark message as spam.
 func (b *MessagesDeleteBuilder) Spam(v bool) *MessagesDeleteBuilder {
 	b.Params["spam"] = v
@@ -141,7 +152,7 @@ func NewMessagesDeleteChatPhotoBuilder() *MessagesDeleteChatPhotoBuilder {
 
 // ChatID parameter.
 func (b *MessagesDeleteChatPhotoBuilder) ChatID(v int) *MessagesDeleteChatPhotoBuilder {
-	b.Params["chat_id"] = v
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 
@@ -176,6 +187,11 @@ func (b *MessagesDeleteConversationBuilder) UserID(v int64) *MessagesDeleteConve
 // For community: '- community ID', e.g. '-12345'.
 func (b *MessagesDeleteConversationBuilder) PeerID(v int64) *MessagesDeleteConversationBuilder {
 	b.Params["peer_id"] = v
+	return b
+}
+
+func (b *MessagesDeleteConversationBuilder) ChatID(v int) *MessagesDeleteConversationBuilder {
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 
@@ -224,6 +240,11 @@ func NewMessagesEditBuilder() *MessagesEditBuilder {
 // For community: '- community ID', e.g. '-12345'.
 func (b *MessagesEditBuilder) PeerID(v int64) *MessagesEditBuilder {
 	b.Params["peer_id"] = v
+	return b
+}
+
+func (b *MessagesEditBuilder) ChatID(v int) *MessagesEditBuilder {
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 
@@ -343,6 +364,11 @@ func NewMessagesGetByConversationMessageIDBuilder() *MessagesGetByConversationMe
 // For community: '- community ID', e.g. '-12345'.
 func (b *MessagesGetByConversationMessageIDBuilder) PeerID(v int64) *MessagesGetByConversationMessageIDBuilder {
 	b.Params["peer_id"] = v
+	return b
+}
+
+func (b *MessagesGetByConversationMessageIDBuilder) ChatID(v int) *MessagesGetByConversationMessageIDBuilder {
+	b.Params["chat_id"] = v + 2e9
 	return b
 }
 
@@ -468,6 +494,11 @@ func (b *MessagesGetConversationMembersBuilder) PeerID(v int64) *MessagesGetConv
 	return b
 }
 
+func (b *MessagesGetConversationMembersBuilder) ChatID(v int) *MessagesGetConversationMembersBuilder {
+	b.Params["peer_id"] = v + 2e9
+	return b
+}
+
 // Fields profile fields to return.
 func (b *MessagesGetConversationMembersBuilder) Fields(v []string) *MessagesGetConversationMembersBuilder {
 	b.Params["fields"] = v
@@ -561,6 +592,14 @@ func (b *MessagesGetConversationsByIDBuilder) PeerIDs(v []int64) *MessagesGetCon
 	return b
 }
 
+func (b *MessagesGetConversationsByIDBuilder) ChatIDs(v []int) *MessagesGetConversationsByIDBuilder {
+	for i := range v {
+		v[i] = v[i] + 2e9
+	}
+	b.Params["peer_ids"] = v
+	return b
+}
+
 // Extended return extended properties.
 func (b *MessagesGetConversationsByIDBuilder) Extended(v bool) *MessagesGetConversationsByIDBuilder {
 	b.Params["extended"] = v
@@ -614,6 +653,11 @@ func (b *MessagesGetHistoryBuilder) UserID(v int64) *MessagesGetHistoryBuilder {
 // PeerID parameter.
 func (b *MessagesGetHistoryBuilder) PeerID(v int64) *MessagesGetHistoryBuilder {
 	b.Params["peer_id"] = v
+	return b
+}
+
+func (b *MessagesGetHistoryBuilder) ChatID(v int) *MessagesGetHistoryBuilder {
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 
@@ -1166,6 +1210,11 @@ func (b *MessageEventAnswerBuilder) PeerID(v int64) *MessageEventAnswerBuilder {
 	return b
 }
 
+func (b *MessageEventAnswerBuilder) ChatID(v int) *MessageEventAnswerBuilder {
+	b.Params["chat_id"] = v + 2e9
+	return b
+}
+
 // MessageEventAnswer func.
 func (b *MessageEventAnswerBuilder) EventData(v string) *MessageEventAnswerBuilder {
 	b.Params["event_data"] = v
@@ -1360,7 +1409,7 @@ func (b *MessagesSendBuilder) Domain(v string) *MessagesSendBuilder {
 
 // ChatID ID of conversation the message will relate to.
 func (b *MessagesSendBuilder) ChatID(v int) *MessagesSendBuilder {
-	b.Params["chat_id"] = v
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 

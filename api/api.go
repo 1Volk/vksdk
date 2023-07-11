@@ -3,7 +3,7 @@ Package api implements VK API.
 
 See more https://vk.com/dev/api_requests
 */
-package api 
+package api
 
 import (
 	"bytes"
@@ -308,6 +308,8 @@ func (vk *VK) Request(method string, params Params) ([]byte, error) {
 	}
 
 	resp, err := vk.Handler(method, copyParams)
+
+	fmt.Println(copyParams)
 
 	return resp.Response, err
 }

@@ -9,7 +9,7 @@ import (
 type MessagesAudioMessage struct {
 	AccessKey string `json:"access_key"` // Access key for the document
 	ID        int    `json:"id"`         // Document ID
-	OwnerID   int64    `json:"owner_id"`   // Document owner ID
+	OwnerID   int64  `json:"owner_id"`   // Document owner ID
 	Duration  int    `json:"duration"`   // Audio message duration in seconds
 	LinkMp3   string `json:"link_mp3"`   // MP3 file URL
 	LinkOgg   string `json:"link_ogg"`   // OGG file URL
@@ -25,7 +25,7 @@ func (doc MessagesAudioMessage) ToAttachment() string {
 type MessagesGraffiti struct {
 	AccessKey string `json:"access_key"` // Access key for the document
 	ID        int    `json:"id"`         // Document ID
-	OwnerID   int64    `json:"owner_id"`   // Document owner ID
+	OwnerID   int64  `json:"owner_id"`   // Document owner ID
 	URL       string `json:"url"`        // Graffiti URL
 	Width     int    `json:"width"`      // Graffiti width
 	Height    int    `json:"height"`     // Graffiti height
@@ -38,13 +38,13 @@ func (doc MessagesGraffiti) ToAttachment() string {
 
 // MessagesMessage struct.
 type MessagesMessage struct {
-	AdminAuthorID         int64                         `json:"admin_author_id"` // Only for messages from community. Contains user ID of community admin, who sent this message.
+	AdminAuthorID         int64                       `json:"admin_author_id"` // Only for messages from community. Contains user ID of community admin, who sent this message.
 	Action                MessagesMessageAction       `json:"action"`
 	Attachments           []MessagesMessageAttachment `json:"attachments"`
 	Cmids                 int                         `json:"cmids"`                   // Unique auto-incremented number for all messages with this peer
 	ConversationMessageID int                         `json:"conversation_message_id"` // Unique auto-incremented number for all messages with this peer
 	Date                  int                         `json:"date"`                    // Date when the message has been sent in Unixtime
-	FromID                int64                         `json:"from_id"`                 // Message author's ID
+	FromID                int64                       `json:"from_id"`                 // Message author's ID
 	FwdMessages           []MessagesMessage           `json:"fwd_Messages"`            // Forwarded messages
 	ReplyMessage          *MessagesMessage            `json:"reply_message"`
 	Geo                   BaseMessageGeo              `json:"geo"`
@@ -57,13 +57,14 @@ type MessagesMessage struct {
 	Keyboard              MessagesKeyboard            `json:"keyboard"`
 	Template              MessagesTemplate            `json:"template"`
 	Payload               string                      `json:"payload"`
-	PeerID                int64                         `json:"peer_id"`   // Peer ID
+	PeerID                int64                       `json:"peer_id"`   // Peer ID
 	RandomID              int                         `json:"random_id"` // ID used for sending messages. It returned only for outgoing messages
 	Ref                   string                      `json:"ref"`
 	RefSource             string                      `json:"ref_source"`
 	Text                  string                      `json:"text"`          // Message text
 	UpdateTime            int                         `json:"update_time"`   // Date when the message has been updated in Unixtime
 	MembersCount          int                         `json:"members_count"` // Members number
+	ChatID                int                         `json:"-"`             // ChatID
 }
 
 // MessagesBasePayload struct.
@@ -80,7 +81,7 @@ const (
 
 // MessagesKeyboard struct.
 type MessagesKeyboard struct {
-	AuthorID int64                        `json:"author_id,omitempty"` // Community or bot, which set this keyboard
+	AuthorID int64                      `json:"author_id,omitempty"` // Community or bot, which set this keyboard
 	Buttons  [][]MessagesKeyboardButton `json:"buttons"`
 	OneTime  BaseBoolInt                `json:"one_time,omitempty"` // Should this keyboard disappear on first use
 	Inline   BaseBoolInt                `json:"inline,omitempty"`
@@ -225,7 +226,7 @@ type MessagesKeyboardButtonAction struct {
 	AppID   int    `json:"app_id,omitempty"`   // Fragment value in app link like vk.com/app{app_id}_-654321#hash
 	Hash    string `json:"hash,omitempty"`     // Fragment value in app link like vk.com/app123456_-654321#{hash}
 	Label   string `json:"label,omitempty"`    // Label for button
-	OwnerID int64    `json:"owner_id,omitempty"` // Fragment value in app link like vk.com/app123456_{owner_id}#hash
+	OwnerID int64  `json:"owner_id,omitempty"` // Fragment value in app link like vk.com/app123456_{owner_id}#hash
 	Payload string `json:"payload,omitempty"`  // Additional data sent along with message for developer convenience
 	Type    string `json:"type"`               // Button type
 	Link    string `json:"link,omitempty"`     // Link URL
@@ -357,8 +358,8 @@ type MessagesConversationChatSettings struct {
 		CanCall             BaseBoolInt `json:"can_call"`
 	} `json:"acl"`
 	IsGroupChannel BaseBoolInt `json:"is_group_channel"`
-	OwnerID        int64         `json:"owner_id"`
-	AdminIDs       []int64       `json:"admin_ids"`
+	OwnerID        int64       `json:"owner_id"`
+	AdminIDs       []int64     `json:"admin_ids"`
 }
 
 // MessagesConversationPeer struct.
@@ -396,7 +397,7 @@ type MessagesDialog struct {
 type MessagesHistoryAttachment struct {
 	Attachment MessagesHistoryMessageAttachment `json:"attachment"`
 	MessageID  int                              `json:"message_id"` // Message ID
-	FromID     int64                              `json:"from_id"`
+	FromID     int64                            `json:"from_id"`
 }
 
 // MessagesHistoryMessageAttachment struct.
@@ -443,7 +444,7 @@ const (
 type MessagesMessageAction struct {
 	ConversationMessageID int                        `json:"conversation_message_id"` // Message ID
 	Email                 string                     `json:"email"`                   // Email address for chat_invite_user or chat_kick_user actions
-	MemberID              int64                        `json:"member_id"`               // User or email peer ID
+	MemberID              int64                      `json:"member_id"`               // User or email peer ID
 	Message               string                     `json:"message"`                 // Message body of related message
 	Photo                 MessagesMessageActionPhoto `json:"photo"`
 	Text                  string                     `json:"text"` // New chat title for chat_create and chat_title_update actions
@@ -493,11 +494,11 @@ type MessagesPinnedMessage struct {
 	Attachments           []MessagesMessageAttachment `json:"attachments"`
 	ConversationMessageID int                         `json:"conversation_message_id"` // Unique auto-incremented number for all Messages with this peer
 	Date                  int                         `json:"date"`                    // Date when the message has been sent in Unixtime
-	FromID                int64                        `json:"from_id"`                 // Message author's ID
+	FromID                int64                       `json:"from_id"`                 // Message author's ID
 	FwdMessages           []*MessagesMessage          `json:"fwd_Messages"`
 	Geo                   BaseMessageGeo              `json:"geo"`
 	ID                    int                         `json:"id"`      // Message ID
-	PeerID                int64                         `json:"peer_id"` // Peer ID
+	PeerID                int64                       `json:"peer_id"` // Peer ID
 	ReplyMessage          *MessagesMessage            `json:"reply_message"`
 	Text                  string                      `json:"text"` // Message text
 }

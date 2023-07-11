@@ -277,7 +277,7 @@ func (vk *VK) UploadOwnerPhoto(ownerID int64, squareCrop string, file io.Reader)
 //
 // Limits: width+height not more than 14000 px, file size up to 50 Mb,
 // aspect ratio of at least 1:20.
-func (vk *VK) UploadMessagesPhoto(peerID int, file io.Reader) (response PhotosSaveMessagesPhotoResponse, err error) {
+func (vk *VK) UploadMessagesPhoto(peerID int64, file io.Reader) (response PhotosSaveMessagesPhotoResponse, err error) {
 	uploadServer, err := vk.PhotosGetMessagesUploadServer(Params{
 		"peer_id": peerID,
 	})
@@ -620,7 +620,7 @@ func (vk *VK) UploadGroupWallDoc(groupID int64, title, tags string, file io.Read
 // Supported formats: any formats excepting mp3 and executable files.
 //
 // Limits: file size up to 200 MB.
-func (vk *VK) UploadMessagesDoc(peerID int, typeDoc, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
+func (vk *VK) UploadMessagesDoc(peerID int64, typeDoc, title, tags string, file io.Reader) (response DocsSaveResponse, err error) {
 	uploadServer, err := vk.DocsGetMessagesUploadServer(Params{
 		"peer_id": peerID,
 		"type":    typeDoc,
