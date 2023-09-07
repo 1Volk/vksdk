@@ -170,7 +170,7 @@ type Params map[string]interface{}
 // cyrillic symbols will be transliterated automatically.
 // Numeric format from account.getInfo is supported as well.
 //
-// 	p.Lang(object.LangRU)
+//	p.Lang(object.LangRU)
 //
 // See all language code in module object.
 func (p Params) Lang(v int) Params {
@@ -309,7 +309,7 @@ func (vk *VK) Request(method string, params Params) ([]byte, error) {
 
 	resp, err := vk.Handler(method, copyParams)
 
-	fmt.Println(copyParams)
+	//fmt.Println(copyParams)
 
 	return resp.Response, err
 }
@@ -330,8 +330,8 @@ func (vk *VK) RequestUnmarshal(method string, params Params, obj interface{}) er
 // The Args map variable allows you to retrieve the parameters passed during
 // the request and avoids code formatting.
 //
-// 	return Args.code; // return parameter "code"
-// 	return Args.v; // return parameter "v"
+//	return Args.code; // return parameter "code"
+//	return Args.v; // return parameter "v"
 //
 // https://vk.com/dev/execute
 func (vk *VK) ExecuteWithArgs(code string, params Params, obj interface{}) error {
