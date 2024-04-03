@@ -286,7 +286,7 @@ func (b *MessagesEditBuilder) Long(v float64) *MessagesEditBuilder {
 
 // Attachment (Required if 'message' is not set.) List of objects attached to
 // the message, separated by commas, in the following format:
-// "<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo,
+// "<owner_id>_<media_id>", ” — Type of media attachment: 'photo' — photo,
 // 'video' — video, 'audio' — audio, 'doc' — document, 'wall' — wall post,
 // '<owner_id>' — ID of the media attachment owner. '<media_id>' — media
 // attachment ID. Example: "photo100172_166443618".
@@ -368,7 +368,7 @@ func (b *MessagesGetByConversationMessageIDBuilder) PeerID(v int64) *MessagesGet
 }
 
 func (b *MessagesGetByConversationMessageIDBuilder) ChatID(v int) *MessagesGetByConversationMessageIDBuilder {
-	b.Params["chat_id"] = v + 2e9
+	b.Params["peer_id"] = v + 2e9
 	return b
 }
 
@@ -1445,7 +1445,7 @@ func (b *MessagesSendBuilder) Long(v float64) *MessagesSendBuilder {
 
 // Attachment (Required if 'message' is not set.) List of objects attached to
 // the message, separated by commas, in the following format:
-// "<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo,
+// "<owner_id>_<media_id>", ” — Type of media attachment: 'photo' — photo,
 // 'video' — video, 'audio' — audio, 'doc' — document, 'wall' — wall post,
 // '<owner_id>' — ID of the media attachment owner. '<media_id>' — media
 // attachment ID. Example: "photo100172_166443618".
@@ -1617,5 +1617,90 @@ func (b *MessagesUnpinBuilder) PeerID(v int64) *MessagesUnpinBuilder {
 // GroupID parameter.
 func (b *MessagesUnpinBuilder) GroupID(v int64) *MessagesUnpinBuilder {
 	b.Params["group_id"] = v
+	return b
+}
+
+// MessagesReaction builder.
+//
+// https://vk.com/dev/messages.sendReaction
+type MessagesReactionBuilder struct {
+	api.Params
+}
+
+// MessagesReactionBuilder func.
+func NewMessagesReactionBuilder() *MessagesReactionBuilder {
+	return &MessagesReactionBuilder{api.Params{}}
+}
+
+// PeerID parameter.
+func (b *MessagesReactionBuilder) PeerID(v int64) *MessagesReactionBuilder {
+	b.Params["peer_id"] = v
+	return b
+}
+
+// ChatID parameter.
+func (b *MessagesReactionBuilder) ChatID(v int) *MessagesReactionBuilder {
+	b.Params["peer_id"] = v + 2e9
+	return b
+}
+
+// ConversationID parameter.
+func (b *MessagesReactionBuilder) ConversationID(v int) *MessagesReactionBuilder {
+	b.Params["cmid"] = v
+	return b
+}
+
+// ConversationID parameter.
+func (b *MessagesReactionBuilder) ReactionID(v int) *MessagesReactionBuilder {
+	b.Params["reaction_id"] = v
+	return b
+}
+
+// MessagesReaction builder.
+//
+// https://vk.com/dev/messages.changeConversationMemberRestrictions
+type MessagesRestrictionsBuilder struct {
+	api.Params
+}
+
+// MessagesReactionBuilder func.
+func NewMessagesRestrictionsBuilder() *MessagesRestrictionsBuilder {
+	return &MessagesRestrictionsBuilder{api.Params{}}
+}
+
+// PeerID parameter.
+func (b *MessagesRestrictionsBuilder) PeerID(v int64) *MessagesRestrictionsBuilder {
+	b.Params["peer_id"] = v
+	return b
+}
+
+// ChatID parameter.
+func (b *MessagesRestrictionsBuilder) ChatID(v int) *MessagesRestrictionsBuilder {
+	b.Params["peer_id"] = v + 2e9
+	return b
+}
+
+// MemberIds parameter.
+func (b *MessagesRestrictionsBuilder) MemberIds(v []int64) *MessagesRestrictionsBuilder {
+	b.Params["member_ids"] = v
+	return b
+}
+
+// Second parameter.
+func (b *MessagesRestrictionsBuilder) ForSecond(v int) *MessagesRestrictionsBuilder {
+	b.Params["for"] = v
+	return b
+}
+
+// Action parameter.
+func (b *MessagesRestrictionsBuilder) Action(v int) *MessagesRestrictionsBuilder {
+	var action string
+	switch v {
+	case 1:
+		action = "ro"
+	default:
+		action = "rw"
+	}
+	b.Params["action"] = action
 	return b
 }

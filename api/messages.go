@@ -82,7 +82,7 @@ func (vk *VK) MessageEventAnswer(params Params) (response int, err error) {
 	return
 }
 
-//  edits the message.
+//	edits the message.
 //
 // https://vk.com/dev/messages.edit
 func (vk *VK) MessagesEdit(params Params) (response int, err error) {
@@ -189,12 +189,13 @@ func (vk *VK) MessagesGetChatPreview(params Params) (response MessagesGetChatPre
 // MessagesGetConversationMembersResponse struct.
 type MessagesGetConversationMembersResponse struct {
 	Items []struct {
-		MemberID  int64              `json:"member_id"`
-		JoinDate  int                `json:"join_date"`
-		InvitedBy int                `json:"invited_by"`
-		IsOwner   object.BaseBoolInt `json:"is_owner,omitempty"`
-		IsAdmin   object.BaseBoolInt `json:"is_admin,omitempty"`
-		CanKick   object.BaseBoolInt `json:"can_kick,omitempty"`
+		MemberID     int64              `json:"member_id"`
+		JoinDate     int                `json:"join_date"`
+		InvitedBy    int                `json:"invited_by"`
+		IsRestricted object.BaseBoolInt `json:"is_restricted_to_write"`
+		IsOwner      object.BaseBoolInt `json:"is_owner,omitempty"`
+		IsAdmin      object.BaseBoolInt `json:"is_admin,omitempty"`
+		CanKick      object.BaseBoolInt `json:"can_kick,omitempty"`
 	} `json:"items"`
 	Count            int `json:"count"`
 	ChatRestrictions struct {
@@ -566,5 +567,26 @@ func (vk *VK) MessagesSetChatPhoto(params Params) (response MessagesSetChatPhoto
 // https://vk.com/dev/messages.unpin
 func (vk *VK) MessagesUnpin(params Params) (response int, err error) {
 	err = vk.RequestUnmarshal("messages.unpin", params, &response)
+	return
+}
+
+// MessagesReaction messages.sendReaction?.
+//
+// https://vk.com/dev/messages.sendReaction
+func (vk *VK) MessagesReaction(params Params) (response int, err error) {
+	err = vk.RequestUnmarshal("messages.sendReaction", params, &response)
+	return
+}
+
+// MessagesResctrionsResponse struct.
+type MessagesResctrionsResponse struct {
+	FailedMemberIds []int64 `json:"failed_member_ids"`
+}
+
+// MessagesRestrictions messages.changeConversationMemberRestrictions
+//
+// https://vk.com/dev/messages.changeConversationMemberRestrictions
+func (vk *VK) MessagesRestrictions(params Params) (response MessagesResctrionsResponse, err error) {
+	err = vk.RequestUnmarshal("messages.changeConversationMemberRestrictions", params, &response)
 	return
 }
