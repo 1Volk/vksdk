@@ -9,6 +9,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 	"mime"
 	"net/http"
 	"net/url"
@@ -114,6 +116,7 @@ type VK struct {
 	Limit        int
 	UserAgent    string
 	Handler      func(method string, params Params) (Response, error)
+	Debug        bool
 
 	tokenPool TokenPool
 	mux       sync.Mutex
@@ -153,7 +156,7 @@ type Response struct {
 // HTTP Client by setting the VK.Client value.
 //
 // This set limit 20 requests per second.
-func NewVK(token string) *VK {
+func NewVK(token string, debug bool) *VK {
 	var vk VK
 	vk.AccessToken = token
 	vk.Version = Version
@@ -166,6 +169,7 @@ func NewVK(token string) *VK {
 	vk.Limit = LimitGroupToken
 	vk.UserAgent = UserAgent
 	vk.IsPoolClient = false
+	vk.Debug = debug
 
 	return &vk
 }
@@ -173,7 +177,7 @@ func NewVK(token string) *VK {
 // NewVKWithPool is similar to NewVK but uses token pool for api calls.
 // Use this if you need to increase RPS limit.
 func NewVKWithPool(tokens ...string) *VK {
-	vk := NewVK("pool")
+	vk := NewVK("pool", false)
 	vk.tokenPool = NewTokenPool(tokens...)
 	vk.Limit = LimitGroupToken * len(tokens)
 	vk.IsPoolClient = true
@@ -184,8 +188,8 @@ func NewVKWithPool(tokens ...string) *VK {
 // Init VK API.
 //
 // Deprecated: use NewVK.
-func Init(token string) *VK {
-	return NewVK(token)
+func Init(token string, debug bool) *VK {
+	return NewVK(token, debug)
 }
 
 // Params type.
@@ -290,9 +294,19 @@ func (vk *VK) defaultHandler(method string, params Params) (Response, error) {
 			return response, fmt.Errorf("invalid content-type")
 		}
 
-		err = json.NewDecoder(resp.Body).Decode(&response)
+		respBody, err := io.ReadAll(resp.Body)
 		if err != nil {
 			_ = resp.Body.Close()
+			return response, err
+		}
+		_ = resp.Body.Close()
+
+		if vk.Debug {
+			log.Printf("\n[VKSDK %s]\nRequest:%s\nResponse:%s", method, query, string(respBody))
+		}
+
+		err = json.Unmarshal(respBody, &response)
+		if err != nil {
 			return response, err
 		}
 
@@ -335,14 +349,13 @@ func (vk *VK) Request(method string, params Params) ([]byte, error) {
 
 	resp, err := vk.Handler(method, copyParams)
 
-	//fmt.Println(copyParams)
-
 	return resp.Response, err
 }
 
 // RequestUnmarshal provides access to VK API methods.
 func (vk *VK) RequestUnmarshal(method string, params Params, obj interface{}) error {
 	rawResponse, err := vk.Request(method, params)
+
 	if err != nil {
 		return err
 	}

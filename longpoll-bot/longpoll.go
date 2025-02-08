@@ -8,6 +8,8 @@ package longpoll // import "github.com/1Volk/vksdk/longpoll-bot"
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 	"net/http"
 	"sync/atomic"
 
@@ -30,6 +32,8 @@ type Longpoll struct {
 	funcFullResponseList []func(object.LongpollBotResponse)
 	inShutdown           int32
 
+	Debug bool
+
 	events.FuncList
 }
 
@@ -38,12 +42,13 @@ type Longpoll struct {
 // The Longpoll will use the http.DefaultClient.
 // This means that if the http.DefaultClient is modified by other components
 // of your application the modifications will be picked up by the SDK as well.
-func NewLongpoll(vk *api.VK, groupID int64) (*Longpoll, error) {
+func NewLongpoll(vk *api.VK, groupID int64, debug bool) (*Longpoll, error) {
 	lp := &Longpoll{
 		VK:      vk,
 		GroupID: groupID,
 		Wait:    25,
 		Client:  http.DefaultClient,
+		Debug:   debug,
 	}
 	lp.FuncList = *events.NewFuncList()
 
@@ -119,9 +124,17 @@ func (lp *Longpoll) check() (object.LongpollBotResponse, error) {
 	if err != nil {
 		return response, err
 	}
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return response, err
+	}
 	defer resp.Body.Close()
 
-	err = json.NewDecoder(resp.Body).Decode(&response)
+	if lp.Debug {
+		log.Printf("\n[VKSDK longpoll]\n%s", string(respBody))
+	}
+
+	err = json.Unmarshal(respBody, &response)
 	if err != nil {
 		return response, err
 	}
