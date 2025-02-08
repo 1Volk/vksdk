@@ -16,16 +16,42 @@ import (
 	"sync"
 	"time"
 
+	"github.com/1Volk/vksdk"
 	"github.com/1Volk/vksdk/api/errors"
-	"github.com/1Volk/vksdk/internal"
 	"github.com/1Volk/vksdk/object"
 )
 
 // Api constants.
 const (
-	Version      = "5.103"
+	Version      = "5.199"
 	APIMethodURL = "https://api.vk.com/method/" // TODO: v2 rename (name starts with package name)
+	UserAgent    = "vksdk/" + vksdk.Version + " (+https://github.com/1Volk/vksdk)"
 )
+
+// TokenPool is a simple round-robin based token pool.
+type TokenPool struct {
+	tokens chan string
+}
+
+// NewTokenPool returns new token pool.
+func NewTokenPool(tokens ...string) TokenPool {
+	c := make(chan string, len(tokens))
+	for _, t := range tokens {
+		c <- t
+	}
+
+	return TokenPool{
+		tokens: c,
+	}
+}
+
+// Get returns access token from pool.
+func (tp TokenPool) Get() string {
+	token := <-tp.tokens
+	tp.tokens <- token
+
+	return token
+}
 
 // VKontakte API methods (except for methods from secure and ads sections)
 // with user access key or service access key can be accessed
@@ -89,7 +115,7 @@ type VK struct {
 	UserAgent    string
 	Handler      func(method string, params Params) (Response, error)
 
-	tokenPool internal.TokenPool
+	tokenPool TokenPool
 	mux       sync.Mutex
 	lastTime  time.Time
 	rps       int
@@ -138,7 +164,7 @@ func NewVK(token string) *VK {
 	vk.MethodURL = APIMethodURL
 	vk.Client = http.DefaultClient
 	vk.Limit = LimitGroupToken
-	vk.UserAgent = internal.UserAgent
+	vk.UserAgent = UserAgent
 	vk.IsPoolClient = false
 
 	return &vk
@@ -148,7 +174,7 @@ func NewVK(token string) *VK {
 // Use this if you need to increase RPS limit.
 func NewVKWithPool(tokens ...string) *VK {
 	vk := NewVK("pool")
-	vk.tokenPool = internal.NewTokenPool(tokens...)
+	vk.tokenPool = NewTokenPool(tokens...)
 	vk.Limit = LimitGroupToken * len(tokens)
 	vk.IsPoolClient = true
 

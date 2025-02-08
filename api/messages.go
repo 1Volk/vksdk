@@ -503,8 +503,6 @@ func (vk *VK) MessagesSearchConversations(params Params) (response MessagesSearc
 //
 // https://vk.com/dev/messages.send
 func (vk *VK) MessagesSend(params Params) (response int, err error) {
-	params["user_ids"] = ""
-	params["peer_ids"] = ""
 	err = vk.RequestUnmarshal("messages.send", params, &response)
 
 	return
@@ -512,9 +510,10 @@ func (vk *VK) MessagesSend(params Params) (response int, err error) {
 
 // MessagesSendUserIDsResponse struct.
 type MessagesSendUserIDsResponse []struct {
-	PeerID    int64 `json:"peer_id"`
-	MessageID int   `json:"message_id"`
-	Error     struct {
+	PeerID                int64 `json:"peer_id"`
+	MessageID             int   `json:"message_id"`
+	ConversationMessageID int   `json:"conversation_message_id"`
+	Error                 struct {
 		Code        int    `json:"code"`
 		Description string `json:"description"`
 	} `json:"error"`

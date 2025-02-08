@@ -1,4 +1,4 @@
-package api 
+package api
 
 import (
 	"github.com/1Volk/vksdk/object"
@@ -72,7 +72,7 @@ type UsersGetSubscriptionsResponse struct {
 //
 // https://vk.com/dev/users.getSubscriptions
 //
-// BUG(SevereCloud): UsersGetSubscriptions bad response with extended=1.
+// BUG(1Volk): UsersGetSubscriptions bad response with extended=1.
 func (vk *VK) UsersGetSubscriptions(params Params) (response UsersGetSubscriptionsResponse, err error) {
 	params["extended"] = false
 	err = vk.RequestUnmarshal("users.getSubscriptions", params, &response)

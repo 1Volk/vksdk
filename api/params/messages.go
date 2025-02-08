@@ -1108,7 +1108,17 @@ func (b *MessagesMarkAsReadBuilder) PeerID(v int64) *MessagesMarkAsReadBuilder {
 
 // StartMessageID message ID to start from.
 func (b *MessagesMarkAsReadBuilder) StartMessageID(v int) *MessagesMarkAsReadBuilder {
-	b.Params["start_message_id"] = v
+	b.Params["up_to_cmid"] = v
+	return b
+}
+
+func (b *MessagesMarkAsReadBuilder) MarkConversationAsRead(v int) *MessagesMarkAsReadBuilder {
+	b.Params["mark_conversation_as_read"] = v
+	return b
+}
+
+func (b *MessagesMarkAsReadBuilder) UpToCmid(v int) *MessagesMarkAsReadBuilder {
+	b.Params["up_to_cmid"] = v
 	return b
 }
 
@@ -1410,12 +1420,6 @@ func (b *MessagesSendBuilder) Domain(v string) *MessagesSendBuilder {
 // ChatID ID of conversation the message will relate to.
 func (b *MessagesSendBuilder) ChatID(v int) *MessagesSendBuilder {
 	b.Params["peer_id"] = v + 2e9
-	return b
-}
-
-// UserIDs IDs of message recipients (if new conversation shall be started).
-func (b *MessagesSendBuilder) UserIDs(v []int64) *MessagesSendBuilder {
-	b.Params["user_ids"] = v
 	return b
 }
 

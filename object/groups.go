@@ -110,7 +110,7 @@ type GroupsGroup struct {
 	AdminLevel           int                  `json:"admin_level"`
 	Deactivated          string               `json:"deactivated"` // Information whether community is banned
 	FinishDate           int                  `json:"finish_date"` // Finish date in Unixtime format
-	ID                   int64                  `json:"id"`          // Community ID
+	ID                   int64                `json:"id"`          // Community ID
 	Name                 string               `json:"name"`        // Community name
 	Photo100             string               `json:"photo_100"`   // URL of square photo of the community with 100 pixels in width
 	Photo200             string               `json:"photo_200"`   // URL of square photo of the community with 200 pixels in width
@@ -169,7 +169,7 @@ type GroupsGroup struct {
 	ActionButton         GroupsActionButton   `json:"action_button"`
 	TrackCode            string               `json:"track_code"`
 	PublicDateLabel      string               `json:"public_date_label"`
-	AuthorID             int64                  `json:"author_id"`
+	AuthorID             int64                `json:"author_id"`
 	Phone                string               `json:"phone"`
 }
 
@@ -225,7 +225,7 @@ type GroupsContactsItem struct {
 	Desc   string `json:"desc"`    // Contact description
 	Email  string `json:"email"`   // Contact email
 	Phone  string `json:"phone"`   // Contact phone
-	UserID int64    `json:"user_id"` // User ID
+	UserID int64  `json:"user_id"` // User ID
 }
 
 // GroupsCountersGroup struct.
@@ -397,7 +397,7 @@ type GroupsGroupSettings struct {
 	Audio              int                             `json:"audio"`           // Audio settings
 	Description        string                          `json:"description"`     // Community description
 	Docs               int                             `json:"docs"`            // Docs settings
-	ObsceneWords       []string                        `json:"obscene_words"`   // The list of stop words
+	ObsceneWords       string                          `json:"obscene_words"`   // The list of stop words
 	Photos             int                             `json:"photos"`          // Photos settings
 	PublicCategory     int                             `json:"public_category"` // Information about the group category
 	PublicCategoryList []GroupsGroupPublicCategoryList `json:"public_category_list"`
@@ -414,8 +414,6 @@ type GroupsGroupSettings struct {
 	CountryID          int                             `json:"country_id"`
 	CityID             int                             `json:"city_id"`
 	Messages           int                             `json:"messages"`
-	Articles           int                             `json:"articles"`
-	Events             int                             `json:"events"`
 	AgeLimits          int                             `json:"age_limits"`
 	ObsceneFilter      BaseBoolInt                     `json:"obscene_filter"`    // Information whether the obscene filter is enabled
 	ObsceneStopwords   BaseBoolInt                     `json:"obscene_stopwords"` // Information whether the stopwords filter is enabled
@@ -627,11 +625,13 @@ type GroupsMarketInfo struct {
 	CurrencyText    string            `json:"currency_text"` // Currency name
 	Enabled         BaseBoolInt       `json:"enabled"`       // Information whether the market is enabled
 	CommentsEnabled BaseBoolInt       `json:"comments_enabled"`
+	CanMessage      BaseBoolInt       `json:"can_message"`
 	MainAlbumID     int               `json:"main_album_id"` // Main market album ID
 	PriceMax        string            `json:"price_max"`     // Maximum price
 	PriceMin        string            `json:"price_min"`     // Minimum price
 	Wiki            PagesWikipageFull `json:"wiki"`
 	CountryIDs      []int             `json:"country_ids"`
+	CityIds         []int             `json:"city_ids"`
 	// TODO: add in 5.110 CanMessage      BaseBoolInt       `json:"can_message"`
 }
 
@@ -660,7 +660,7 @@ type GroupsMemberRoleXtrUsersUser struct {
 // GroupsMemberStatus struct.
 type GroupsMemberStatus struct {
 	Member      BaseBoolInt `json:"member"`  // Information whether user is a member of the group
-	UserID      int64         `json:"user_id"` // User ID
+	UserID      int64       `json:"user_id"` // User ID
 	Permissions []string    `json:"permissions"`
 }
 
@@ -671,7 +671,7 @@ type GroupsMemberStatusFull struct {
 	Request    BaseBoolInt `json:"request"`    // Information whether user has send request to the group
 	CanInvite  BaseBoolInt `json:"can_invite"` // Information whether user can be invite
 	CanRecall  BaseBoolInt `json:"can_recall"` // Information whether user's invite to the group can be recalled
-	UserID     int64         `json:"user_id"`    // User ID
+	UserID     int64       `json:"user_id"`    // User ID
 }
 
 // GroupsOnlineStatus Status type.

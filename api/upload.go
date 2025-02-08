@@ -1,4 +1,4 @@
-package api 
+package api
 
 import (
 	"bytes"
@@ -502,7 +502,7 @@ func (vk *VK) UploadVideo(params Params, file io.Reader) (response VideoSaveResp
 	}
 
 	if videoUploadError.ErrorCode != 0 {
-		err = fmt.Errorf(videoUploadError.Error)
+		err = fmt.Errorf("%s", videoUploadError.Error)
 	}
 
 	return
@@ -527,7 +527,7 @@ func (vk *VK) uploadDoc(url, title, tags string, file io.Reader) (response DocsS
 	}
 
 	if docUploadError.Error != "" {
-		err = fmt.Errorf(docUploadError.Error)
+		err = fmt.Errorf("%s", docUploadError.Error)
 		return
 	}
 
@@ -718,7 +718,7 @@ func (vk *VK) UploadStoriesPhoto(params Params, file io.Reader) (response Upload
 	}
 
 	if handler.Error.ErrorCode != 0 {
-		err = fmt.Errorf(handler.Error.Type)
+		err = fmt.Errorf("%s", handler.Error.Type)
 	} else {
 		response.Sig = handler.Response.Sig
 		response.Stories = handler.Response.Stories
@@ -750,7 +750,7 @@ func (vk *VK) UploadStoriesVideo(params Params, file io.Reader) (response Upload
 
 	if handler.ErrorCode != 0 {
 		// TODO: new type error
-		err = fmt.Errorf(handler.Error)
+		err = fmt.Errorf("%s", handler.Error)
 	} else {
 		response.Sig = handler.Sig
 		response.Stories = handler.Stories
