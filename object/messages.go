@@ -36,6 +36,13 @@ func (doc MessagesGraffiti) ToAttachment() string {
 	return fmt.Sprintf("doc%d_%d", doc.OwnerID, doc.ID)
 }
 
+// Reactions struct
+type Reactions struct {
+	ReactionID int     `json:"reaction_id"`
+	Count      int     `json:"count"`
+	UserIds    []int64 `json:"user_ids"`
+}
+
 // MessagesMessage struct.
 type MessagesMessage struct {
 	AdminAuthorID         int64                       `json:"admin_author_id"` // Only for messages from community. Contains user ID of community admin, who sent this message.
@@ -64,7 +71,11 @@ type MessagesMessage struct {
 	Text                  string                      `json:"text"`          // Message text
 	UpdateTime            int                         `json:"update_time"`   // Date when the message has been updated in Unixtime
 	MembersCount          int                         `json:"members_count"` // Members number
-	ChatID                int                         `json:"-"`             // ChatID
+	IsUnavailable         BaseBoolInt                 `json:"is_unavailable"`
+	ReactionID            int                         `json:"reaction_id"`      // Reaction ID
+	Reactions             Reactions                   `json:"reactions"`        // Reactions
+	LastReactionId        int                         `json:"last_reaction_id"` // Last Reaction ID
+	ChatID                int                         `json:"-"`                // ChatID
 }
 
 // MessagesBasePayload struct.
