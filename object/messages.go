@@ -73,7 +73,7 @@ type MessagesMessage struct {
 	MembersCount          int                         `json:"members_count"` // Members number
 	IsUnavailable         BaseBoolInt                 `json:"is_unavailable"`
 	ReactionID            int                         `json:"reaction_id"`      // Reaction ID
-	Reactions             Reactions                   `json:"reactions"`        // Reactions
+	Reactions             []*Reactions                `json:"reactions"`        // Reactions
 	LastReactionId        int                         `json:"last_reaction_id"` // Last Reaction ID
 	ChatID                int                         `json:"-"`                // ChatID
 }
